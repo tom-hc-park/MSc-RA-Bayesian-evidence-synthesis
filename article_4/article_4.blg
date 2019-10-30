@@ -3,44 +3,53 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: article_4.aux
 The style file: unsrt.bst
 Database file #1: sample.bib.bib
-You've used 1 entry,
+Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
+while executing---line 944 of file unsrt.bst
+You've used 2 entries,
             1791 wiz_defined-function locations,
-            453 strings with 3689 characters,
-and the built_in function-call counts, 245 in all, are:
-= -- 21
-> -- 8
+            459 strings with 3919 characters,
+and the built_in function-call counts, 374 in all, are:
+= -- 32
+> -- 12
 < -- 0
-+ -- 3
-- -- 2
-* -- 17
-:= -- 45
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 1
++ -- 5
+- -- 3
+* -- 20
+:= -- 69
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 9
-empty$ -- 24
-format.name$ -- 2
-if$ -- 52
+cite$ -- 2
+duplicate$ -- 17
+empty$ -- 38
+format.name$ -- 3
+if$ -- 80
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 1
-pop$ -- 1
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 2
+pop$ -- 4
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 4
+skip$ -- 7
 stack$ -- 0
 substring$ -- 21
-swap$ -- 1
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 2
-width$ -- 2
-write$ -- 13
+while$ -- 3
+width$ -- 3
+write$ -- 23
+(There were 4 error messages)

@@ -1,0 +1,29 @@
+\documentclass[12pt]{report}
+\usepackage{mathtools}
+\usepackage{lipsum}
+
+\begin{document}
+	first reference \ref{first} is about sth. \\
+	one dollar sign $1=1$ is for this.
+	two of them is $$1=1$$ is not easy.
+	\begin{multline} \label{first}
+		\frac{1}{\inf} = 0
+	\end{multline}
+	
+	\lipsum
+	
+	\begin{align}
+		a=1\\
+		b=2\\
+		c=d\\
+	\end{align}
+	\begin{align*}
+	a=1\\
+	b=2\\
+	c=d\\
+	\end{align*}
+	
+	\begin{figure}
+		\includegraphics[width=100mm]{./thumb.jpeg}
+	\end{figure}
+\end{document}
