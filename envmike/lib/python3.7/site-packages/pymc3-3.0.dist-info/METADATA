@@ -1,0 +1,38 @@
+Metadata-Version: 2.0
+Name: pymc3
+Version: 3.0
+Summary: PyMC3
+Home-page: http://github.com/pymc-devs/pymc3
+Author: Thomas Wiecki
+Author-email: thomas.wiecki@gmail.com
+License: Apache License, Version 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Operating System :: OS Independent
+Requires-Dist: CommonMark (==0.5.4)
+Requires-Dist: joblib (>=0.9)
+Requires-Dist: matplotlib (>=1.5.0)
+Requires-Dist: nbsphinx
+Requires-Dist: numpy (>=1.11.0)
+Requires-Dist: numpydoc
+Requires-Dist: pandas (>=0.18.0)
+Requires-Dist: patsy (>=0.4.0)
+Requires-Dist: recommonmark
+Requires-Dist: scipy (>=0.12.0)
+Requires-Dist: sphinx
+Requires-Dist: theano (>=0.8.2)
+Requires-Dist: tqdm (>=4.8.4)
+
+Bayesian estimation, particularly using Markov chain Monte Carlo (MCMC), is an increasingly relevant approach to statistical estimation. However, few statistical software packages implement MCMC samplers, and they are non-trivial to code by hand. ``pymc3`` is a python package that implements the Metropolis-Hastings algorithm as a python class, and is extremely flexible and applicable to a large suite of problems. ``pymc3`` includes methods for summarizing output, plotting, goodness-of-fit and convergence diagnostics.
+
+
