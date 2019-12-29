@@ -1,7 +1,7 @@
 \deactivateaddvspace 
-\contentsline {figure}{\numberline {1}{\ignorespaces An example of a floating figure}}{4}{figure.caption.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces A number of pictures.}}{6}{figure.caption.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A city market.}}}{6}{subfigure.2.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Forest landscape.}}}{6}{subfigure.2.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Mountain landscape.}}}{6}{subfigure.2.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {A tile decoration.}}}{6}{subfigure.2.4}
+\contentsline {figure}{\numberline {1}{\ignorespaces An example of a floating figure}}{5}{figure.caption.3}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces A number of pictures.}}{7}{figure.caption.5}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A city market.}}}{7}{subfigure.2.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Forest landscape.}}}{7}{subfigure.2.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Mountain landscape.}}}{7}{subfigure.2.3}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {A tile decoration.}}}{7}{subfigure.2.4}% 

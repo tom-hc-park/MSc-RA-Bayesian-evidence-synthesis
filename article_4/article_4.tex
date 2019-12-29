@@ -77,8 +77,46 @@ BCOR5mm, % Binding correction
 %----------------------------------------------------------------------------------------
 
 \section*{Abstract} % This section will not appear in the table of contents due to the star (\section*)
-(This is from a template)
-\lipsum[1] % Dummy text
+
+This project is about the area of Bayesian evidence synthesis methodology oriented toward applications in public health and epidemiology.  The project will involve one or both of the following lines of enquiry:
+
+1. Developing new evidence synthesis models to address specific public health challenges.
+
+2. Developing theoretical understanding of what a priori assumptions are required to yield partial or full identification of target quantities in prototype evidence synthesis models.
+
+Mike builds Bayesian evidence synthesis models for public health and epidemiology applications. Typically in public health many aspects of the system of study remain hidden and surveillance data is derived from downstream effects. (e.g. think of a disease that is symptomless where only diagnoses are observed) These models also require flexibility including incorporating dynamic rates and geographic variation through the use of hierarchical components. Some examples include:
+
+1. Assessing the impact of the take home naloxone program on the number of overdose deaths in BC.
+
+2. Estimating the number of overdoses occurring within a given month and region based on ambulance call-outs, hospitalizations and other surveillance data.
+
+3. Estimating the size of the population with substance use disorder, opioid use disorder, individuals who inject opioids etc.
+
+4. The prevalence of sexually-transmitted infections based on diagnosis and testing data, combined with sexual behaviour survey data.
+
+Generally there are scientifically relevant questions of "information flow" in such models, very roughly put: how good do the inputs needs to be in order to get useful outputs. And the inputs could be multiple datasets plus multiple prior distributions.
+
+An example of this can be seen when estimating the total number of overdoses occurring based on different data sources. If an individual overdoses there is some associated probability that it is witnessed by either a passerby or emergency services. There’s a further probability an ambulance may be called or the individual is transported to hospital. Data on ambulance-attended overdoses, ED visits, and other uses of intervention each provide different information about this underlying process and can help to refine the total estimate.
+
+More specifically, it may not be obvious how the width of the posterior distribution on a given target parameter depends on widths of the prior distributions on various parameters plus the amount of data in each data source. But it would be scientifically relevant to know this. For example, estimating populations at risk are required for service planning. An estimate with large uncertainty (wide posterior width) would most likely not be useful. 
+
+Of course one way to address this question is in a simulation context. Just try changing the sample sizes and the prior specification, and see what happens. And this project would likely involve some of this.
+
+But hopefully though there is also scope to get some clean and general answers at the cost of working with stripped-down, simplified versions of models.
+
+A specific avenue to investigate is whether any simplified models are amenable to the sort of "partial identification" analysis that Paul has used in other contexts. Likely the most accessible intro to this is Chapters 1 and 2 of Paul's recent book:
+
+https://doi.org/10.1201/b18308
+
+(available free online via the UBC library).
+
+Another aspect of this project can be to develop model assessment, validation, and selection within the context of partial identification. Previous work within the field of public health has used information criteria such as the Deviance Information Criterion to assess model fit and select between candidate models. Understanding the evolution of these criteria under different data sources, increased number of observations, and changes to the structure of the priors would also be valuable to investigate.
+
+e.g. see https://doi.org/10.1093/biostatistics/kxn004
+
+The project is at a very early stage, quite nascent and amorphous. So the RA work is on trying to flesh out more specific research plans. For instance, can we identify which of Mike's models, and with what simplifications, are good candidates for further study?
+
+%\lipsum[1] % Dummy text
 
 %----------------------------------------------------------------------------------------
 %	AUTHOR AFFILIATIONS

@@ -1,8 +1,8 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: article_4.aux
 The style file: unsrt.bst
-Database file #1: sample.bib.bib
+Database file #1: sample.bib
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
