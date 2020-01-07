@@ -78,46 +78,6 @@ BCOR5mm, % Binding correction
 
 \section*{Abstract} % This section will not appear in the table of contents due to the star (\section*)
 
-This project is about the area of Bayesian evidence synthesis methodology oriented toward applications in public health and epidemiology.  The project will involve one or both of the following lines of enquiry:
-
-1. Developing new evidence synthesis models to address specific public health challenges.
-
-2. Developing theoretical understanding of what a priori assumptions are required to yield partial or full identification of target quantities in prototype evidence synthesis models.
-
-Mike builds Bayesian evidence synthesis models for public health and epidemiology applications. Typically in public health many aspects of the system of study remain hidden and surveillance data is derived from downstream effects. (e.g. think of a disease that is symptomless where only diagnoses are observed) These models also require flexibility including incorporating dynamic rates and geographic variation through the use of hierarchical components. Some examples include:
-
-1. Assessing the impact of the take home naloxone program on the number of overdose deaths in BC.
-
-2. Estimating the number of overdoses occurring within a given month and region based on ambulance call-outs, hospitalizations and other surveillance data.
-
-3. Estimating the size of the population with substance use disorder, opioid use disorder, individuals who inject opioids etc.
-
-4. The prevalence of sexually-transmitted infections based on diagnosis and testing data, combined with sexual behaviour survey data.
-
-Generally there are scientifically relevant questions of "information flow" in such models, very roughly put: how good do the inputs needs to be in order to get useful outputs. And the inputs could be multiple datasets plus multiple prior distributions.
-
-An example of this can be seen when estimating the total number of overdoses occurring based on different data sources. If an individual overdoses there is some associated probability that it is witnessed by either a passerby or emergency services. There’s a further probability an ambulance may be called or the individual is transported to hospital. Data on ambulance-attended overdoses, ED visits, and other uses of intervention each provide different information about this underlying process and can help to refine the total estimate.
-
-More specifically, it may not be obvious how the width of the posterior distribution on a given target parameter depends on widths of the prior distributions on various parameters plus the amount of data in each data source. But it would be scientifically relevant to know this. For example, estimating populations at risk are required for service planning. An estimate with large uncertainty (wide posterior width) would most likely not be useful. 
-
-Of course one way to address this question is in a simulation context. Just try changing the sample sizes and the prior specification, and see what happens. And this project would likely involve some of this.
-
-But hopefully though there is also scope to get some clean and general answers at the cost of working with stripped-down, simplified versions of models.
-
-A specific avenue to investigate is whether any simplified models are amenable to the sort of "partial identification" analysis that Paul has used in other contexts. Likely the most accessible intro to this is Chapters 1 and 2 of Paul's recent book:
-
-https://doi.org/10.1201/b18308
-
-(available free online via the UBC library).
-
-Another aspect of this project can be to develop model assessment, validation, and selection within the context of partial identification. Previous work within the field of public health has used information criteria such as the Deviance Information Criterion to assess model fit and select between candidate models. Understanding the evolution of these criteria under different data sources, increased number of observations, and changes to the structure of the priors would also be valuable to investigate.
-
-e.g. see https://doi.org/10.1093/biostatistics/kxn004
-
-The project is at a very early stage, quite nascent and amorphous. So the RA work is on trying to flesh out more specific research plans. For instance, can we identify which of Mike's models, and with what simplifications, are good candidates for further study?
-
-%\lipsum[1] % Dummy text
-
 %----------------------------------------------------------------------------------------
 %	AUTHOR AFFILIATIONS
 %----------------------------------------------------------------------------------------
@@ -135,19 +95,130 @@ The project is at a very early stage, quite nascent and amorphous. So the RA wor
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
+All examples here were performed in Python 3.7 using the library pyMC [reference] and JAGS. Training was performed using No U-Turn Sampling (NUTS) over two chains with 10000 iterations and initial conditions for the chain were selected through the use of ADVI. Fitting was performed on a GHz Intel Core i5 with 8GM of LPDDD3 RAM and typically had wall times under ten minutes. Data processing was carried out using the Pandas and SciPy library [reference] Data visualization was performed using the libraries Seaborn and Matplotlib [ref]. Code for all examples in this study are provided.
+\begin{enumerate}
+	\item{Intro of Intro: Early Writing}
+	(Below from tamplete)
+	opioid crisis is one of major issues in North America continents including Canada. There were 1,490 deaths and 15,598 paramedic- attended overdose events during 2017 alone. \cite{Irvine:modelling} (need to know about bib in latex, change statistics to 2018 later) The goal of this project is to apply Bayesian evidence synthesis to help reduce the effect of opoid crisis in Vancouver, Canada.
+	
+	There are multiple sources of data sets.   
+	
+	We estimates the number of drug addicts.  
+	A statement requiring citation \cite{Figueredo:2009dg}.
+	
+	\item{Project Goal: scrapped from e mails}
+	
+	<Frame>
+	
+	This project is about the area of Bayesian evidence synthesis methodology oriented toward applications in public health and epidemiology.  The project will involve one or both of the following lines of enquiry:
+	
+	1. Developing new evidence synthesis models to address specific public health challenges.
+	
+	2. Developing theoretical understanding of what a priori assumptions are required to yield partial or full identification of target quantities in prototype evidence synthesis models.
+	
+	Mike builds Bayesian evidence synthesis models for public health and epidemiology applications. Typically in public health many aspects of the system of study remain hidden and surveillance data is derived from downstream effects. (e.g. think of a disease that is symptomless where only diagnoses are observed) These models also require flexibility including incorporating dynamic rates and geographic variation through the use of hierarchical components. Some examples include:
+	
+	1. Assessing the impact of the take home naloxone program on the number of overdose deaths in BC.
+	
+	2. Estimating the number of overdoses occurring within a given month and region based on ambulance call-outs, hospitalizations and other surveillance data.
+	
+	3. Estimating the size of the population with substance use disorder, opioid use disorder, individuals who inject opioids etc.
+	
+	4. The prevalence of sexually-transmitted infections based on diagnosis and testing data, combined with sexual behaviour survey data.
+	
+	Generally there are scientifically relevant questions of "information flow" in such models, very roughly put: how good do the inputs needs to be in order to get useful outputs. And the inputs could be multiple datasets plus multiple prior distributions.
+	
+	An example of this can be seen when estimating the total number of overdoses occurring based on different data sources. If an individual overdoses there is some associated probability that it is witnessed by either a passerby or emergency services. There’s a further probability an ambulance may be called or the individual is transported to hospital. Data on ambulance-attended overdoses, ED visits, and other uses of intervention each provide different information about this underlying process and can help to refine the total estimate.
+	
+	More specifically, it may not be obvious how the width of the posterior distribution on a given target parameter depends on widths of the prior distributions on various parameters plus the amount of data in each data source. But it would be scientifically relevant to know this. For example, estimating populations at risk are required for service planning. An estimate with large uncertainty (wide posterior width) would most likely not be useful. 
+	
+	Of course one way to address this question is in a simulation context. Just try changing the sample sizes and the prior specification, and see what happens. And this project would likely involve some of this.
+	
+	But hopefully though there is also scope to get some clean and general answers at the cost of working with stripped-down, simplified versions of models.
+	
+	A specific avenue to investigate is whether any simplified models are amenable to the sort of "partial identification" analysis that Paul has used in other contexts. Likely the most accessible intro to this is Chapters 1 and 2 of Paul's recent book:
+	
+	Another aspect of this project can be to develop model assessment, validation, and selection within the context of partial identification. Previous work within the field of public health has used information criteria such as the Deviance Information Criterion to assess model fit and select between candidate models. Understanding the evolution of these criteria under different data sources, increased number of observations, and changes to the structure of the priors would also be valuable to investigate.
+	
+	The project is at a very early stage, quite nascent and amorphous. So the RA work is on trying to flesh out more specific research plans. For instance, can we identify which of Mike's models, and with what simplifications, are good candidates for further study?
+	
+	\item{Scratch Paragraphs: initial writing attempts}
+	We have certain goals 
+	
+	1. developing new evidence synthesis models for a certain public health challenges
+	
+	2. developing theorietical understanding of what a priori assumptions are required to yield identification of target quantities 
+	
+	3. Estimate some possible variables of interest:
+	The number of overdoses, the number of infected people and so on.
+	
+	4. Information flow: how good should the input data be in order to have fairly good enough output?
+	
+	5. how priors and data set affect the posteriors of interest?
+	
+	\begin{itemize}
+		\item 5.a. by simulation in complicated context
+		\item  5.b. in simplified model, some general understanding mathmatically.
+	\end{itemize}
+	
+	6. Model assessment, selection and validation:
+	Paul's partially identified model application
+	
+	7. For further study, which of Mike's models are good with some simplifications? 
+	
+	\LARGE Process
+	
+	\normalsize
+	The number of overdose is our interest of estimation. Let $O_t$ the number of overdose in a given month $t$. Suppose there was a survey  conducted to see the proportion of ambulance call $p_A$ among the subjects of overdose. Let $n_{A}$ the sample size of the survey and   
+	$x_{A}$ to be the total number who confirmed they did call an ambulance. Then $x_{A}$ is assumed to follow Binomial distribution as follows.
+	$$x_{A} \sim Bin(n_{A},p_{A})$$
+	The total overdoses need to be modeled. The simplest conceptual model is to take an underlying log-rate $z_t$ that is independent and identically distributed according to a normal distribution with mean $\mu$ and variance $\sigma^2$. \cite{Irvine:modelling} Denote $\lambda_{t}$ the rate of overdose at time $t$. It is assumed that the total overdose $O_t$ follows Poission distribution where the population of the region of interest is $N$. 
+	$$z_{t} \sim N(\mu, \sigma^{2})$$  
+	$$\lambda_{t}^{OD} = \exp(z_{t})$$  
+	$$O_{t} \sim Poi(\lambda_{t}^{OD}N)$$  
+	\newcommand{\pp}[1]{{#1}_t}
+	Notice that $O_t$ cannot be estimated directly since none of the variables determining $O_t$ ($\mu$, $\sigma$, $N$) is known. Henc \(\pp{O}\) should be inferred from \(p_A\), the ambulance call out rate.
+	
+	It is assumed that the data of ambulance-attended overdoses is given. Let \(U_t\) the number of  ambulance-attended overdoses at a time point $t$. \(U_t\) follows Binomial distribution: 
+	$$U_t \sim Bin(O_t, p_A)$$  
+	Now $O_t$ can be estimated since $p_A$ is infered by survey data and the data $U_t$ is given. 
+	A simple model was suggested. The model combines Ambulance Call-outs Model and Overdose Model. 
+	
+	The next step is to run some simulations and to figure out how different types of inputs lead the changes of output. To do so, simplest model is proposed as a start point.
+	
+	\LARGE Simulation
+	
+	\normalsize The first simulation simplifies variables as much as possible. 
+	For simplicity, assume $N= 10000, n_{A}=1000$. Later the total number of population for a region N could vary over time and also be staritified for better realization of the real world. Likewise, $n_A$ can be vary and it is recommended to see the impact of the likelihood over the posterior distributions of variables of interest. 
+	
+	
+	
+	\large Likelihood
+	
+	\normalsize 
+	The two data set (survey data set and ambulance attended overdose) is simulated. 
+	For the survey data, the true value was set $p_A=0.8$. For twelve months (t=1,2,3, ..., 12), $x_t$ values are independentally generated. 
+	
+	Simulation for the overdose model assumed the true values of parameters $\mu=\log0.05, \sigma=1$. Likewise twelve samples of $O_t$ and $U_t$ were generated. 
+	
+	
+	Note that only $U_t$ and $x_t$ are known as likelihood. Also $N=10000, n_A = 1000$ are given for now. The goal is to estimate $p_A$ and $O_t$. 
+	
+	
+	\large Prior Distributions
+	
+	\normalsize Noninformative prior distributions are presumed as a beginning for simplicity. 
+	$$p(p_A) \sim Beta(1,1)$$
+	$$\mu \sim U(-10,0)$$ 
+	$$\sigma \sim U(0,5)$$
+	This lead the posterior estimates of interest heavily depend on the likelihood. Later the priors will be changed and the impact of the change over posteriors will be investigated. 
+	
+	\large Early Result
+	
+	\normalsize 
+\end{enumerate}
 
-(Below from tamplete)
 
-
-opioid crisis is one of major issues in North America continents including Canada. There were 1,490 deaths and 15,598 paramedic- attended overdose events during 2017 alone. \cite{Irvine:modelling} (need to know about bib in latex, change statistics to 2018 later) The goal of this project is to apply Bayesian evidence synthesis to help reduce the effect of opoid crisis in Vancouver, Canada. 
-There are multiple sources of data sets. 
-We estimates the number of drug addicts.
-A statement requiring citation \cite{Figueredo:2009dg}.
-
-
-\lipsum[1-3] % Dummy text
-
-Some mathematics in the text: $\cos\pi=-1$ and $\alpha$.
  
 %----------------------------------------------------------------------------------------
 %	METHODS
@@ -156,7 +227,7 @@ Some mathematics in the text: $\cos\pi=-1$ and $\alpha$.
 \section{Methods}
 We first focus on the simplest sitaution that can describe the data sets and the general idea.
 
-\lipsum[5] % Dummy text
+% \lipsum[5] % Dummy text
 
 \begin{enumerate}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
 \item First item in a list
@@ -168,24 +239,24 @@ We first focus on the simplest sitaution that can describe the data sets and the
 
 \subsection{Paragraphs}
 
-\lipsum[6] % Dummy text
+%\lipsum[6] % Dummy text
 
-\paragraph{Paragraph Description} \lipsum[7] % Dummy text
+\paragraph{Paragraph Description} %\lipsum[7] % Dummy text
 
-\paragraph{Different Paragraph Description} \lipsum[8] % Dummy text
+\paragraph{Different Paragraph Description} %\lipsum[8] % Dummy text
 
 %------------------------------------------------
 
 \subsection{Math}
 
-\lipsum[4] % Dummy text
+%\lipsum[4] % Dummy text
 
 \begin{equation}
 \cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
 \label{eq:refname2}
 \end{equation}
 
-\lipsum[5] % Dummy text
+%\lipsum[5] % Dummy text
 
 \begin{definition}[Gauss] 
 To a mathematician it is obvious that
@@ -218,17 +289,17 @@ Reference to Figure~\vref{fig:gallery}. % The \vref command specifies the locati
 \label{fig:gallery} 
 \end{figure}
 
-\lipsum[10] % Dummy text
+%\lipsum[10] % Dummy text
 
 %------------------------------------------------
 
 \subsection{Subsection}
 
-\lipsum[11] % Dummy text
+%\lipsum[11] % Dummy text
 
 \subsubsection{Subsubsection}
 
-\lipsum[12] % Dummy text
+%\lipsum[12] % Dummy text
 
 \begin{description}
 \item[Word] Definition
@@ -236,7 +307,7 @@ Reference to Figure~\vref{fig:gallery}. % The \vref command specifies the locati
 \item[Idea] Text
 \end{description}
 
-\lipsum[12] % Dummy text
+%\lipsum[12] % Dummy text
 
 \begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
 \item First item in a list
@@ -246,7 +317,7 @@ Reference to Figure~\vref{fig:gallery}. % The \vref command specifies the locati
 
 \subsubsection{Table}
 
-\lipsum[13] % Dummy text
+%\lipsum[13] % Dummy text
 
 \begin{table}[hbt]
 \caption{Table of Grades}
@@ -272,7 +343,7 @@ Reference to Table~\vref{tab:label}. % The \vref command specifies the location 
 
 Reference the figure composed of multiple subfigures as Figure~\vref{fig:esempio}. Reference one of the subfigures as Figure~\vref{fig:ipsum}. % The \vref command specifies the location of the reference
 
-\lipsum[15-18] % Dummy text
+%\lipsum[15-18] % Dummy text
 
 \begin{figure}[tb]
 \centering

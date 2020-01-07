@@ -1,11 +1,11 @@
-\contentsline {section}{\numberline {1}{Introduction}}{3}{section.1}% 
-\contentsline {section}{\numberline {2}{Methods}}{3}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}{Paragraphs}}{4}{subsection.2.1}% 
-\contentsline {paragraph}{{Paragraph Description}}{4}{paragraph*.1}% 
-\contentsline {paragraph}{{Different Paragraph Description}}{4}{paragraph*.2}% 
-\contentsline {subsection}{\numberline {2.2}{Math}}{4}{subsection.2.2}% 
+\contentsline {section}{\numberline {1}{Introduction}}{2}{section.1}% 
+\contentsline {section}{\numberline {2}{Methods}}{5}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}{Paragraphs}}{5}{subsection.2.1}% 
+\contentsline {paragraph}{{Paragraph Description}}{5}{paragraph*.1}% 
+\contentsline {paragraph}{{Different Paragraph Description}}{5}{paragraph*.2}% 
+\contentsline {subsection}{\numberline {2.2}{Math}}{5}{subsection.2.2}% 
 \contentsline {section}{\numberline {3}{Results and Discussion}}{5}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}{Subsection}}{5}{subsection.3.1}% 
 \contentsline {subsubsection}{\numberline {3.1.1}{Subsubsection}}{5}{subsubsection.3.1.1}% 
-\contentsline {subsubsection}{\numberline {3.1.2}{Table}}{6}{subsubsection.3.1.2}% 
+\contentsline {subsubsection}{\numberline {3.1.2}{Table}}{5}{subsubsection.3.1.2}% 
 \contentsline {subsection}{\numberline {3.2}{Figure Composed of Subfigures}}{6}{subsection.3.2}% 
