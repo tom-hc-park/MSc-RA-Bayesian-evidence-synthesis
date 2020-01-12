@@ -27,7 +27,7 @@ oneside, % One page layout (no page indentation)
 headinclude,footinclude, % Extra spacing for the header and footer
 BCOR5mm, % Binding correction
 ]{scrartcl}
-
+\usepackage{amsmath}
 \input{structure.tex} % Include the structure.tex file which specified the document structure and layout
 
 \hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
@@ -47,7 +47,6 @@ BCOR5mm, % Binding correction
 %----------------------------------------------------------------------------------------
 
 \begin{document}
-
 %----------------------------------------------------------------------------------------
 %	HEADERS
 %----------------------------------------------------------------------------------------
@@ -95,136 +94,113 @@ BCOR5mm, % Binding correction
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-All examples here were performed in Python 3.7 using the library pyMC [reference] and JAGS. Training was performed using No U-Turn Sampling (NUTS) over two chains with 10000 iterations and initial conditions for the chain were selected through the use of ADVI. Fitting was performed on a GHz Intel Core i5 with 8GM of LPDDD3 RAM and typically had wall times under ten minutes. Data processing was carried out using the Pandas and SciPy library [reference] Data visualization was performed using the libraries Seaborn and Matplotlib [ref]. Code for all examples in this study are provided.
-\begin{enumerate}
-	\item{Intro of Intro: Early Writing}
-	(Below from tamplete)
-	opioid crisis is one of major issues in North America continents including Canada. There were 1,490 deaths and 15,598 paramedic- attended overdose events during 2017 alone. \cite{Irvine:modelling} (need to know about bib in latex, change statistics to 2018 later) The goal of this project is to apply Bayesian evidence synthesis to help reduce the effect of opoid crisis in Vancouver, Canada.
-	
-	There are multiple sources of data sets.   
-	
-	We estimates the number of drug addicts.  
-	A statement requiring citation \cite{Figueredo:2009dg}.
-	
-	\item{Project Goal: scrapped from e mails}
-	
-	<Frame>
-	
-	This project is about the area of Bayesian evidence synthesis methodology oriented toward applications in public health and epidemiology.  The project will involve one or both of the following lines of enquiry:
-	
-	1. Developing new evidence synthesis models to address specific public health challenges.
-	
-	2. Developing theoretical understanding of what a priori assumptions are required to yield partial or full identification of target quantities in prototype evidence synthesis models.
-	
-	Mike builds Bayesian evidence synthesis models for public health and epidemiology applications. Typically in public health many aspects of the system of study remain hidden and surveillance data is derived from downstream effects. (e.g. think of a disease that is symptomless where only diagnoses are observed) These models also require flexibility including incorporating dynamic rates and geographic variation through the use of hierarchical components. Some examples include:
-	
-	1. Assessing the impact of the take home naloxone program on the number of overdose deaths in BC.
-	
-	2. Estimating the number of overdoses occurring within a given month and region based on ambulance call-outs, hospitalizations and other surveillance data.
-	
-	3. Estimating the size of the population with substance use disorder, opioid use disorder, individuals who inject opioids etc.
-	
-	4. The prevalence of sexually-transmitted infections based on diagnosis and testing data, combined with sexual behaviour survey data.
-	
-	Generally there are scientifically relevant questions of "information flow" in such models, very roughly put: how good do the inputs needs to be in order to get useful outputs. And the inputs could be multiple datasets plus multiple prior distributions.
-	
-	An example of this can be seen when estimating the total number of overdoses occurring based on different data sources. If an individual overdoses there is some associated probability that it is witnessed by either a passerby or emergency services. There’s a further probability an ambulance may be called or the individual is transported to hospital. Data on ambulance-attended overdoses, ED visits, and other uses of intervention each provide different information about this underlying process and can help to refine the total estimate.
-	
-	More specifically, it may not be obvious how the width of the posterior distribution on a given target parameter depends on widths of the prior distributions on various parameters plus the amount of data in each data source. But it would be scientifically relevant to know this. For example, estimating populations at risk are required for service planning. An estimate with large uncertainty (wide posterior width) would most likely not be useful. 
-	
-	Of course one way to address this question is in a simulation context. Just try changing the sample sizes and the prior specification, and see what happens. And this project would likely involve some of this.
-	
-	But hopefully though there is also scope to get some clean and general answers at the cost of working with stripped-down, simplified versions of models.
-	
-	A specific avenue to investigate is whether any simplified models are amenable to the sort of "partial identification" analysis that Paul has used in other contexts. Likely the most accessible intro to this is Chapters 1 and 2 of Paul's recent book:
-	
-	Another aspect of this project can be to develop model assessment, validation, and selection within the context of partial identification. Previous work within the field of public health has used information criteria such as the Deviance Information Criterion to assess model fit and select between candidate models. Understanding the evolution of these criteria under different data sources, increased number of observations, and changes to the structure of the priors would also be valuable to investigate.
-	
-	The project is at a very early stage, quite nascent and amorphous. So the RA work is on trying to flesh out more specific research plans. For instance, can we identify which of Mike's models, and with what simplifications, are good candidates for further study?
-	
-	\item{Scratch Paragraphs: initial writing attempts}
-	We have certain goals 
-	
-	1. developing new evidence synthesis models for a certain public health challenges
-	
-	2. developing theorietical understanding of what a priori assumptions are required to yield identification of target quantities 
-	
-	3. Estimate some possible variables of interest:
-	The number of overdoses, the number of infected people and so on.
-	
-	4. Information flow: how good should the input data be in order to have fairly good enough output?
-	
-	5. how priors and data set affect the posteriors of interest?
-	
-	\begin{itemize}
-		\item 5.a. by simulation in complicated context
-		\item  5.b. in simplified model, some general understanding mathmatically.
-	\end{itemize}
-	
-	6. Model assessment, selection and validation:
-	Paul's partially identified model application
-	
-	7. For further study, which of Mike's models are good with some simplifications? 
-	
-	\LARGE Process
-	
-	\normalsize
-	The number of overdose is our interest of estimation. Let $O_t$ the number of overdose in a given month $t$. Suppose there was a survey  conducted to see the proportion of ambulance call $p_A$ among the subjects of overdose. Let $n_{A}$ the sample size of the survey and   
-	$x_{A}$ to be the total number who confirmed they did call an ambulance. Then $x_{A}$ is assumed to follow Binomial distribution as follows.
-	$$x_{A} \sim Bin(n_{A},p_{A})$$
-	The total overdoses need to be modeled. The simplest conceptual model is to take an underlying log-rate $z_t$ that is independent and identically distributed according to a normal distribution with mean $\mu$ and variance $\sigma^2$. \cite{Irvine:modelling} Denote $\lambda_{t}$ the rate of overdose at time $t$. It is assumed that the total overdose $O_t$ follows Poission distribution where the population of the region of interest is $N$. 
-	$$z_{t} \sim N(\mu, \sigma^{2})$$  
-	$$\lambda_{t}^{OD} = \exp(z_{t})$$  
-	$$O_{t} \sim Poi(\lambda_{t}^{OD}N)$$  
-	\newcommand{\pp}[1]{{#1}_t}
-	Notice that $O_t$ cannot be estimated directly since none of the variables determining $O_t$ ($\mu$, $\sigma$, $N$) is known. Henc \(\pp{O}\) should be inferred from \(p_A\), the ambulance call out rate.
-	
-	It is assumed that the data of ambulance-attended overdoses is given. Let \(U_t\) the number of  ambulance-attended overdoses at a time point $t$. \(U_t\) follows Binomial distribution: 
-	$$U_t \sim Bin(O_t, p_A)$$  
-	Now $O_t$ can be estimated since $p_A$ is infered by survey data and the data $U_t$ is given. 
-	A simple model was suggested. The model combines Ambulance Call-outs Model and Overdose Model. 
-	
-	The next step is to run some simulations and to figure out how different types of inputs lead the changes of output. To do so, simplest model is proposed as a start point.
-	
-	\LARGE Simulation
-	
-	\normalsize The first simulation simplifies variables as much as possible. 
-	For simplicity, assume $N= 10000, n_{A}=1000$. Later the total number of population for a region N could vary over time and also be staritified for better realization of the real world. Likewise, $n_A$ can be vary and it is recommended to see the impact of the likelihood over the posterior distributions of variables of interest. 
-	
-	
-	
-	\large Likelihood
-	
-	\normalsize 
-	The two data set (survey data set and ambulance attended overdose) is simulated. 
-	For the survey data, the true value was set $p_A=0.8$. For twelve months (t=1,2,3, ..., 12), $x_t$ values are independentally generated. 
-	
-	Simulation for the overdose model assumed the true values of parameters $\mu=\log0.05, \sigma=1$. Likewise twelve samples of $O_t$ and $U_t$ were generated. 
-	
-	
-	Note that only $U_t$ and $x_t$ are known as likelihood. Also $N=10000, n_A = 1000$ are given for now. The goal is to estimate $p_A$ and $O_t$. 
-	
-	
-	\large Prior Distributions
-	
-	\normalsize Noninformative prior distributions are presumed as a beginning for simplicity. 
-	$$p(p_A) \sim Beta(1,1)$$
-	$$\mu \sim U(-10,0)$$ 
-	$$\sigma \sim U(0,5)$$
-	This lead the posterior estimates of interest heavily depend on the likelihood. Later the priors will be changed and the impact of the change over posteriors will be investigated. 
-	
-	\large Early Result
-	
-	\normalsize 
-\end{enumerate}
+Opioid crisis is one of major issues in North America continents including Canada. There were 1,490 deaths and 15,598 paramedic- attended overdose events during 2017 alone. \cite{Irvine:modelling} (need to know about bib in latex, change statistics to 2018 later) The goal of this project is to apply Bayesian evidence synthesis to help reduce the effect of opoid crisis in Vancouver, Canada.  \\
 
+All examples here were performed in Python 3.7 using the library pyMC (reference) and JAGS (reference). Training was performed using No U-Turn Sampling (NUTS) over two chains with 1000 iterations (is it sample size?). Fitting was performed on a GHz Intel Core i5 with 8GM of LPDD3 RAM and typically had wall times under ten minutes. Data processing was carried out using the Pandas and SciPy library [reference]. Data visualization was performed using the libraries Seaborn and Matplotlib [ref]. Code for all examples in this study are provided. 
+
+
+\section{methods}
+
+\large Process\\
+
+\normalsize
+The number of overdoses is our ultimate interest of estimation. Let $O_t$ the number of overdose in a given month $t$. Suppose there was a survey  conducted to estimate the proportion of ambulance call $p_A$ among the subjects of overdoses. Let $n_{A}$ the sample size of the survey and   
+$x_{A}$ to be the total number who confirmed they did call ambulance. It is assumed that $x_{A}$ follows Binomial distribution.
+
+\begin{equation}
+\label{ambulance}
+	\left.\begin{aligned}
+	x_{A} \sim Bin(n_{A},p_{A})
+	\end{aligned}\right.
+	\text{		ambulance call-outs model}
+\end{equation}
+
+The total overdoses need to be modeled. The simplest conceptual model is to take an underlying log-rate $z_t$ that is independent and identically distributed according to a normal distribution with mean $\mu$ and variance $\sigma^2$. \cite{Irvine:modelling} Denote $\lambda_{t}$ the rate of overdose at time $t$. It is assumed that the total overdose $O_t$ follows Poission distribution where the population of the region of interest is $N$. 
+
+\begin{equation}
+\label{overdose}
+\left.\begin{aligned}
+z_{t} \sim N(\mu, \sigma^{2}) \\
+\lambda_{t}^{OD} = \exp(z_{t})\\
+O_{t} \sim Poi(\lambda_{t}^{OD}N) 
+\end{aligned}\right\} 
+\text{		overdose model} 
+\end{equation}
+
+
+
+Estimation of $O_t$ is not straightforward since none of the variables ($\mu$, $\sigma$, $N$) determining $O_t$  is known. Hence $O_t$ should be inferred from using $U_t$ and \(p_A\), where $p_A$ is the ambulance call out rate and \(U_t\) is the number of  ambulance-attended overdoses at a time point $t$. In general, the data of ambulance-attended overdoses \(U_t\) can be obtained. It is assumed that  \(U_t\) follows Binomial distribution: 
+\begin{equation}
+\label{over_amb}
+\left.
+U_t \sim Bin(O_t, p_A)
+\right.
+\end{equation}
+
+Now $O_t$ can be estimated as $p_A$ can be infered by survey data and the data regarding $U_t$ is given. We suggest a simple model as a start where the model only combines Ambulance Call-outs Model (\ref{ambulance}) and Overdose Model (\ref{overdose}). 
+
+The next step is to run some simulations to figure out how different types of inputs lead some changes of output. To do so, the simple model illustrated below.\\
+
+\large Simulation \\
+
+\normalsize 
+The first simulation simplifies the assumptions of variables as much as possible; We assumed $N= 10000, n_{A}=1000$. The assumptions will change later to see the impact of the likelihood over the posterior distributions of variables of interest; The total number of population for a region N could vary over time or it can be staritified for a better realization of the real world. $n_A$ can be vary as $n_{A}=100$ or $n_{A}=10000$.  \\
+
+
+
+\large Likelihood\\
+
+\normalsize 
+There exist two data sets; survey data ($n_A, x_A$), and ambulance attended overdose data ($U_t$). The two data set is simulated as follows.
+The true value of $p_A$ was set $p_A=0.8$ for the survey data.
+It is assumed that the data was collected for a year (t=1,2,3, ..., 12) and 
+$x_t$ values were independentally generated from the Binomial distribution (\ref{ambulance}). It is assumed that the true values of parameters for overdose model were $\mu=\log0.05, \sigma=1$.
+The vector of $O_t$ was generated following the overdose model (\ref{overdose}). The vector of $U_t$ was gerated from the Binomial relation of the two variables ($\ref{over_amb}$). The two generated vectors have the same length with the survey data (t=1,2,3, ..., 12).
+
+Note that only $U_t$ and $x_t$ are known as the likelihood and $p_A$ needs to be estimated first so as to estimate $O_t$ which is the ultimate interest of the research.\\
+
+\large Prior Distributions\\
+
+\normalsize Noninformative prior distributions are presumed as a start for simplicity. 
+
+\begin{equation}
+\label{nonin_prior_amb}
+p(p_A) \sim Beta(1,1)
+\text{			noninformative prior of ambulance model}
+\end{equation} 
+
+\begin{equation}
+\label{noninprior_over}
+\left.\begin{aligned}
+\mu \sim U(-10,0)\\
+\sigma \sim U(0,5)
+\end{aligned}\right\} 
+\text{			noninformative prior of overdose model}
+\end{equation}
+
+This leads the posterior distribution of variables of interest to heavily depend on the likelihood. Later, the noninformative priors will be changed and the impact of the changes over posteriors will be investigated. \\
+
+\large Early Result\\
+ %% find a way to move the figure location%%
+ 
+ 
+\normalsize 
+
+Figure 1 is the boxplot of posterior samples of $O_t$. It is shown that 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/earlyresult1_ot.png}
+	\caption{Boxplot of posterior 2000 samples of $O_t$ with actual data as red dot.}
+	\label{fig:screenshot001}
+\end{figure}
 
  
+\normalsize
 %----------------------------------------------------------------------------------------
 %	METHODS
 %----------------------------------------------------------------------------------------
 
-\section{Methods}
+\section{template}
 We first focus on the simplest sitaution that can describe the data sets and the general idea.
 
 % \lipsum[5] % Dummy text
@@ -282,7 +258,7 @@ Then $2\log(-1)=0$, from which the proof.
 
 Reference to Figure~\vref{fig:gallery}. % The \vref command specifies the location of the reference
 
-\begin{figure}[tb]
+\begin{figure}[htb]
 \centering 
 \includegraphics[width=0.5\columnwidth]{GalleriaStampe} 
 \caption[An example of a floating figure]{An example of a floating figure (a reproduction from the \emph{Gallery of prints}, M.~Escher,\index{Escher, M.~C.} from \url{http://www.mcescher.com/}).} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
