@@ -28,6 +28,7 @@ headinclude,footinclude, % Extra spacing for the header and footer
 BCOR5mm, % Binding correction
 ]{scrartcl}
 \usepackage{amsmath}
+\usepackage{graphicx}
 \input{structure.tex} % Include the structure.tex file which specified the document structure and layout
 
 \hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
@@ -101,7 +102,7 @@ All examples here were performed in Python 3.7 using the library pyMC (reference
 
 \section{methods}
 
-\large Process\\
+\LARGE Process\\
 
 \normalsize
 The number of overdoses is our ultimate interest of estimation. Let $O_t$ the number of overdose in a given month $t$. Suppose there was a survey  conducted to estimate the proportion of ambulance call $p_A$ among the subjects of overdoses. Let $n_{A}$ the sample size of the survey and   
@@ -141,14 +142,14 @@ Now $O_t$ can be estimated as $p_A$ can be infered by survey data and the data r
 
 The next step is to run some simulations to figure out how different types of inputs lead some changes of output. To do so, the simple model illustrated below.\\
 
-\large Simulation \\
+\LARGE Simulation \\
 
 \normalsize 
 The first simulation simplifies the assumptions of variables as much as possible; We assumed $N= 10000, n_{A}=1000$. The assumptions will change later to see the impact of the likelihood over the posterior distributions of variables of interest; The total number of population for a region N could vary over time or it can be staritified for a better realization of the real world. $n_A$ can be vary as $n_{A}=100$ or $n_{A}=10000$.  \\
 
 
 
-\large Likelihood\\
+\LARGE Likelihood\\
 
 \normalsize 
 There exist two data sets; survey data ($n_A, x_A$), and ambulance attended overdose data ($U_t$). The two data set is simulated as follows.
@@ -159,7 +160,7 @@ The vector of $O_t$ was generated following the overdose model (\ref{overdose}).
 
 Note that only $U_t$ and $x_t$ are known as the likelihood and $p_A$ needs to be estimated first so as to estimate $O_t$ which is the ultimate interest of the research.\\
 
-\large Prior Distributions\\
+\Large Prior Distributions\\
 
 \normalsize Noninformative prior distributions are presumed as a start for simplicity. 
 
@@ -180,22 +181,57 @@ p(p_A) \sim Beta(1,1)
 
 This leads the posterior distribution of variables of interest to heavily depend on the likelihood. Later, the noninformative priors will be changed and the impact of the changes over posteriors will be investigated. \\
 
-\large Early Result\\
- %% find a way to move the figure location%%
- 
+\Large Early Result \\
+\\
+\normalsize The result from the simple case scenario is illustrated below.\\
+
+\large Posterior Distribution
  
 \normalsize 
 
-Figure 1 is the boxplot of posterior samples of $O_t$. It is shown that 
-\begin{figure}[htb]
+Figure \ref{pst_ot} is the boxplot of posterior samples of $O_t$. It is shown that our posterior estimates of  $O_t$ is fairly accurate since (1) the boxplots contain actual values of $O_t$ within their interquartile range (IQR) and (2) the ranges of IQR and 95\% range seem narrow covering the actual values of $O_t$. Notice that the range of the boxplot from a higher $O_t$ values (t=4) is wider than the other ranges of the boxplots from smaller estimates of $O_t$ (all t values but 4)\\
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/earlyresult1_ot.png}
-	\caption{Boxplot of posterior 2000 samples of $O_t$ with actual data as red dot.}
-	\label{fig:screenshot001}
+	\caption{Boxplot of posterior samples of $O_t$ (2000 samples for each month) with actual data points of simulated $O_t$ values. The simulated values are shown as red dots.}
+	\label{pst_ot}
 \end{figure}
 
+\newpage
+
+\large Posterior Predictive Check\\
+\normalsize\\
+Figure\ref{ppc_ut} is the boxplot of posterior predictive samples of $U_t$. It is shown that the posterior predictive estimates of $U_t$ is failry accurate with the same two reasons regarding the accuracy of the posterior distribution of $O_t$ It is more obvious here that the range of the boxplots from  higher $O_t$ values (t=1, 7, 11) is wider than the other ranges of the boxplots from smaller estimates of $O_t$ (all t values but 1,7, 11)\\.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/early_r_ppc1_ut.png}
+	\caption{Boxplot of posterior predictive samples of $U_t$ (2000 samples for each month) with actual data points of simulated $U_t$ values. The simulated values are shown as red dots.}
+	\label{ppc_ut}
+\end{figure}
+
+Figure \ref{ppc_xt} is the boxplot of posterior predictive samples of $x_A$. It is shown that the posterior predictive estimates of $x_A$ is failry accurate with the same two reasons regarding the accuracy of the posterior distribution of $x_A$.\\
  
-\normalsize
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/early_r_ppc1_xt.png}
+	\caption{Boxplot of posterior predictive samples of $x_A$ (1000 samples) with the actual data point of simulated $x_A$ value. The simulated value is shown as a red dot.}
+	\label{ppc_xt}
+\end{figure}
+
+\Large Early Result: Contamination of $p_A$ \\
+\normalsize \\
+One of the attention of this research project is to investigate how robust the model is from a contamination of a data set. The first inspection is to check an impact of a contamination of $p_A$; what would happen if the estimation of $p_A$ is biased? It is assumed that the survey data gives us a wrong estimate of $p_A$ and it would be underestimated or overestimated. We then want to see how the biased estimation of $p_A$ affects the estimate of $O_t$, the total overdose.\\
+\normalsize\\
+Both of underestimation and overestimation were conducted for the analysis. In terms of underestimation, the simulated survey data ($n_A, x_A$) was generated with $p_A=0.6$ while the true value of $p_A$ is 0.8, and all the other assumptions hold the same. That is, $x_A$ is generated from $x_A \sim Bin(n_A, 0.6)$, while $U_t$ is generated from $U_t \sim Bin(O_t, 0.8)$ for every $t$. For overestimation, the simulated survey data was generated with $p_A=0.9$ while the true value of $p_A$ is 0.8, and all the other assumptions hold the same. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/early_contamination_ot.png}
+	\caption{Boxplot of posterior predictive samples of $x_A$ (1000 samples) with the actual data point of simulated $x_A$ value. The simulated value is shown as a red dot.}
+	\label{ppc_xt}
+\end{figure}
 %----------------------------------------------------------------------------------------
 %	METHODS
 %----------------------------------------------------------------------------------------
@@ -258,7 +294,7 @@ Then $2\log(-1)=0$, from which the proof.
 
 Reference to Figure~\vref{fig:gallery}. % The \vref command specifies the location of the reference
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering 
 \includegraphics[width=0.5\columnwidth]{GalleriaStampe} 
 \caption[An example of a floating figure]{An example of a floating figure (a reproduction from the \emph{Gallery of prints}, M.~Escher,\index{Escher, M.~C.} from \url{http://www.mcescher.com/}).} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
