@@ -13,9 +13,9 @@
 \contentsline {subsection}{\numberline {3.1}{Paragraphs}}{7}{subsection.3.1}% 
 \contentsline {paragraph}{{Paragraph Description}}{7}{paragraph*.10}% 
 \contentsline {paragraph}{{Different Paragraph Description}}{7}{paragraph*.11}% 
-\contentsline {subsection}{\numberline {3.2}{Math}}{7}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.2}{Math}}{8}{subsection.3.2}% 
 \contentsline {section}{\numberline {4}{Results and Discussion}}{8}{section.4}% 
 \contentsline {subsection}{\numberline {4.1}{Subsection}}{8}{subsection.4.1}% 
 \contentsline {subsubsection}{\numberline {4.1.1}{Subsubsection}}{8}{subsubsection.4.1.1}% 
 \contentsline {subsubsection}{\numberline {4.1.2}{Table}}{8}{subsubsection.4.1.2}% 
-\contentsline {subsection}{\numberline {4.2}{Figure Composed of Subfigures}}{8}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.2}{Figure Composed of Subfigures}}{9}{subsection.4.2}% 
