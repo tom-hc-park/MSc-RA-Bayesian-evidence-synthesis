@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JAN 2020 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JAN 2020 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1258,7 +1258,7 @@ Package pdftex.def Info: Figures/early_contamination_over-xa.png  used on input
  line 269.
 (pdftex.def)             Requested size: 370.0pt x 259.88683pt.
 [7 <./Figures/early_contamination_under-ot.png>]
-<Figures/GalleriaStampe.jpg, id=144, 414.348pt x 409.53pt>
+<Figures/GalleriaStampe.jpg, id=146, 414.348pt x 409.53pt>
 File: Figures/GalleriaStampe.jpg Graphic file (type jpg)
 <use Figures/GalleriaStampe.jpg>
 Package pdftex.def Info: Figures/GalleriaStampe.jpg  used on input line 342.
@@ -1274,24 +1274,24 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<Figures/Lorem.jpg, id=150, 240.9pt x 180.675pt>
+<Figures/Lorem.jpg, id=152, 240.9pt x 180.675pt>
 File: Figures/Lorem.jpg Graphic file (type jpg)
 <use Figures/Lorem.jpg>
 Package pdftex.def Info: Figures/Lorem.jpg  used on input line 405.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
 LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <8> not available
 (Font)              Font shape `T1/iwona/b/n' tried instead on input line 405.
-<Figures/Ipsum.jpg, id=151, 240.9pt x 180.675pt>
+<Figures/Ipsum.jpg, id=153, 240.9pt x 180.675pt>
 File: Figures/Ipsum.jpg Graphic file (type jpg)
 <use Figures/Ipsum.jpg>
 Package pdftex.def Info: Figures/Ipsum.jpg  used on input line 406.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
-<Figures/Dolor.jpg, id=152, 240.9pt x 180.675pt>
+<Figures/Dolor.jpg, id=154, 240.9pt x 180.675pt>
 File: Figures/Dolor.jpg Graphic file (type jpg)
 <use Figures/Dolor.jpg>
 Package pdftex.def Info: Figures/Dolor.jpg  used on input line 407.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
-<Figures/Sit.jpg, id=153, 240.9pt x 180.675pt>
+<Figures/Sit.jpg, id=155, 240.9pt x 180.675pt>
 File: Figures/Sit.jpg Graphic file (type jpg)
 <use Figures/Sit.jpg>
 Package pdftex.def Info: Figures/Sit.jpg  used on input line 408.
@@ -1337,10 +1337,10 @@ cki/iwona/iwonar.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on article_4.pdf (12 pages, 512301 bytes).
+Output written on article_4.pdf (12 pages, 512488 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
- 244 compressed objects within 3 object streams
+ 303 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
  63 named destinations out of 1000 (max. 500000)
  44703 words of extra memory for PDF output out of 51595 (max. 10000000)
 
