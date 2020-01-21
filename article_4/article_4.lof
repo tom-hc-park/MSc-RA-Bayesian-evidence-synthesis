@@ -1,8 +1,16 @@
 \deactivateaddvspace 
-\contentsline {figure}{\numberline {1}{\ignorespaces Boxplot of posterior 2000 samples of $O_t$ with actual data as red dot.\relax }}{3}{figure.caption.1}% 
-\contentsline {figure}{\numberline {2}{\ignorespaces An example of a floating figure}}{4}{figure.caption.4}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces A number of pictures.}}{5}{figure.caption.6}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A city market.}}}{5}{subfigure.3.1}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Forest landscape.}}}{5}{subfigure.3.2}% 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Mountain landscape.}}}{5}{subfigure.3.3}% 
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {A tile decoration.}}}{5}{subfigure.3.4}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Boxplot of posterior samples of $O_t$ (2000 samples for each month) with actual data points of simulated $O_t$ values. The simulated values are shown as red dots.\relax }}{5}{figure.caption.1}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Boxplot of posterior predictive samples of $U_t$ (2000 samples for each month) with actual data points of simulated $U_t$ values. The simulated values are shown as red dots.\relax }}{5}{figure.caption.2}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Boxplot of posterior predictive samples of $x_A$ (1000 samples) with the actual data point of simulated $x_A$ value. The simulated value is shown as a red dot.\relax }}{6}{figure.caption.3}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Boxplot of posterior samples of $x_A$ (1000 samples) where survey data is contaminated (underestimation of $p_A$.) The actual data point of simulated $x_A$ values are shown as red dots.\relax }}{7}{figure.caption.4}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Boxplot of posterior samples of $x_A$ (1000 samples) where survey data is contaminated (overestimation of $p_A$). The actual data point of simulated $x_A$ values are shown as red dots.\relax }}{8}{figure.caption.5}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Boxplot of posterior predictive samples of $x_A$ (1000 samples) where survey data is contaminated (underestimation of $p_A$). The actual data point of simulated $x_A$ values are shown as red dots.\relax }}{9}{figure.caption.6}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Boxplot of posterior predictive samples of $x_A$ (1000 samples) where survey data is contaminated (overestimation of $p_A$). The actual data point of simulated $x_A$ values are shown as red dots.\relax }}{10}{figure.caption.7}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Boxplot of posterior predictive samples of $x_A$ (1000 samples) where survey data is contaminated (underestimation of $p_A$). The actual data point of simulated $x_A$ value is shown as the red dot.\relax }}{10}{figure.caption.8}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Boxplot of posterior predictive samples of $x_A$ (1000 samples) where survey data is contaminated (overestimation of $p_A$). The actual data point of simulated $x_A$ value is shown as the red dot.\relax }}{11}{figure.caption.9}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces An example of a floating figure}}{11}{figure.caption.12}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces A number of pictures.}}{12}{figure.caption.14}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A city market.}}}{12}{subfigure.11.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Forest landscape.}}}{12}{subfigure.11.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Mountain landscape.}}}{12}{subfigure.11.3}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {A tile decoration.}}}{12}{subfigure.11.4}% 

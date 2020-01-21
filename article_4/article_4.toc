@@ -1,12 +1,12 @@
-\contentsline {section}{\numberline {1}{Introduction}}{2}{section.1}% 
-\contentsline {section}{\numberline {2}{methods}}{2}{section.2}% 
-\contentsline {section}{\numberline {3}{template}}{4}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}{Paragraphs}}{4}{subsection.3.1}% 
-\contentsline {paragraph}{{Paragraph Description}}{4}{paragraph*.2}% 
-\contentsline {paragraph}{{Different Paragraph Description}}{4}{paragraph*.3}% 
-\contentsline {subsection}{\numberline {3.2}{Math}}{4}{subsection.3.2}% 
-\contentsline {section}{\numberline {4}{Results and Discussion}}{4}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}{Subsection}}{4}{subsection.4.1}% 
-\contentsline {subsubsection}{\numberline {4.1.1}{Subsubsection}}{4}{subsubsection.4.1.1}% 
-\contentsline {subsubsection}{\numberline {4.1.2}{Table}}{5}{subsubsection.4.1.2}% 
-\contentsline {subsection}{\numberline {4.2}{Figure Composed of Subfigures}}{5}{subsection.4.2}% 
+\contentsline {section}{\numberline {1}{Introduction}}{3}{section.1}% 
+\contentsline {section}{\numberline {2}{methods}}{3}{section.2}% 
+\contentsline {section}{\numberline {3}{template}}{7}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}{Paragraphs}}{7}{subsection.3.1}% 
+\contentsline {paragraph}{{Paragraph Description}}{7}{paragraph*.10}% 
+\contentsline {paragraph}{{Different Paragraph Description}}{7}{paragraph*.11}% 
+\contentsline {subsection}{\numberline {3.2}{Math}}{8}{subsection.3.2}% 
+\contentsline {section}{\numberline {4}{Results and Discussion}}{8}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}{Subsection}}{8}{subsection.4.1}% 
+\contentsline {subsubsection}{\numberline {4.1.1}{Subsubsection}}{8}{subsubsection.4.1.1}% 
+\contentsline {subsubsection}{\numberline {4.1.2}{Table}}{8}{subsubsection.4.1.2}% 
+\contentsline {subsection}{\numberline {4.2}{Figure Composed of Subfigures}}{9}{subsection.4.2}% 

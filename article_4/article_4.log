@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  11 JAN 2020 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JAN 2020 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -207,6 +207,26 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
 (./structure.tex
 (/usr/local/texlive/2019/texmf-dist/tex/latex/classicthesis/classicthesis.sty
 Package: classicthesis 2018/06/03 v4.6 Typographic style for a classic-looking 
@@ -252,10 +272,6 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -290,7 +306,7 @@ Package: microtype 2019/02/28 v2.7b Micro-typographical refinements (RS)
 \MT@toks=\toks20
 \MT@count=\count101
 LaTeX Info: Redefining \textls on input line 790.
-\MT@outer@kern=\dimen112
+\MT@outer@kern=\dimen114
 LaTeX Info: Redefining \textmicrotypecontext on input line 1336.
 \MT@listname@count=\count102
 
@@ -329,23 +345,23 @@ Package: mparhack 2005/04/17 v1.4 (T. Sgouros and S. Ulrich)
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen113
-\lightrulewidth=\dimen114
-\cmidrulewidth=\dimen115
-\belowrulesep=\dimen116
-\belowbottomsep=\dimen117
-\aboverulesep=\dimen118
-\abovetopsep=\dimen119
-\cmidrulesep=\dimen120
-\cmidrulekern=\dimen121
-\defaultaddspace=\dimen122
+\heavyrulewidth=\dimen115
+\lightrulewidth=\dimen116
+\cmidrulewidth=\dimen117
+\belowrulesep=\dimen118
+\belowbottomsep=\dimen119
+\aboverulesep=\dimen120
+\abovetopsep=\dimen121
+\cmidrulesep=\dimen122
+\cmidrulekern=\dimen123
+\defaultaddspace=\dimen124
 \@cmidla=\count103
 \@cmidlb=\count104
-\@aboverulesep=\dimen123
-\@belowrulesep=\dimen124
+\@aboverulesep=\dimen125
+\@belowrulesep=\dimen126
 \@thisruleclass=\count105
 \@lastruleclass=\count106
-\@thisrulewidth=\dimen125
+\@thisrulewidth=\dimen127
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
@@ -393,12 +409,12 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box31
 \beforetitleunit=\skip61
 \aftertitleunit=\skip62
-\ttl@plus=\dimen126
-\ttl@minus=\dimen127
+\ttl@plus=\dimen128
+\ttl@minus=\dimen129
 \ttl@toksa=\toks21
-\titlewidth=\dimen128
-\titlewidthlast=\dimen129
-\titlewidthfirst=\dimen130
+\titlewidth=\dimen130
+\titlewidthlast=\dimen131
+\titlewidthfirst=\dimen132
 
 
 Package titlesec Warning: Non standard sectioning command detected
@@ -499,13 +515,13 @@ Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen131
-\captionmargin@=\dimen132
-\captionwidth=\dimen133
-\caption@tempdima=\dimen134
-\caption@indent=\dimen135
-\caption@parindent=\dimen136
-\caption@hangindent=\dimen137
+\captionmargin=\dimen133
+\captionmargin@=\dimen134
+\captionwidth=\dimen135
+\caption@tempdima=\dimen136
+\caption@indent=\dimen137
+\caption@parindent=\dimen138
+\caption@hangindent=\dimen139
 )
 Package caption Info: KOMA-Script document class.
 \c@caption@flags=\count109
@@ -561,7 +577,7 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen138
+\@linkdim=\dimen140
 \Hy@linkcounter=\count111
 \Hy@pagecounter=\count112
 
@@ -590,10 +606,10 @@ Package hyperref Info: Bookmarks ON on input line 4772.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5125.
-\XeTeXLinkMargin=\dimen139
+\XeTeXLinkMargin=\dimen141
 \Fld@menulength=\count115
-\Field@Width=\dimen140
-\Fld@charsize=\dimen141
+\Field@Width=\dimen142
+\Fld@charsize=\dimen143
 Package hyperref Info: Hyper figures OFF on input line 6380.
 Package hyperref Info: Link nesting OFF on input line 6385.
 Package hyperref Info: Hyper index ON on input line 6388.
@@ -677,23 +693,6 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 99.
-)
-\Gin@req@height=\dimen142
-\Gin@req@width=\dimen143
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/02/04 v3.8 Customized lists
@@ -930,20 +929,20 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 74.
 ) (./article_4.aux)
 \openout1 = `article_4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -975,7 +974,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 49.
+LaTeX Info: Redefining \microtypecontext on input line 50.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -992,7 +991,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box53
-Package hyperref Info: Link coloring ON on input line 49.
+Package hyperref Info: Link coloring ON on input line 50.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1003,22 +1002,22 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 \c@section@level=\count293
 LaTeX Info: Redefining \Ref on input line 515.
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+LaTeX Info: Redefining \ref on input line 50.
+LaTeX Info: Redefining \pageref on input line 50.
+LaTeX Info: Redefining \nameref on input line 50.
 
 (./article_4.out) (./article_4.out)
 \@outlinefile=\write3
 \openout3 = `article_4.out'.
 
-LaTeX Info: Redefining \Ref on input line 49.
+LaTeX Info: Redefining \Ref on input line 50.
 Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           Using `bookmark' together with `hyperref' is recommended,
 (scrartcl)           because of handling of possible bookmark level gaps.
 (scrartcl)           You can avoid loading `bookmark' with KOMA-Script option
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message with `\usepackage{bookmark}'
-(scrartcl)           before \begin{document} on input line 49.
+(scrartcl)           before \begin{document} on input line 50.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
@@ -1030,7 +1029,7 @@ Package auxhook Info: \AddLineBeginMainAux comes a little late,
 e 164.
 \BKM@id=\count294
 ))
-LaTeX Font Info:    Try loading font information for T1+iwona on input line 65.
+LaTeX Font Info:    Try loading font information for T1+iwona on input line 66.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/iwona/t1iwona.fd
@@ -1041,16 +1040,16 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <10> not available
-(Font)              Font shape `T1/iwona/b/n' tried instead on input line 65.
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 66.
 LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/iwona/b/n' tried instead on input line 65.
-LaTeX Font Info:    Try loading font information for OT1+pplj on input line 65.
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 66.
+LaTeX Font Info:    Try loading font information for OT1+pplj on input line 66.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplj.fd
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 )
-LaTeX Font Info:    Try loading font information for U+zeur on input line 65.
+LaTeX Font Info:    Try loading font information for U+zeur on input line 66.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
@@ -1058,7 +1057,7 @@ File: uzeur.fd 2005/01/11 v4.0 (WaS)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeus on input line 65.
+LaTeX Font Info:    Try loading font information for U+zeus on input line 66.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
@@ -1066,12 +1065,12 @@ File: uzeus.fd 2005/01/11 v4.0 (WaS)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeuex on input line 65.
+LaTeX Font Info:    Try loading font information for U+zeuex on input line 66.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 65.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 66.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -1088,11 +1087,11 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \hbox (70.61511pt too wide) in paragraph at lines 65--65
+Overfull \hbox (70.61511pt too wide) in paragraph at lines 66--66
  [][] 
  []
 
-Package tocbasic Info: character protrusion at toc deactivated on input line 68
+Package tocbasic Info: character protrusion at toc deactivated on input line 69
 .
 (./article_4.toc
 Package microtype Info: Character `029' is missing
@@ -1104,152 +1103,290 @@ LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
 \tf@toc=\write4
 \openout4 = `article_4.toc'.
 
-Package tocbasic Info: character protrusion at lof deactivated on input line 70
+Package tocbasic Info: character protrusion at lof deactivated on input line 71
 .
- (./article_4.lof)
+ (./article_4.lof [1
+
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@lof=\write5
 \openout5 = `article_4.lof'.
 
-Package tocbasic Info: character protrusion at lot deactivated on input line 72
+Package tocbasic Info: character protrusion at lot deactivated on input line 73
 .
  (./article_4.lot)
 \tf@lot=\write6
 \openout6 = `article_4.lot'.
 
- [1
-
-
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+ [2]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--185
+Underfull \hbox (badness 10000) in paragraph at lines 184--187
 
  []
 
-<Figures/earlyresult1_ot.png, id=58, 848.16875pt x 390.45876pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+
+ []
+
+<Figures/earlyresult1_ot.png, id=79, 848.16875pt x 390.45876pt>
 File: Figures/earlyresult1_ot.png Graphic file (type png)
 <use Figures/earlyresult1_ot.png>
-Package pdftex.def Info: Figures/earlyresult1_ot.png  used on input line 192.
+Package pdftex.def Info: Figures/earlyresult1_ot.png  used on input line 196.
 (pdftex.def)             Requested size: 370.0pt x 170.33076pt.
 LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <9> not available
-(Font)              Font shape `T1/iwona/b/n' tried instead on input line 193.
-[3 <./Figures/earlyresult1_ot.png>]
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 197.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 203--206
+
+ []
+
+<Figures/early_r_ppc1_ut.png, id=88, 719.68875pt x 513.92pt>
+File: Figures/early_r_ppc1_ut.png Graphic file (type png)
+<use Figures/early_r_ppc1_ut.png>
+Package pdftex.def Info: Figures/early_r_ppc1_ut.png  used on input line 209.
+(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+<Figures/early_r_ppc1_xt.png, id=90, 711.65875pt x 499.8675pt>
+File: Figures/early_r_ppc1_xt.png Graphic file (type png)
+<use Figures/early_r_ppc1_xt.png>
+Package pdftex.def Info: Figures/early_r_ppc1_xt.png  used on input line 218.
+(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--228
+
+ []
+
+[5 <./Figures/earlyresult1_ot.png> <./Figures/early_r_ppc1_ut.png>]
+<Figures/early_contamination_under-ot.png, id=98, 791.95876pt x 513.92pt>
+File: Figures/early_contamination_under-ot.png Graphic file (type png)
+<use Figures/early_contamination_under-ot.png>
+Package pdftex.def Info: Figures/early_contamination_under-ot.png  used on inpu
+t line 231.
+(pdftex.def)             Requested size: 370.0pt x 240.09953pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+
+ []
+
+<Figures/early_contamination_over-ot.png, id=102, 791.95876pt x 513.92pt>
+File: Figures/early_contamination_over-ot.png Graphic file (type png)
+<use Figures/early_contamination_over-ot.png>
+Package pdftex.def Info: Figures/early_contamination_over-ot.png  used on input
+ line 243.
+(pdftex.def)             Requested size: 370.0pt x 240.09953pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--250
+
+ []
+
+<Figures/early_contamination_under-ut.png, id=103, 719.68875pt x 513.92pt>
+File: Figures/early_contamination_under-ut.png Graphic file (type png)
+<use Figures/early_contamination_under-ut.png>
+Package pdftex.def Info: Figures/early_contamination_under-ut.png  used on inpu
+t line 253.
+(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
+<Figures/early_contamination_over-ut.png, id=104, 719.68875pt x 513.92pt>
+File: Figures/early_contamination_over-ut.png Graphic file (type png)
+<use Figures/early_contamination_over-ut.png>
+Package pdftex.def Info: Figures/early_contamination_over-ut.png  used on input
+ line 260.
+(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+[6 <./Figures/early_r_ppc1_xt.png>]
+<Figures/early_contamination_under-xa.png, id=112, 711.65875pt x 499.8675pt>
+File: Figures/early_contamination_under-xa.png Graphic file (type png)
+<use Figures/early_contamination_under-xa.png>
+Package pdftex.def Info: Figures/early_contamination_under-xa.png  used on inpu
+t line 269.
+(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
+<Figures/early_contamination_over-xa.png, id=113, 711.65875pt x 499.8675pt>
+File: Figures/early_contamination_over-xa.png Graphic file (type png)
+<use Figures/early_contamination_over-xa.png>
+Package pdftex.def Info: Figures/early_contamination_over-xa.png  used on input
+ line 276.
+(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--286
+
+ []
+
 LaTeX Font Info:    Font shape `T1/iwona/bx/sc' in size <10> not available
-(Font)              Font shape `T1/iwona/b/sc' tried instead on input line 216.
+(Font)              Font shape `T1/iwona/b/sc' tried instead on input line 299.
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/b/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-<Figures/GalleriaStampe.jpg, id=69, 414.348pt x 409.53pt>
+[7 <./Figures/early_contamination_under-ot.png>]
+<Figures/GalleriaStampe.jpg, id=129, 414.348pt x 409.53pt>
 File: Figures/GalleriaStampe.jpg Graphic file (type jpg)
 <use Figures/GalleriaStampe.jpg>
-Package pdftex.def Info: Figures/GalleriaStampe.jpg  used on input line 263.
+Package pdftex.def Info: Figures/GalleriaStampe.jpg  used on input line 346.
 (pdftex.def)             Requested size: 185.0pt x 182.84953pt.
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 264.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 347.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.65005pt on input line 264.
+(Font)              scaled to size 7.65005pt on input line 347.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/iwona/bx/it' in size <10> not available
-(Font)              Font shape `T1/iwona/b/it' tried instead on input line 276.
+(Font)              Font shape `T1/iwona/b/it' tried instead on input line 359.
 
- [4 <./Figures/GalleriaStampe.jpg>]
-<Figures/Lorem.jpg, id=95, 240.9pt x 180.675pt>
+<Figures/Lorem.jpg, id=135, 240.9pt x 180.675pt>
 File: Figures/Lorem.jpg Graphic file (type jpg)
 <use Figures/Lorem.jpg>
-Package pdftex.def Info: Figures/Lorem.jpg  used on input line 326.
+Package pdftex.def Info: Figures/Lorem.jpg  used on input line 409.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
 LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <8> not available
-(Font)              Font shape `T1/iwona/b/n' tried instead on input line 326.
-<Figures/Ipsum.jpg, id=96, 240.9pt x 180.675pt>
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 409.
+<Figures/Ipsum.jpg, id=136, 240.9pt x 180.675pt>
 File: Figures/Ipsum.jpg Graphic file (type jpg)
 <use Figures/Ipsum.jpg>
-Package pdftex.def Info: Figures/Ipsum.jpg  used on input line 327.
+Package pdftex.def Info: Figures/Ipsum.jpg  used on input line 410.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
-<Figures/Dolor.jpg, id=97, 240.9pt x 180.675pt>
+<Figures/Dolor.jpg, id=137, 240.9pt x 180.675pt>
 File: Figures/Dolor.jpg Graphic file (type jpg)
 <use Figures/Dolor.jpg>
-Package pdftex.def Info: Figures/Dolor.jpg  used on input line 328.
+Package pdftex.def Info: Figures/Dolor.jpg  used on input line 411.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
-<Figures/Sit.jpg, id=98, 240.9pt x 180.675pt>
+<Figures/Sit.jpg, id=138, 240.9pt x 180.675pt>
 File: Figures/Sit.jpg Graphic file (type jpg)
 <use Figures/Sit.jpg>
-Package pdftex.def Info: Figures/Sit.jpg  used on input line 329.
+Package pdftex.def Info: Figures/Sit.jpg  used on input line 412.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
- (./article_4.bbl [5 <./Figures/Lorem.jpg> <./Figures/Ipsum.jpg> <./Figures/Dol
-or.jpg> <./Figures/Sit.jpg>]) [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
+ [8 <./Figures/early_contamination_over-ot.png>] (./article_4.bbl) [9 <./Figure
+s/early_contamination_under-ut.png>] [10 <./Figures/early_contamination_over-ut
+.png> <./Figures/early_contamination_under-xa.png>] [11 <./Figures/early_contam
+ination_over-xa.png> <./Figures/GalleriaStampe.jpg>] [12 <./Figures/Lorem.jpg> 
+<./Figures/Ipsum.jpg> <./Figures/Dolor.jpg> <./Figures/Sit.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 429.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 429.
  (./article_4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 346.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 346.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 429.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 429.
 Package rerunfilecheck Info: File `article_4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 346.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
  ) 
 Here is how much of TeX's memory you used:
- 25110 strings out of 492616
- 474366 string characters out of 6129482
- 838360 words of memory out of 5000000
- 28599 multiletter control sequences out of 15000+600000
- 675311 words of font info for 220 fonts, out of 8000000 for 9000
+ 25190 strings out of 492616
+ 476320 string characters out of 6129482
+ 842367 words of memory out of 5000000
+ 28646 multiletter control sequences out of 15000+600000
+ 682080 words of font info for 232 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 70i,22n,94p,9108b,681s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/
-local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2
+ 67i,23n,92p,9108b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
+exlive/2019/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/local/texlive/2
 019/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}</usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/local/texlive/2019/
@@ -1267,10 +1404,10 @@ cki/iwona/iwonar.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
 no/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on article_4.pdf (6 pages, 415412 bytes).
+Output written on article_4.pdf (12 pages, 510057 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 45151 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 45703 words of extra memory for PDF output out of 51595 (max. 10000000)
 
