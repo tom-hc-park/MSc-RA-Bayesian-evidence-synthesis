@@ -102,8 +102,6 @@ All examples here were performed in Python 3.7 using the library pyMC (reference
 
 \section{methods}
 
-\LARGE Process\\
-
 \normalsize
 The number of overdoses is our ultimate interest of estimation. Let $O_t$ the number of overdose in a given month $t$. Suppose there was a survey  conducted to estimate the proportion of ambulance call $p_A$ among the subjects of overdoses. Let $n_{A}$ the sample size of the survey and   
 $x_{A}$ to be the total number who confirmed they did call ambulance. It is assumed that $x_{A}$ follows Binomial distribution.
@@ -142,14 +140,12 @@ Now $O_t$ can be estimated as $p_A$ can be infered by survey data and the data r
 
 The next step is to run some simulations to figure out how different types of inputs lead some changes of output. To do so, the simple model illustrated below.\\
 
-\LARGE Simulation \\
+\subsection{Simulation}
 
 \normalsize 
 The first simulation simplifies the assumptions of variables as much as possible; We assumed $N= 10000, n_{A}=1000$. The assumptions will change later to see the impact of the likelihood over the posterior distributions of variables of interest; The total number of population for a region N could vary over time or it can be staritified for a better realization of the real world. $n_A$ can be vary as $n_{A}=100$ or $n_{A}=10000$.  \\
 
-
-
-\LARGE Likelihood\\
+\subsubsection{Likelihood}
 
 \normalsize 
 There exist two data sets; survey data ($n_A, x_A$), and ambulance attended overdose data ($U_t$). The two data set is simulated as follows.
@@ -160,8 +156,8 @@ The vector of $O_t$ was generated following the overdose model (\ref{overdose}).
 
 Note that only $U_t$ and $x_t$ are known as the likelihood and $p_A$ needs to be estimated first so as to estimate $O_t$ which is the ultimate interest of the research.\\
 
-\Large Prior Distributions\\
 
+\subsubsection{Prior Distributions}
 \normalsize Noninformative prior distributions are presumed as a start for simplicity. 
 
 \begin{equation}
@@ -181,13 +177,12 @@ p(p_A) \sim Beta(1,1)
 
 This leads the posterior distribution of variables of interest to heavily depend on the likelihood. Later, the noninformative priors will be changed and the impact of the changes over posteriors will be investigated. \\
 
-\Large Early Result \\
-\\
-\normalsize The result from the simple case scenario is illustrated below.\\
+\subsection{Early Result } 
 
-\large Posterior Distribution
- 
-\normalsize 
+The result from the simple case scenario is illustrated below.
+
+\subsubsection{Posterior Distribution}
+
 
 Figure \ref{pst_ot} is the boxplot of posterior samples of $O_t$. It is shown that our posterior estimates of  $O_t$ is fairly accurate since (1) the boxplots contain actual values of $O_t$ within their interquartile range (IQR) and (2) the ranges of IQR and 95\% range seem narrow covering the actual values of $O_t$. Notice that the range of the boxplot from a higher $O_t$ values (t=4) is wider than the other ranges of the boxplots from smaller estimates of $O_t$ (all t values but 4)\\
 
@@ -199,9 +194,9 @@ Figure \ref{pst_ot} is the boxplot of posterior samples of $O_t$. It is shown th
 \end{figure}
 
 \newpage
+\subsubsection{Posterior Predictive Check}
 
-\large Posterior Predictive Check\\
-\normalsize\\
+
 Figure\ref{ppc_ut} is the boxplot of posterior predictive samples of $U_t$. It is shown that the posterior predictive estimates of $U_t$ is failry accurate with the same two reasons regarding the accuracy of the posterior distribution of $O_t$ It is more obvious here that the range of the boxplots from  higher $O_t$ values (t=1, 7, 11) is wider than the other ranges of the boxplots from smaller estimates of $O_t$ (all t values but 1,7, 11)\\.
 
 \begin{figure}[htb]
@@ -220,10 +215,9 @@ Figure \ref{ppc_xt} is the boxplot of posterior predictive samples of $x_A$. It 
 	\label{ppc_xt}
 \end{figure}
 
-\Large Early Result: Contamination of $p_A$ \\
-\normalsize \\
+\subsection{Early Result: Contamination of $p_A$ } 
 One of the attention of this research project is to investigate how robust the model is from a contamination of the data set. The first inspection is to check an impact of a contamination of $p_A$; what would happen if the estimation of $p_A$ is biased? It is assumed that the survey data gives us a wrong estimate of $p_A$ such that it would be underestimated or overestimated. We then want to see how the biased estimation of $p_A$ affects the estimate of $O_t$, the total overdose.\\
-\normalsize\\
+
 Both of underestimation and overestimation were conducted for the analysis. In terms of underestimation, the simulated survey data ($n_A, x_A$) was generated with $p_A=0.6$ while the true value of $p_A$ is 0.8, and all the other assumptions hold the same. That is, $x_A$ is generated from $x_A \sim Bin(n_A, 0.6)$, while $U_t$ is generated from $U_t \sim Bin(O_t, 0.8)$ for every $t$. For overestimation, the simulated survey data was generated with $p_A=0.9$ while the true value of $p_A$ is 0.8, and all the other assumptions hold the same.  \\
 
 \begin{figure}[htb]
@@ -233,7 +227,7 @@ Both of underestimation and overestimation were conducted for the analysis. In t
 	\label{under_ot}
 \end{figure}
 
-\large Posterior Distribution
+\subsubsection{Posterior Distribution}
 
 \normalsize 
 Figure \ref{under_ot} is the boxplot of posterior predictive samples where $p_A$ is underestimated from the survey data. It is seen that the underestimation of $p_A$ leads to an overestimation of $O_t$ as the boxplots are above the red dots. This is justifiable considering the given data sets (likelihoods) and the relationship between the two models (\ref{over_amb}); $O_t$ is generated by multiplying $U_t$ and the inverse of $p_A$ where $p_A$ is underestimated. This leads overestimated inverse of $p_A$ so that  $O_t$ becomes overestimated. Figure \ref{over_ot} shows the opposite case. Overestimation of $p_A$ leads underestimation of the inverse of $p_A$ which causes underestimation of $O_t$. From both figures it is seen that the bias increases as the estimated values and the actual values get large.\\
@@ -245,8 +239,7 @@ Figure \ref{under_ot} is the boxplot of posterior predictive samples where $p_A$
 	\label{over_ot}
 \end{figure}
 
-\large Posterior Predictive Check\\
-\normalsize\\
+\subsubsection{Posterior Predictive Check}
 
 \begin{figure}[htb]
 	\centering
@@ -279,10 +272,13 @@ Figure \ref{under_ut} and \ref{over_ut} are the boxplots of posterior predictive
 \end{figure}
 
 Figure \ref{under_xa} and \ref{over_xa} are the boxplots of posterior predictive samples where $p_A$ is underestimated and overestimated respectively from the survey data.
+
+
+
+
 %----------------------------------------------------------------------------------------
 %	METHODS
 %----------------------------------------------------------------------------------------
-\\\\\\\\\\\\
 \section{template}
 We first focus on the simplest sitaution that can describe the data sets and the general idea.
 

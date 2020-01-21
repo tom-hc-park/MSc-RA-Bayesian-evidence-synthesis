@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JAN 2020 14:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JAN 2020 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1128,286 +1128,222 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--187
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--187
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
-
- []
-
-<Figures/earlyresult1_ot.png, id=79, 848.16875pt x 390.45876pt>
-File: Figures/earlyresult1_ot.png Graphic file (type png)
-<use Figures/earlyresult1_ot.png>
-Package pdftex.def Info: Figures/earlyresult1_ot.png  used on input line 196.
-(pdftex.def)             Requested size: 370.0pt x 170.33076pt.
-LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <9> not available
-(Font)              Font shape `T1/iwona/b/n' tried instead on input line 197.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
-
- []
-
-<Figures/early_r_ppc1_ut.png, id=88, 719.68875pt x 513.92pt>
-File: Figures/early_r_ppc1_ut.png Graphic file (type png)
-<use Figures/early_r_ppc1_ut.png>
-Package pdftex.def Info: Figures/early_r_ppc1_ut.png  used on input line 209.
-(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
-
- []
-
-<Figures/early_r_ppc1_xt.png, id=90, 711.65875pt x 499.8675pt>
-File: Figures/early_r_ppc1_xt.png Graphic file (type png)
-<use Figures/early_r_ppc1_xt.png>
-Package pdftex.def Info: Figures/early_r_ppc1_xt.png  used on input line 218.
-(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--228
-
- []
-
-[5 <./Figures/earlyresult1_ot.png> <./Figures/early_r_ppc1_ut.png>]
-<Figures/early_contamination_under-ot.png, id=98, 791.95876pt x 513.92pt>
-File: Figures/early_contamination_under-ot.png Graphic file (type png)
-<use Figures/early_contamination_under-ot.png>
-Package pdftex.def Info: Figures/early_contamination_under-ot.png  used on inpu
-t line 231.
-(pdftex.def)             Requested size: 370.0pt x 240.09953pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
-
- []
-
-<Figures/early_contamination_over-ot.png, id=102, 791.95876pt x 513.92pt>
-File: Figures/early_contamination_over-ot.png Graphic file (type png)
-<use Figures/early_contamination_over-ot.png>
-Package pdftex.def Info: Figures/early_contamination_over-ot.png  used on input
- line 243.
-(pdftex.def)             Requested size: 370.0pt x 240.09953pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
-
- []
-
-<Figures/early_contamination_under-ut.png, id=103, 719.68875pt x 513.92pt>
-File: Figures/early_contamination_under-ut.png Graphic file (type png)
-<use Figures/early_contamination_under-ut.png>
-Package pdftex.def Info: Figures/early_contamination_under-ut.png  used on inpu
-t line 253.
-(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
-<Figures/early_contamination_over-ut.png, id=104, 719.68875pt x 513.92pt>
-File: Figures/early_contamination_over-ut.png Graphic file (type png)
-<use Figures/early_contamination_over-ut.png>
-Package pdftex.def Info: Figures/early_contamination_over-ut.png  used on input
- line 260.
-(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
-
- []
-
-[6 <./Figures/early_r_ppc1_xt.png>]
-<Figures/early_contamination_under-xa.png, id=112, 711.65875pt x 499.8675pt>
-File: Figures/early_contamination_under-xa.png Graphic file (type png)
-<use Figures/early_contamination_under-xa.png>
-Package pdftex.def Info: Figures/early_contamination_under-xa.png  used on inpu
-t line 269.
-(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
-<Figures/early_contamination_over-xa.png, id=113, 711.65875pt x 499.8675pt>
-File: Figures/early_contamination_over-xa.png Graphic file (type png)
-<use Figures/early_contamination_over-xa.png>
-Package pdftex.def Info: Figures/early_contamination_over-xa.png  used on input
- line 276.
-(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--286
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
 LaTeX Font Info:    Font shape `T1/iwona/bx/sc' in size <10> not available
-(Font)              Font shape `T1/iwona/b/sc' tried instead on input line 299.
+(Font)              Font shape `T1/iwona/b/sc' tried instead on input line 143.
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/b/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+[3]
+LaTeX Font Info:    Font shape `T1/iwona/bx/it' in size <10> not available
+(Font)              Font shape `T1/iwona/b/it' tried instead on input line 148.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+ []
+
+<Figures/earlyresult1_ot.png, id=89, 848.16875pt x 390.45876pt>
+File: Figures/earlyresult1_ot.png Graphic file (type png)
+<use Figures/earlyresult1_ot.png>
+Package pdftex.def Info: Figures/earlyresult1_ot.png  used on input line 191.
+(pdftex.def)             Requested size: 370.0pt x 170.33076pt.
+LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <9> not available
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 192.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4]
+<Figures/early_r_ppc1_ut.png, id=102, 719.68875pt x 513.92pt>
+File: Figures/early_r_ppc1_ut.png Graphic file (type png)
+<use Figures/early_r_ppc1_ut.png>
+Package pdftex.def Info: Figures/early_r_ppc1_ut.png  used on input line 204.
+(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+<Figures/early_r_ppc1_xt.png, id=104, 711.65875pt x 499.8675pt>
+File: Figures/early_r_ppc1_xt.png Graphic file (type png)
+<use Figures/early_r_ppc1_xt.png>
+Package pdftex.def Info: Figures/early_r_ppc1_xt.png  used on input line 213.
+(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 218.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 218.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 218.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+[5 <./Figures/earlyresult1_ot.png> <./Figures/early_r_ppc1_ut.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
+<Figures/early_contamination_under-ot.png, id=112, 791.95876pt x 513.92pt>
+File: Figures/early_contamination_under-ot.png Graphic file (type png)
+<use Figures/early_contamination_under-ot.png>
+Package pdftex.def Info: Figures/early_contamination_under-ot.png  used on inpu
+t line 225.
+(pdftex.def)             Requested size: 370.0pt x 240.09953pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+<Figures/early_contamination_over-ot.png, id=116, 791.95876pt x 513.92pt>
+File: Figures/early_contamination_over-ot.png Graphic file (type png)
+<use Figures/early_contamination_over-ot.png>
+Package pdftex.def Info: Figures/early_contamination_over-ot.png  used on input
+ line 237.
+(pdftex.def)             Requested size: 370.0pt x 240.09953pt.
+<Figures/early_contamination_under-ut.png, id=117, 719.68875pt x 513.92pt>
+File: Figures/early_contamination_under-ut.png Graphic file (type png)
+<use Figures/early_contamination_under-ut.png>
+Package pdftex.def Info: Figures/early_contamination_under-ut.png  used on inpu
+t line 246.
+(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
+[6 <./Figures/early_r_ppc1_xt.png>]
+<Figures/early_contamination_over-ut.png, id=124, 719.68875pt x 513.92pt>
+File: Figures/early_contamination_over-ut.png Graphic file (type png)
+<use Figures/early_contamination_over-ut.png>
+Package pdftex.def Info: Figures/early_contamination_over-ut.png  used on input
+ line 253.
+(pdftex.def)             Requested size: 370.0pt x 264.22084pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+
+ []
+
+<Figures/early_contamination_under-xa.png, id=127, 711.65875pt x 499.8675pt>
+File: Figures/early_contamination_under-xa.png Graphic file (type png)
+<use Figures/early_contamination_under-xa.png>
+Package pdftex.def Info: Figures/early_contamination_under-xa.png  used on inpu
+t line 262.
+(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
+<Figures/early_contamination_over-xa.png, id=128, 711.65875pt x 499.8675pt>
+File: Figures/early_contamination_over-xa.png Graphic file (type png)
+<use Figures/early_contamination_over-xa.png>
+Package pdftex.def Info: Figures/early_contamination_over-xa.png  used on input
+ line 269.
+(pdftex.def)             Requested size: 370.0pt x 259.88683pt.
 [7 <./Figures/early_contamination_under-ot.png>]
-<Figures/GalleriaStampe.jpg, id=129, 414.348pt x 409.53pt>
+<Figures/GalleriaStampe.jpg, id=150, 414.348pt x 409.53pt>
 File: Figures/GalleriaStampe.jpg Graphic file (type jpg)
 <use Figures/GalleriaStampe.jpg>
-Package pdftex.def Info: Figures/GalleriaStampe.jpg  used on input line 346.
+Package pdftex.def Info: Figures/GalleriaStampe.jpg  used on input line 342.
 (pdftex.def)             Requested size: 185.0pt x 182.84953pt.
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 347.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 343.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.65005pt on input line 347.
+(Font)              scaled to size 7.65005pt on input line 343.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/iwona/bx/it' in size <10> not available
-(Font)              Font shape `T1/iwona/b/it' tried instead on input line 359.
-
-<Figures/Lorem.jpg, id=135, 240.9pt x 180.675pt>
+<Figures/Lorem.jpg, id=156, 240.9pt x 180.675pt>
 File: Figures/Lorem.jpg Graphic file (type jpg)
 <use Figures/Lorem.jpg>
-Package pdftex.def Info: Figures/Lorem.jpg  used on input line 409.
+Package pdftex.def Info: Figures/Lorem.jpg  used on input line 405.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
 LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <8> not available
-(Font)              Font shape `T1/iwona/b/n' tried instead on input line 409.
-<Figures/Ipsum.jpg, id=136, 240.9pt x 180.675pt>
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 405.
+<Figures/Ipsum.jpg, id=157, 240.9pt x 180.675pt>
 File: Figures/Ipsum.jpg Graphic file (type jpg)
 <use Figures/Ipsum.jpg>
-Package pdftex.def Info: Figures/Ipsum.jpg  used on input line 410.
+Package pdftex.def Info: Figures/Ipsum.jpg  used on input line 406.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
-<Figures/Dolor.jpg, id=137, 240.9pt x 180.675pt>
+<Figures/Dolor.jpg, id=158, 240.9pt x 180.675pt>
 File: Figures/Dolor.jpg Graphic file (type jpg)
 <use Figures/Dolor.jpg>
-Package pdftex.def Info: Figures/Dolor.jpg  used on input line 411.
+Package pdftex.def Info: Figures/Dolor.jpg  used on input line 407.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
-<Figures/Sit.jpg, id=138, 240.9pt x 180.675pt>
+<Figures/Sit.jpg, id=159, 240.9pt x 180.675pt>
 File: Figures/Sit.jpg Graphic file (type jpg)
 <use Figures/Sit.jpg>
-Package pdftex.def Info: Figures/Sit.jpg  used on input line 412.
+Package pdftex.def Info: Figures/Sit.jpg  used on input line 408.
 (pdftex.def)             Requested size: 166.49887pt x 124.87814pt.
- [8 <./Figures/early_contamination_over-ot.png>] (./article_4.bbl) [9 <./Figure
-s/early_contamination_under-ut.png>] [10 <./Figures/early_contamination_over-ut
-.png> <./Figures/early_contamination_under-xa.png>] [11 <./Figures/early_contam
-ination_over-xa.png> <./Figures/GalleriaStampe.jpg>] [12 <./Figures/Lorem.jpg> 
-<./Figures/Ipsum.jpg> <./Figures/Dolor.jpg> <./Figures/Sit.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 429.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 429.
+ (./article_4.bbl
+[8 <./Figures/early_contamination_over-ot.png>]) [9 <./Figures/early_contaminat
+ion_under-ut.png>] [10 <./Figures/early_contamination_over-ut.png> <./Figures/e
+arly_contamination_under-xa.png>] [11 <./Figures/early_contamination_over-xa.pn
+g> <./Figures/GalleriaStampe.jpg>] [12 <./Figures/Lorem.jpg> <./Figures/Ipsum.j
+pg> <./Figures/Dolor.jpg> <./Figures/Sit.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 425.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 425.
  (./article_4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 429.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 429.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 425.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 425.
 Package rerunfilecheck Info: File `article_4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 425.
  ) 
 Here is how much of TeX's memory you used:
- 25190 strings out of 492616
- 476320 string characters out of 6129482
+ 25186 strings out of 492616
+ 476360 string characters out of 6129482
  842367 words of memory out of 5000000
  28646 multiletter control sequences out of 15000+600000
- 682080 words of font info for 232 fonts, out of 8000000 for 9000
+ 671823 words of font info for 216 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 67i,23n,92p,9108b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2019/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/local/texlive/2
-019/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}</usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-di
-st/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts
-/type1/nowacki/iwona/iwonab.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
-/nowacki/iwona/iwonabi.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/nowa
-cki/iwona/iwonar.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palati
-no/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr
-8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
->
-Output written on article_4.pdf (12 pages, 510057 bytes).
+ 67i,22n,92p,9108b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{subsection.2.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
+live/2019/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/local/texlive/201
+9/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}</usr/local/texlive/2019/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2019/
+texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
+ype1/nowacki/iwona/iwonab.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/n
+owacki/iwona/iwonabi.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/nowack
+i/iwona/iwonar.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino
+/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on article_4.pdf (12 pages, 511921 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 219 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 45703 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 301 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 44703 words of extra memory for PDF output out of 51595 (max. 10000000)
 
