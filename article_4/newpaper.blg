@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: article_4.aux
+The top-level auxiliary file: newpaper.aux
 The style file: unsrt.bst
 Database file #1: sample.bib
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
@@ -13,7 +13,7 @@ Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatte
 while executing---line 944 of file unsrt.bst
 You've used 1 entry,
             1791 wiz_defined-function locations,
-            451 strings with 3756 characters,
+            451 strings with 3754 characters,
 and the built_in function-call counts, 149 in all, are:
 = -- 11
 > -- 4

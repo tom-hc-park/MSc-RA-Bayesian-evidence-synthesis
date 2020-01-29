@@ -21,15 +21,16 @@
 
 \documentclass[
 10pt, % Main document font size
-a4paper, % Paper type, use 'letterpaper' for US Letter paper
+letterpaper, % Paper type, use 'letterpaper' for US Letter paper
 oneside, % One page layout (no page indentation)
 %twoside, % Two page layout (page indentation for binding and different headers)
 headinclude,footinclude, % Extra spacing for the header and footer
 BCOR5mm, % Binding correction
-]{scrartcl}
-\usepackage{amsmath}
+]{article}
+
 \usepackage{graphicx}
 \usepackage{float}
+
 \input{structure.tex} % Include the structure.tex file which specified the document structure and layout
 
 \hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
@@ -47,7 +48,6 @@ BCOR5mm, % Binding correction
 \date{} % An optional date to appear under the author(s)
 
 %----------------------------------------------------------------------------------------
-
 \begin{document}
 %----------------------------------------------------------------------------------------
 %	HEADERS
@@ -96,17 +96,23 @@ BCOR5mm, % Binding correction
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-Opioid crisis is one of major issues in North America continents including Canada. There were 1,490 deaths and 15,598 paramedic- attended overdose events during 2017 alone. \cite{Irvine:modelling} (need to know about bib in latex, change statistics to 2018 later) The goal of this project is to apply Bayesian evidence synthesis to help reduce the effect of opoid crisis in Vancouver, Canada.  \\
+The opioid crisis is a major issue in North America  including Canada. There were 1,490 deaths and 15,598 paramedic- attended overdose events during 2017 alone. \cite{Irvine:modelling} (need to know about bib in latex, change statistics to 2018 later) The goal of this project is to apply Bayesian evidence synthesis to understand better the opoid crisis in Vancouver, Canada.  \\
+
+[Need to give a backstory-why isn't this observable? The number of overdoses] 
+
+[specify a geographic area]
 
 All examples here were performed in Python 3.7 using the library pyMC (reference) and JAGS (reference). Training was performed using No U-Turn Sampling (NUTS) over two chains with 1000 iterations (is it sample size?). Fitting was performed on a GHz Intel Core i5 with 8GM of LPDD3 RAM and typically had wall times under ten minutes. Data processing was carried out using the Pandas and SciPy library [reference]. Data visualization was performed using the libraries Seaborn and Matplotlib [ref]. Code for all examples in this study are provided. 
+
+[explain Bayesian statistics, MCMC and related topics]
 
 
 \section{methods}
 
 \normalsize
-The number of overdoses is our ultimate interest of estimation. Let $O_t$ the number of overdose in a given month $t$. Suppose there was a survey  conducted to estimate the proportion of ambulance call $p_A$ among the subjects of overdoses. Let $n_{A}$ the sample size of the survey and   
-$x_{A}$ to be the total number who confirmed they did call ambulance. It is assumed that $x_{A}$ follows Binomial distribution.
-
+ The number of overdoses is our ultimate interest of estimation.  Let $O_t$ the number of overdoses in a given month $t$. Suppose there was a survey  conducted to estimate the proportion of ambulance call $p_A$ among the overdoses. $p_A$ is assumed constant across time for simplicity. Let $n_{A}$ the sample size of the survey and   
+$x_{A}$ to be the total number who confirmed they did call ambulance. It is assumed that $x_{A}$ follows a Binomial distribution:
+[math font changing: suggest regular (not Greek letter) for observable]
 \begin{equation}
 \label{ambulance}
 	\left.\begin{aligned}
