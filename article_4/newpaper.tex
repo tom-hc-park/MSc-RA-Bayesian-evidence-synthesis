@@ -48,19 +48,33 @@
 \end{abstract}
 
 \section{Introduction}
-The opioid crisis is a major issue in North America  including Canada. There were 1,490 deaths and 15,598 paramedic- attended overdose events during 2017 alone. \cite{Irvine:modelling} (need to know about bib in latex, change statistics to 2018 later) The goal of this project is to apply Bayesian evidence synthesis to understand better the opoid crisis in Vancouver, Canada.  \\
+The opioid crisis is a major issue in North America including British Columbia, Canada. British Columbia is in the midst of a drug overdose crisis due to illicit opioids and the circumstance is getting worse; According to the BC Coroners Service, there were more than 930 apparent illicit drug overdose deaths in BC from Jan. 1 to Dec. 31, 2016. This compares to 518 in 2015, an increase of 79.2\%. \cite{bccdc_opioid}  The goal of this project is to apply Bayesian evidence synthesis to understand better the opoid crisis in British Columbia, Canada.  \\
 
-[Need to give a backstory-why isn't this observable? The number of overdoses] [specify a geographic area]
-\\
+One difficulty to cope with the opioid crisis is that the total number of overdoses is unknown. The reason is that the use of prescription opioids often leads to use illicit opioids and the illicit usage cannot be known. Many of those who become addicted to opioids do so after initially receiving a prescription. The highly addictive nature of these pain relievers makes it easy for the human brain to crave more. It is only after their prescription ends that many users realize they’ve become dependent on the effects of opioids  to function “normally.” At that point, they are either forced to get clean and endure the pain that comes with the withdrawal symptoms of opioids or look for another means of getting their high. This is often the time where people will turn to illicit drugs or other analogues. Because prescription opioids are so expensive, this is when many users turn to heroin. It is often cheaper, more potent, and easier to locate than what they were taking before. In fact, about 80\% of people using heroin started with a prescription to another opioid. After using heroin, however, 23\% of individuals develop opioid addiction.\cite{opioid_desc} [attempt: need to give a backstory-why isn't this observable? The number of overdoses]\\
+
+Since the total overdoses are unknown, the number needs to be estimated. Bayesian statistics can be a way to approach the problem and give us the good estimate of the number. Bayesian statistics is a theory in the field of statistics based on the Bayesian interpretation of probability where probability expresses a degree of belief in an event. \cite{wiki_bayes} Detailed explanation is provided at the following section. [attempt: explain Bayesian statistics]\\
 
 All examples here were performed in Python 3.7 using the library pyMC (reference) and JAGS (reference). Training was performed using No U-Turn Sampling (NUTS) over two chains with 1000 iterations (is it sample size?). Fitting was performed on a GHz Intel Core i5 with 8GM of LPDD3 RAM and typically had wall times under ten minutes. Data processing was carried out using the Pandas and SciPy library [reference]. Data visualization was performed using the libraries Seaborn and Matplotlib [ref]. Code for all examples in this study are provided. \\
 
-[explain Bayesian statistics, MCMC and related topics]
+
+
 
 \section{methods}
 
 \normalsize
-The number of overdoses is our ultimate interest of estimation.  Let $O_t$ the number of overdoses in a given month $t$. Suppose there was a survey  conducted to estimate the proportion of ambulance call $p_A$ among the overdoses. $p_A$ is assumed constant across time for simplicity. Let $n_{A}$ the sample size of the survey and $x_{A}$ to be the total number who confirmed they did call ambulance. It is assumed that $x_{A}$ follows a Binomial distribution:
+
+The number of overdoses is our ultimate interest of estimation. To achive the goal in context of Bayesian statistics, we use our prior belief and available data set about the target of estimation. The posterior belief is coming from both parts of the information. Following equation express the idea in a mathmatical form:  
+\begin{equation}
+\label{bayes_thm}
+\left.\begin{aligned}
+p(\theta| y ) = \frac{ p(\theta, y)   }{ p(y)} = \frac{ p(\theta) p(y| \theta)}{ p(y)} \propto p(\theta) p(y| \theta) \end{aligned}\right.
+\end{equation}
+where $\theta$ represents the target of estimation, the total overdoses and $y$ represents the collected data set providing relevant samples of the target variable. In Bayesian concepts, the variable of interest $\theta$ is a fixed number but the number is yielded from a certain distribution; That is, $\theta$ is considered to be a sample of a random variable. 
+
+The problem, however, is that the data set $y$ is not available. Hence the technique is to approach the estimation in a indirect fashion. Figure \cite{simple_drawing} shows how we estimate the target variable. 
+\\
+
+ Let $O_t$ the number of overdoses in a given month $t$ in British Columbia. [attempt: specify a geographic area] Suppose there was a survey  conducted to estimate the proportion of ambulance call $p_A$ among the overdoses. $p_A$ is assumed constant across time for simplicity. Let $n_{A}$ the sample size of the survey and $x_{A}$ to be the total number who confirmed they did call ambulance. It is assumed that $x_{A}$ follows a Binomial distribution:
 
 \begin{equation}
 \label{ambulance}
@@ -99,6 +113,7 @@ The next step is to run some simulations to figure out how different types of in
 \normalsize 
 The first simulation simplifies the assumptions of variables as much as possible; We assumed $N= 10000, n_{A}=1000$. Note that the population size, N,  is unknown in reality but it is assumed known for the investigator here for simplicity. The assumptions will change later to see the impact of the likelihood over the posterior distributions of variables of interest; The total population size for a region, N, could vary over time or it can be staritified for a better realization of the real world. We vary the survey size  as $n_{A}=100$ or $n_{A}=10000$.  \\
 
+[brief explaination of MCMC and related topics]
 \subsubsection{Likelihood}
 
 \normalsize 

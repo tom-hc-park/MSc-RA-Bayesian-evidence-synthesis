@@ -3,6 +3,11 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: newpaper.aux
 The style file: unsrt.bst
 Database file #1: sample.bib
+I was expecting a `,' or a `}'---line 37 of file sample.bib
+ :  
+ :  year     = {2019},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
@@ -11,45 +16,45 @@ Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatte
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
 while executing---line 944 of file unsrt.bst
-You've used 1 entry,
+You've used 4 entries,
             1791 wiz_defined-function locations,
-            451 strings with 3754 characters,
-and the built_in function-call counts, 149 in all, are:
-= -- 11
-> -- 4
+            460 strings with 3896 characters,
+and the built_in function-call counts, 482 in all, are:
+= -- 39
+> -- 10
 < -- 0
-+ -- 2
-- -- 1
-* -- 5
-:= -- 33
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 1
++ -- 6
+- -- 2
+* -- 7
+:= -- 72
+add.period$ -- 10
+call.type$ -- 4
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 8
-empty$ -- 15
-format.name$ -- 1
-if$ -- 29
+cite$ -- 4
+duplicate$ -- 23
+empty$ -- 69
+format.name$ -- 2
+if$ -- 115
 int.to.chr$ -- 0
-int.to.str$ -- 1
+int.to.str$ -- 4
 missing$ -- 1
-newline$ -- 8
-num.names$ -- 1
-pop$ -- 3
+newline$ -- 21
+num.names$ -- 2
+pop$ -- 22
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 3
+skip$ -- 16
 stack$ -- 0
 substring$ -- 0
-swap$ -- 1
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 1
-width$ -- 2
-write$ -- 12
-(There were 4 error messages)
+while$ -- 2
+width$ -- 5
+write$ -- 37
+(There were 5 error messages)

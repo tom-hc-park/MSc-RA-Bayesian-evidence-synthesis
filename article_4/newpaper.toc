@@ -1,11 +1,11 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}% 
-\contentsline {section}{\numberline {2}methods}{2}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Simulation}{3}{subsection.2.1}% 
-\contentsline {subsubsection}{\numberline {2.1.1}Likelihood}{3}{subsubsection.2.1.1}% 
-\contentsline {subsubsection}{\numberline {2.1.2}Prior Distributions}{3}{subsubsection.2.1.2}% 
-\contentsline {subsection}{\numberline {2.2}Early Result }{4}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Posterior Distribution}{4}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2}Posterior Predictive Check}{5}{subsubsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Early Result: Contamination of $p_A$ }{5}{subsection.2.3}% 
-\contentsline {subsubsection}{\numberline {2.3.1}Posterior Distribution}{6}{subsubsection.2.3.1}% 
-\contentsline {subsubsection}{\numberline {2.3.2}Posterior Predictive Check}{6}{subsubsection.2.3.2}% 
+\contentsline {section}{\numberline {2}methods}{3}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Simulation}{4}{subsection.2.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Likelihood}{4}{subsubsection.2.1.1}% 
+\contentsline {subsubsection}{\numberline {2.1.2}Prior Distributions}{4}{subsubsection.2.1.2}% 
+\contentsline {subsection}{\numberline {2.2}Early Result }{5}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Posterior Distribution}{5}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Posterior Predictive Check}{6}{subsubsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Early Result: Contamination of $p_A$ }{6}{subsection.2.3}% 
+\contentsline {subsubsection}{\numberline {2.3.1}Posterior Distribution}{7}{subsubsection.2.3.1}% 
+\contentsline {subsubsection}{\numberline {2.3.2}Posterior Predictive Check}{7}{subsubsection.2.3.2}% 
