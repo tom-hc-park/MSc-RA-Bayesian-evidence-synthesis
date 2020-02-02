@@ -1,16 +1,15 @@
 \begin{thebibliography}{1}
 
 \bibitem{bccdc_opioid}
-"bc overdose prevention services guide".
-\newblock url.
+BC~Center for Disease~Control.
 
 \bibitem{opioid_desc}
 Cooper Smith.
-\newblock "what is the opioid epidemic?".
+\newblock What is the opioid epidemic?
 \newblock url, 2019.
 
 \bibitem{wiki_bayes}
-"bayesian statistics".
+Bayesian statistics.
 \newblock url, 2020.
 
 \bibitem{Irvine:modelling}
@@ -18,5 +17,12 @@ Buxton J Balshaw R Otterstatter M Macdougall L et~al. Irvine~MA, Kuo~M.
 \newblock Modelling the combined impact of interventions in averting deaths
   during a synthetic-opioid overdose epidemic.
 \newblock {\em Addiction}, 2019.
+
+\bibitem{bda_galman}
+Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald
+  Rubin.
+\newblock {\em Bayesian Data Analysis}.
+\newblock CRC Press, 6000 Broken Sound Parkway NW, Suite 300 Boca Raton, FL
+  33487-2742, 2014.
 
 \end{thebibliography}

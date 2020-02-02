@@ -1,13 +1,14 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Boxplot of posterior samples of $O_t$ (2000 samples for each month) with actual data points of simulated $O_t$ values. The simulated values are shown as red dots.\relax }}{5}{figure.caption.4}% 
-\contentsline {figure}{\numberline {2}{\ignorespaces two early result box plots:}}{6}{figure.caption.5}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $U_t$}}}{6}{subfigure.2.1}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $p_A$}}}{6}{subfigure.2.2}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Example of estimating the total overdoses indirectly given two data sets: ambulance attended overdoses and survey data. N is the population size\relax }}{3}{figure.caption.4}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Boxplot of posterior samples of $O_t$ (2000 samples for each month) with actual data points of simulated $O_t$ values. The simulated values are shown as red dots.\relax }}{6}{figure.caption.5}% 
 \contentsline {figure}{\numberline {3}{\ignorespaces two early result box plots:}}{7}{figure.caption.6}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $O_t$: underestimated $p_A$}}}{7}{subfigure.3.1}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $O_t$: overestimated $p_A$}}}{7}{subfigure.3.2}% 
-\contentsline {figure}{\numberline {4}{\ignorespaces two early result box plots:ut}}{8}{figure.caption.7}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $U_t$: underestimated $p_A$}}}{8}{subfigure.4.1}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $U_t$: overestimated $p_A$}}}{8}{subfigure.4.2}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces two early result box plots:xa}}{9}{figure.caption.8}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $x_A$: underestimated $p_A$}}}{9}{subfigure.5.1}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $x_A$: overestimated $p_A$}}}{9}{subfigure.5.2}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $U_t$}}}{7}{subfigure.3.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $p_A$}}}{7}{subfigure.3.2}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces two early result box plots:}}{8}{figure.caption.7}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $O_t$: underestimated $p_A$}}}{8}{subfigure.4.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $O_t$: overestimated $p_A$}}}{8}{subfigure.4.2}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces two early result box plots:ut}}{9}{figure.caption.8}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $U_t$: underestimated $p_A$}}}{9}{subfigure.5.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $U_t$: overestimated $p_A$}}}{9}{subfigure.5.2}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces two early result box plots:xa}}{10}{figure.caption.9}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $x_A$: underestimated $p_A$}}}{10}{subfigure.6.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $x_A$: overestimated $p_A$}}}{10}{subfigure.6.2}% 
