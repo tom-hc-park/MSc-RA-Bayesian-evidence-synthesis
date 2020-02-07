@@ -114,7 +114,7 @@ The next step is to run some simulations to figure out how different types of in
 The first simulation simplifies the assumptions of variables as much as possible; we assumed $N= 10000, n_{A}=1000$. Note that the population size, N,  is unknown in reality but it is assumed known for the investigator here for simplicity as in figure \ref{simple_draw}. The assumptions will change later to see the impact of the likelihood over the posterior distributions of variables of interest; the total population size for a region, N, could vary over time or it can be staritified for a better realization of the reality. The survey size could also vary such as $n_{A}=100$ or $n_{A}=10000$ in later examples.  \\
 
 \subsubsection{Markov chain Monte Carlo}
-The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). The technique is a popular method to obtain posterior samples from distributions where analytic forms do not exist or are hard to be derived. [Further explanation is going to be added.] [attempt:brief explaination of MCMC and related topics]\\
+The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). The technique is a popular method to obtain posterior samples from distributions where analytic forms do not exist or are hard to be derived. \textbf{[Further explanation is going to be added.]} [attempt:brief explaination of MCMC and related topics]\\
 
 
 \subsubsection{Likelihood}
@@ -166,7 +166,7 @@ Figure \ref{pst_ot} is the boxplot of posterior samples of $O_t$. It is shown th
 \newpage
 \subsubsection{Posterior Predictive Check}
 Posterior predictive checking is a model validation technique that we simulate some replicated data under the fitted model then compare the new data to the observed data. If the model fits, then replicated data generated under the model should look similar to observed data. To put it another way, the observed data should look plausible under the posterior predictive distribution. This is really a self-consistency check: an observed discrepancy can be due to model misfit or chance. \cite{bda_galman}
-[brief explannation of what is PPC]\\
+[attempted: brief explannation of what is PPC]\\
 
 Figure \ref{ppc_ut} is the boxplot of posterior predictive samples of $U_t$. It is shown that the posterior predictive estimates of $U_t$ is failry accurate with the same two reasons regarding the accuracy of the posterior distribution of $O_t$. It is more obvious here that the range of the boxplots from higher $O_t$ values (t=1, 7, 11) is wider than the other ranges of the boxplots from smaller estimates of $O_t$ (all t values but 1,7, 11). Notice that the relative ranges of figure \ref{ppc_ut} follow the ones of figure \ref{pst_ot}; for months where $U_t$ values are higher, the values of $O_t$ are also higher than the average (t=1, 7, 11)\\
 
@@ -222,7 +222,7 @@ The possible explanation is that the contaminations of  $p_A$ and $O_t$ (from $p
 	\label{contam_ut}
 \end{figure}
 
-Figure \ref{contam_xt}  are the boxplots of posterior predictive samples of $x_A$ where $p_A$ is underestimated and overestimated respectively from the survey data. It is seen that none of the contaminations of $p_A$ leads an effect of contamination on $x_A$; the actual simulated points (red dots) are close to the medians from the two boxplots. However, notice that the range of the estimated values are different between the two boxplots; the median from Figure \ref{under_xa} is around 600 whereas the median from Figure \ref{over_xa} is around 900. [I think this should go to the previous of the previous paragraph: This is because overdose model (\ref{overdose}) does not affect the resulf from the ambulance model (\ref{ambulance}); only the ambulance model has an effect on the overdose model.]
+Figure \ref{contam_xt}  are the boxplots of posterior predictive samples of $x_A$ where $p_A$ is underestimated and overestimated respectively from the survey data. It is seen that none of the contaminations of $p_A$ leads an effect of contamination on $x_A$; the actual simulated points (red dots) are close to the medians from the two boxplots. However, notice that the range of the estimated values are different between the two boxplots; the median from Figure \ref{under_xa} is around 600 whereas the median from Figure \ref{over_xa} is around 900. [???? I think this should go to the previous of the previous paragraph] This is because overdose model (\ref{overdose}) does not affect the resulf from the ambulance model (\ref{ambulance}); only the ambulance model has an effect on the overdose model.
 
 \begin{figure}[h]
 	\centering
