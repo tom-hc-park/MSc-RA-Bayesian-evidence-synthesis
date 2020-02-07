@@ -1,0 +1,58 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+First, we bring the two data sets (survey data and ambulance attended overdoses data) into here. It is done by manual labor for now but it should be automatical when the pipeline with pymc3 code is built (probably with reticulate package).
+```{r}
+df <- data.frame(
+  o_t= c(2475,  262,  318,  149, 1151,   39, 2997,  242,  702,  377, 2088,76), 
+  u_t=c(1969,  217,  253,  119,  934,   34, 2392,  196,  569,  308, 1655,55), 
+  x_a= c(799, 798, 795, 816, 805, 794, 793, 780, 773, 779, 788, 813)
+)
+n_a=1000
+N= 10000
+```
+
+runjags package 
+
+
+
+
+
+Todo: 
+
+1. Import relavent functions from the pymc3 Jupyter notebook.
+2. Obtain the same data sets. 
+
+To do 1, I need to save the functions into a module or a library.
+```{r Package preparing}
+# package connecting R and Python
+install.packages("reticulate", dependencies = TRUE)
+# JAGS
+install.packages('rjags')
+library(reticulate)
+library(rjags)
+```
+```{r}
+py_install("pandas")
+py_run_file("../report_revised_2.py")
+```
+
+```{r}
+install.packages('RSQLite')
+library(RSQLite)
+```
+```{r}
+conn <- dbConnect(RSQLite::SQLite(), "notebook_env.db")
+alltables = dbListTables(conn)
+```
+
+```{r}
+install.packages('ProjectTemplate')
+library('ProjectTemplate')
+```
+
+```{r}
+db.reader('notebook_env.db', '../notebook_env.db', 'data')
+```
+
