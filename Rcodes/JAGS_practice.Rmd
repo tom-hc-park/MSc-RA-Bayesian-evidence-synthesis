@@ -2,6 +2,45 @@
 title: "R Notebook"
 output: html_notebook
 ---
+# Following an online tutorial
+
+Context:Normal model with unknown mean and variance. 
+
+```{r}
+install.packages('runjags')
+library(runjags)
+modelString = "
+model{
+for (i in 1:N) {
+y[i] ~ dnorm(mu, phi)
+} 
+mu ~ dnorm(mu_0, phi_0)
+phi ~ dgamma(alpha, beta)
+}
+"
+
+```
+- note that they take precison for Normal distribution
+-use 'd' to describe density: 'r' never used.
+
+```{r}
+y <- CEdata$LogTotalExpLastQ
+N <- length(y)
+the_data <- list(
+  'y'=y,
+  'N'=N,
+  'mu_0'=5,
+  'phi_0'=1/1^2,
+  'alpha'=1,
+  'beta'=1
+)
+
+```
+
+
+
+
+# Opioid Overdose Modeling 
 First, we bring the two data sets (survey data and ambulance attended overdoses data) into here. It is done by manual labor for now but it should be automatical when the pipeline with pymc3 code is built (probably with reticulate package).
 ```{r}
 df <- data.frame(

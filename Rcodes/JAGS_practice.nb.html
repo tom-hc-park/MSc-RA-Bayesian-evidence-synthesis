@@ -1767,6 +1767,50 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
+<div id="following-an-online-tutorial" class="section level1">
+<h1>Following an online tutorial</h1>
+<p>Context:Normal model with unknown mean and variance.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcygncnVuamFncycpXG5saWJyYXJ5KHJ1bmphZ3MpXG5tb2RlbFN0cmluZyA9IFwiXG5tb2RlbHtcbmZvciAoaSBpbiAxOk4pIHtcbnlbaV0gfiBkbm9ybShtdSwgcGhpKVxufSBcbm11IH4gZG5vcm0obXVfMCwgcGhpXzApXG5waGkgfiBkZ2FtbWEoYWxwaGEsIGJldGEpXG59XG5cIlxuXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&#39;runjags&#39;)
+library(runjags)
+modelString = &quot;
+model{
+for (i in 1:N) {
+y[i] ~ dnorm(mu, phi)
+} 
+mu ~ dnorm(mu_0, phi_0)
+phi ~ dgamma(alpha, beta)
+}
+&quot;
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>note that they take precison for Normal distribution -use ‘d’ to describe density: ‘r’ never used.</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueSA8LSBDRWRhdGEkTG9nVG90YWxFeHBMYXN0UVxuTiA8LSBsZW5ndGgoeSlcbnRoZV9kYXRhIDwtIGxpc3QoXG4gICd5Jz15LFxuICAnTic9TixcbiAgJ211XzAnPTUsXG4gICdwaGlfMCc9MS8xXjIsXG4gICdhbHBoYSc9MSxcbiAgJ2JldGEnPTFcbilcblxuYGBgIn0= -->
+<pre class="r"><code>y &lt;- CEdata$LogTotalExpLastQ
+N &lt;- length(y)
+the_data &lt;- list(
+  &#39;y&#39;=y,
+  &#39;N&#39;=N,
+  &#39;mu_0&#39;=5,
+  &#39;phi_0&#39;=1/1^2,
+  &#39;alpha&#39;=1,
+  &#39;beta&#39;=1
+)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="opioid-overdose-modeling" class="section level1">
+<h1>Opioid Overdose Modeling</h1>
 <p>First, we bring the two data sets (survey data and ambulance attended overdoses data) into here. It is done by manual labor for now but it should be automatical when the pipeline with pymc3 code is built (probably with reticulate package).</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -1903,8 +1947,9 @@ The downloaded binary packages are in
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpGaXJzdCwgd2UgYnJpbmcgdGhlIHR3byBkYXRhIHNldHMgKHN1cnZleSBkYXRhIGFuZCBhbWJ1bGFuY2UgYXR0ZW5kZWQgb3ZlcmRvc2VzIGRhdGEpIGludG8gaGVyZS4gSXQgaXMgZG9uZSBieSBtYW51YWwgbGFib3IgZm9yIG5vdyBidXQgaXQgc2hvdWxkIGJlIGF1dG9tYXRpY2FsIHdoZW4gdGhlIHBpcGVsaW5lIHdpdGggcHltYzMgY29kZSBpcyBidWlsdCAocHJvYmFibHkgd2l0aCByZXRpY3VsYXRlIHBhY2thZ2UpLgpgYGB7cn0KZGYgPC0gZGF0YS5mcmFtZSgKICBvX3Q9IGMoMjQ3NSwgIDI2MiwgIDMxOCwgIDE0OSwgMTE1MSwgICAzOSwgMjk5NywgIDI0MiwgIDcwMiwgIDM3NywgMjA4OCw3NiksIAogIHVfdD1jKDE5NjksICAyMTcsICAyNTMsICAxMTksICA5MzQsICAgMzQsIDIzOTIsICAxOTYsICA1NjksICAzMDgsIDE2NTUsNTUpLCAKICB4X2E9IGMoNzk5LCA3OTgsIDc5NSwgODE2LCA4MDUsIDc5NCwgNzkzLCA3ODAsIDc3MywgNzc5LCA3ODgsIDgxMykKKQpuX2E9MTAwMApOPSAxMDAwMApgYGAKCnJ1bmphZ3MgcGFja2FnZSAKCgoKCgpUb2RvOiAKCjEuIEltcG9ydCByZWxhdmVudCBmdW5jdGlvbnMgZnJvbSB0aGUgcHltYzMgSnVweXRlciBub3RlYm9vay4KMi4gT2J0YWluIHRoZSBzYW1lIGRhdGEgc2V0cy4gCgpUbyBkbyAxLCBJIG5lZWQgdG8gc2F2ZSB0aGUgZnVuY3Rpb25zIGludG8gYSBtb2R1bGUgb3IgYSBsaWJyYXJ5LgpgYGB7ciBQYWNrYWdlIHByZXBhcmluZ30KIyBwYWNrYWdlIGNvbm5lY3RpbmcgUiBhbmQgUHl0aG9uCmluc3RhbGwucGFja2FnZXMoInJldGljdWxhdGUiLCBkZXBlbmRlbmNpZXMgPSBUUlVFKQojIEpBR1MKaW5zdGFsbC5wYWNrYWdlcygncmphZ3MnKQpsaWJyYXJ5KHJldGljdWxhdGUpCmxpYnJhcnkocmphZ3MpCmBgYApgYGB7cn0KcHlfaW5zdGFsbCgicGFuZGFzIikKcHlfcnVuX2ZpbGUoIi4uL3JlcG9ydF9yZXZpc2VkXzIucHkiKQpgYGAKCmBgYHtyfQppbnN0YWxsLnBhY2thZ2VzKCdSU1FMaXRlJykKbGlicmFyeShSU1FMaXRlKQpgYGAKYGBge3J9CmNvbm4gPC0gZGJDb25uZWN0KFJTUUxpdGU6OlNRTGl0ZSgpLCAibm90ZWJvb2tfZW52LmRiIikKYWxsdGFibGVzID0gZGJMaXN0VGFibGVzKGNvbm4pCmBgYAoKYGBge3J9Cmluc3RhbGwucGFja2FnZXMoJ1Byb2plY3RUZW1wbGF0ZScpCmxpYnJhcnkoJ1Byb2plY3RUZW1wbGF0ZScpCmBgYAoKYGBge3J9CmRiLnJlYWRlcignbm90ZWJvb2tfZW52LmRiJywgJy4uL25vdGVib29rX2Vudi5kYicsICdkYXRhJykKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQojIEZvbGxvd2luZyBhbiBvbmxpbmUgdHV0b3JpYWwKCkNvbnRleHQ6Tm9ybWFsIG1vZGVsIHdpdGggdW5rbm93biBtZWFuIGFuZCB2YXJpYW5jZS4gCgpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygncnVuamFncycpCmxpYnJhcnkocnVuamFncykKbW9kZWxTdHJpbmcgPSAiCm1vZGVsewpmb3IgKGkgaW4gMTpOKSB7CnlbaV0gfiBkbm9ybShtdSwgcGhpKQp9IAptdSB+IGRub3JtKG11XzAsIHBoaV8wKQpwaGkgfiBkZ2FtbWEoYWxwaGEsIGJldGEpCn0KIgoKYGBgCi0gbm90ZSB0aGF0IHRoZXkgdGFrZSBwcmVjaXNvbiBmb3IgTm9ybWFsIGRpc3RyaWJ1dGlvbgotdXNlICdkJyB0byBkZXNjcmliZSBkZW5zaXR5OiAncicgbmV2ZXIgdXNlZC4KCmBgYHtyfQp5IDwtIENFZGF0YSRMb2dUb3RhbEV4cExhc3RRCk4gPC0gbGVuZ3RoKHkpCnRoZV9kYXRhIDwtIGxpc3QoCiAgJ3knPXksCiAgJ04nPU4sCiAgJ211XzAnPTUsCiAgJ3BoaV8wJz0xLzFeMiwKICAnYWxwaGEnPTEsCiAgJ2JldGEnPTEKKQoKYGBgCgoKCgojIE9waW9pZCBPdmVyZG9zZSBNb2RlbGluZyAKRmlyc3QsIHdlIGJyaW5nIHRoZSB0d28gZGF0YSBzZXRzIChzdXJ2ZXkgZGF0YSBhbmQgYW1idWxhbmNlIGF0dGVuZGVkIG92ZXJkb3NlcyBkYXRhKSBpbnRvIGhlcmUuIEl0IGlzIGRvbmUgYnkgbWFudWFsIGxhYm9yIGZvciBub3cgYnV0IGl0IHNob3VsZCBiZSBhdXRvbWF0aWNhbCB3aGVuIHRoZSBwaXBlbGluZSB3aXRoIHB5bWMzIGNvZGUgaXMgYnVpbHQgKHByb2JhYmx5IHdpdGggcmV0aWN1bGF0ZSBwYWNrYWdlKS4KYGBge3J9CmRmIDwtIGRhdGEuZnJhbWUoCiAgb190PSBjKDI0NzUsICAyNjIsICAzMTgsICAxNDksIDExNTEsICAgMzksIDI5OTcsICAyNDIsICA3MDIsICAzNzcsIDIwODgsNzYpLCAKICB1X3Q9YygxOTY5LCAgMjE3LCAgMjUzLCAgMTE5LCAgOTM0LCAgIDM0LCAyMzkyLCAgMTk2LCAgNTY5LCAgMzA4LCAxNjU1LDU1KSwgCiAgeF9hPSBjKDc5OSwgNzk4LCA3OTUsIDgxNiwgODA1LCA3OTQsIDc5MywgNzgwLCA3NzMsIDc3OSwgNzg4LCA4MTMpCikKbl9hPTEwMDAKTj0gMTAwMDAKYGBgCgpydW5qYWdzIHBhY2thZ2UgCgoKCgoKVG9kbzogCgoxLiBJbXBvcnQgcmVsYXZlbnQgZnVuY3Rpb25zIGZyb20gdGhlIHB5bWMzIEp1cHl0ZXIgbm90ZWJvb2suCjIuIE9idGFpbiB0aGUgc2FtZSBkYXRhIHNldHMuIAoKVG8gZG8gMSwgSSBuZWVkIHRvIHNhdmUgdGhlIGZ1bmN0aW9ucyBpbnRvIGEgbW9kdWxlIG9yIGEgbGlicmFyeS4KYGBge3IgUGFja2FnZSBwcmVwYXJpbmd9CiMgcGFja2FnZSBjb25uZWN0aW5nIFIgYW5kIFB5dGhvbgppbnN0YWxsLnBhY2thZ2VzKCJyZXRpY3VsYXRlIiwgZGVwZW5kZW5jaWVzID0gVFJVRSkKIyBKQUdTCmluc3RhbGwucGFja2FnZXMoJ3JqYWdzJykKbGlicmFyeShyZXRpY3VsYXRlKQpsaWJyYXJ5KHJqYWdzKQpgYGAKYGBge3J9CnB5X2luc3RhbGwoInBhbmRhcyIpCnB5X3J1bl9maWxlKCIuLi9yZXBvcnRfcmV2aXNlZF8yLnB5IikKYGBgCgpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygnUlNRTGl0ZScpCmxpYnJhcnkoUlNRTGl0ZSkKYGBgCmBgYHtyfQpjb25uIDwtIGRiQ29ubmVjdChSU1FMaXRlOjpTUUxpdGUoKSwgIm5vdGVib29rX2Vudi5kYiIpCmFsbHRhYmxlcyA9IGRiTGlzdFRhYmxlcyhjb25uKQpgYGAKCmBgYHtyfQppbnN0YWxsLnBhY2thZ2VzKCdQcm9qZWN0VGVtcGxhdGUnKQpsaWJyYXJ5KCdQcm9qZWN0VGVtcGxhdGUnKQpgYGAKCmBgYHtyfQpkYi5yZWFkZXIoJ25vdGVib29rX2Vudi5kYicsICcuLi9ub3RlYm9va19lbnYuZGInLCAnZGF0YScpCmBgYAoK</div>
 
 
 
