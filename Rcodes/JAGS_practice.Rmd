@@ -2,12 +2,18 @@
 title: "R Notebook"
 output: html_notebook
 ---
-# Following an online tutorial
+# Following an online tutorial (no data...)
 
 Context:Normal model with unknown mean and variance. 
 
+summary: 
+in the model, as a string, we put the likelihood and the parameters of interest with their prior distribution.
 ```{r}
 install.packages('runjags')
+install.packages('coda')
+```
+
+```{r}
 library(runjags)
 modelString = "
 model{
@@ -23,6 +29,9 @@ phi ~ dgamma(alpha, beta)
 - note that they take precison for Normal distribution
 -use 'd' to describe density: 'r' never used.
 
+From here, the list named as the_data, we plug in the values of the parameters for the prior including the number of observation for likelihood (N). 
+
+Posterior result is obtained by run.jags function where we plug in our data (the_data) which we set the values of the parameters for prior, we state our interest parameters as monitor. I assume modelString goes into the first argument here.
 ```{r}
 y <- CEdata$LogTotalExpLastQ
 N <- length(y)
@@ -32,10 +41,85 @@ the_data <- list(
   'mu_0'=5,
   'phi_0'=1/1^2,
   'alpha'=1,
-  'beta'=1
-)
+  'beta'=1) # this we where the pre-set priors given to the model
+  posterior <- run.jags(
+    'norm_model.jags',
+    data = the_data,
+    monitor = c('mu','phi'),
+    n.chains=1,
+    adapt=1000,
+    burnin=2000,
+    sample=5000,
+    thin=1
+  )
+
+summary(posterior)
 
 ```
+
+# Another JAGS Tutorial 
+[from here](https://rstudio-pubs-static.s3.amazonaws.com/272658_ae4d482c86514674be17042c852ebbfc.html)
+
+```{r}
+setwd("../../meta-analysis-Bayesian/")
+data =read.csv('data1.csv')
+head(data)
+```
+
+```{r Defining values}
+library(coda)
+N <- length(data$y)
+
+
+data <- list('N'=N, 
+             'y'=data$y,
+             'V'=data$V)
+
+inits <- list(d=0.0)
+
+```
+
+```{r Enter the Model}
+cat("model{
+for (i in 1:N) {
+P[i] <- 1/V[i]
+y[i]~dnorm(d,P[i])
+}
+# Define the priors
+d ~ dnorm(0,0.00001)
+
+# Transfomr the ln(OR) to OR
+OR <- exp(d)
+}
+
+    ", file='model_test.txt')
+```
+
+```{r}
+library(rjags)
+jags.m <- jags.model(file='model_test.txt',data=data, inits=inits, n.chains = 1, n.adapt = 500,)
+```
+```{r}
+params <- c('d','OR')
+samples <- coda.samples(jags.m, params, n.iter=10000)
+```
+
+```{r}
+summary(samples)
+```
+
+```{r}
+summary(window(samples, start=5001))
+```
+
+```{r}
+plot(samples)
+```
+
+
+
+_______________________________________________________________
+
 
 
 
