@@ -1,0 +1,120 @@
+---
+title: "JAGS_overdoses"
+author: "Tom Park"
+date: '2020-02-08'
+output: html_document
+---
+# Basic Model: Ambulance + Overdose
+## Ambulance Call-outs Model
+$n_{A}$: sample size   
+$x_{A}$: the total number who confirmed they did call an ambulance  
+$p_{A}$: probability of a person call an ambulance   
+$$x_{A} \sim Bin(n_{A},p_{A})$$
+**We assume $n_{A}=1000, p_A = 0.8$.**  
+**Suppose the prior of $p_A$ is noninformative.** 
+$$p(p_A) \sim Beta(1,1)$$
+## Overdose Model
+Now we plug in this values into the overdose model and obtain possible $O_t$ values **assuming we have $U_t$ values.**
+
+Also, we have priors.
+$$z_{t} \sim N(\mu, \sigma^{2})$$  
+$$\lambda_{t}^{OD} = \exp(z_{t})$$  
+$$O_{t} \sim Poi(\lambda_{t}^{OD}N)$$  
+$$U_t \sim Bin(O_t, p_A)$$  
+For simplicity we set N =10000 for now. We need to generate reasonable $U_t$ values first. Note that $U_t$ comes from $\mu, \sigma$ following all the way through the overdose model.  
+$\mu=\log0.05, \sigma=1, N=10000$.   
+We suppose survey data exists: ($n_A, x_A$) known.  
+
+**We set for our prior parameters:** $$\mu \sim U(-10,0)$$  $$\sigma \sim U(0,5)$$
+
+```{r message=FALSE, warning=FALSE}
+# install packages
+install.packages('runjags')
+install.packages('rjags')
+install.packages('coda')
+library('runjags')
+library('rjags')
+library('coda')
+```
+The data is the same data from pymc3 with Python.
+```{r}
+df <- read.csv('./basic_data.csv',check.names=FALSE)
+head(df)
+```
+Now we set the model which defines the relations of overdose model and ambulance call model.
+```{r Enter the models}
+cat("model{
+## define the priors
+p_a <- dbeta(alpha, beta)
+mu <- dunif(mu_a, mu_b)
+sigma <- dunif(sigma_a, sigma_b)
+
+## the latent variables
+z <- dnorm(mu, 1/sigma^2)
+lmd <-  exp(z)
+
+for (i in 1:N) {
+x_a[i] <- dbin(p_a, N) # each survey result for month
+o_t[i] <- dpois(lmd) # total overdoses per month
+u_t[i] <-dbin(p_a, o_t[i]) # ambulanced overdoses per month
+}
+}
+
+    ", file='basic_model.txt')
+```
+
+
+```{r Defining Values}
+N <-  length(df$o_t) # we have 12 samples
+u_t <- df$u_t
+x_a <- df$x_a
+dat <- list(
+            # priors for ambulance model
+            'alpha' = 1,
+            'beta' = 1, 
+            
+            # priors for overdose model 
+            'mu_a'=-10,
+            'mu_b'=0,
+            'sigma_a'=0,
+            'sigma_b'=5,
+            
+            # likelihood 
+            'u_t'=u_t, 
+            'x_a'=x_a, # We do not include o_t since unknown
+            "N"=N # total months
+            )
+
+```
+
+I referred two tutorials online. 
+[first one](https://www.youtube.com/watch?v=F9jxvhXc_1w) used run.jags for getting posterior distribution and [the second one](https://rstudio-pubs-static.s3.amazonaws.com/272658_ae4d482c86514674be17042c852ebbfc.html) used jags.model function. 
+
+I tried both and they didn't work.
+
+This is using jags.model function from rjags package.
+```{r Set Up the JAGS Model:jags.model}
+jags.simple <- jags.model(file='basic_model.txt',
+                          data=dat,
+                          n.chains=2,
+                          n.adapt=1000)
+```
+
+# Q1.
+
+Here I am confused since dunif is what I found correct [here](https://web.sgh.waw.pl/~atoroj/ekonometria_bayesowska/jags_user_manual.pdf).
+
+
+# Q2. 
+When I tried the other package and function, I got an error that object "NA" not found as below.
+
+This is using jags.model function from runjags package.
+```{r another try:run.jags}
+jags.simple <- run.jags(file='basic_model.txt',
+                          data=dat,
+                          monitor =c('u_t'),
+                          n.chains=2,
+                          n.adapt=1000)
+```
+```
+

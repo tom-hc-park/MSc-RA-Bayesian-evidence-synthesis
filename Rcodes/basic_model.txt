@@ -1,0 +1,18 @@
+model{
+## define the priors
+p_a <- dbeta(alpha, beta)
+mu <- dunif(mu_a, mu_b)
+sigma <- dunif(sigma_a, sigma_b)
+
+## the latent variables
+z <- dnorm(mu, 1/sigma^2)
+lmd <-  exp(z)
+
+for (i in 1:N) {
+x_a[i] <- dbin(p_a, N) # each survey result for month
+o_t[i] <- dpois(lmd) # total overdoses per month
+u_t[i] <-dbin(p_a, o_t[i]) # ambulanced overdoses per month
+}
+}
+
+    
