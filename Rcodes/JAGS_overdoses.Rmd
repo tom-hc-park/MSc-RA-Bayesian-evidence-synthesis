@@ -15,8 +15,8 @@ $$x_{A} \sim Bin(n_{A},p_{A})$$
 **We assume $n_{A}=1000, p_A = 0.8$.**  
 **Suppose the prior of $p_A$ is noninformative.** 
 $$p(p_A) \sim Beta(1,1)$$
-### Overdose Model
-
+  
+### Overdose Model  
 Now we plug in this values into the overdose model and obtain possible $O_t$ values **assuming we have $U_t$ values.**
 
 Also, we have priors.
