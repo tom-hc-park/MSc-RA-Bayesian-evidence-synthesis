@@ -2,7 +2,9 @@
 title: "JAGS Model"
 author: "Tom Park"
 date: '2020-02-08'
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 ## Basic Model: Ambulance + Overdose
 ### Ambulance Call-outs Model
