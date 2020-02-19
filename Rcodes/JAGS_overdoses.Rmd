@@ -166,6 +166,8 @@ o_t_values$month <- factor(o_t_values$month,levels = seq(1,12))
 
 ggplot()+geom_point(aes(x=o_t_values$month, y=o_t_values$o_t),color='red')+geom_boxplot(aes(x=month,y=o_t),data = df_o_t)
 ```
+### Predictive Posterior Checks
+
 
 ```{r}
 params= c('u_t','x_a')
@@ -180,6 +182,7 @@ summary(window(ppc),start=burnin)
 ```{r eval=FALSE, include=FALSE}
 plot(ppc)
 ```
+### $U_t$: Predictive Posterior Checks
 
 ```{r}
 temp = as.matrix(ppc)
@@ -190,21 +193,19 @@ df_x_a=temp[,13:24]
 
 test <- as.matrix(df_u_t)
 colnames(test) <- seq(1,12)
-head(test)
 mtx_u_t <- as.data.frame(test)
-head(mtx_u_t)
 
 df_u_t <- gather(mtx_u_t, key = 'month',value = 'u_t')
-head(df_u_t)
 
 df_u_t$month <- factor(df_u_t$month,levels = seq(1,12))
-str(df_u_t)
 
 u_t_values=data.frame('month'=seq(1,12),'u_t'=df$u_t)
 u_t_values$month <- factor(u_t_values$month,levels = seq(1,12))
 
 ggplot()+geom_point(aes(x=u_t_values$month, y=u_t_values$u_t),color='red')+geom_boxplot(aes(x=month,y=u_t),data = df_u_t)
 ```
+
+### $x_A$: Predictive Posterior Checks
 
 ```{r}
 
@@ -214,15 +215,15 @@ df_x_a=temp[,13:24]
 
 test <- as.matrix(df_x_a)
 colnames(test) <- seq(1,12)
-head(test)
+
 mtx_x_a <- as.data.frame(test)
-head(mtx_x_a)
+
 
 df_x_a <- gather(mtx_x_a, key = 'month',value = 'x_a')
-head(df_x_a)
+
 
 df_x_a$month <- factor(df_x_a$month,levels = seq(1,12))
-str(df_x_a)
+
 
 x_a_values=data.frame('month'=seq(1,12),'x_a'=df$x_a)
 x_a_values$month <- factor(x_a_values$month,levels = seq(1,12))
