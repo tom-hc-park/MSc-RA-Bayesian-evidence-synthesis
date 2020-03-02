@@ -59,22 +59,31 @@ The model defined as follows.
 cat("model{
 ## define the priors
 p_a ~ dbeta(alpha, beta)
-mu ~ dunif(mu_a, mu_b)
-sigma ~ dunif(sigma_a, sigma_b)
+mu_z ~ dunif(mu_a, mu_b)
+sigma_z ~ dunif(sigma_a, sigma_b)
 
-## the latent variables
-z ~ dnorm(mu, 1/(sigma^2))
-lambda <- exp(z)
 
+
+# unify variable names: 
+# z_t <- z lmb_t <- lambda
+# length unification: z_t is length 12 vector
+
+ ## ambulance model
 for (i in 1:n) {
-  ## ambulance model 
+  #Likelihood
   x_a[i] ~ dbin(p_a, n_a) # each survey result for month
 }
+
+# overdose 
 for (i in 1:n) {
+
+  ## the latent variables
+  z_t[i]~ dnorm(mu_z, 1/(sigma_z^2))
+  lmb_t[i] <- exp(z_t[i])
+
   ## overdose model
-  o_t[i] ~ dpois(lambda*N) # total overdoses per month
-}
-for (i in 1:n) {
+  o_t[i] ~ dpois(lmb_t[i]*N) # total overdoses per month
+# Note that from pymc3 gamma was used instead of Pois dist
   u_t[i] ~ dbin(p_a, o_t[i]) # ambulanced overdoses per month
 }
 
@@ -104,18 +113,16 @@ dat <- list(
             'sigma_b'=5,
             
             # likelihood 
-            'u_t'=u_t, 
-            'x_a'=x_a,  
-            'N'=N, # the population
-            'n'= n, # total months
-            'n_a'=n_a
+            'u_t'=u_t, # giving data 
+            'x_a'=x_a,   # giving data
+            'N'=N, # the population 10000
+            'n'= n, # total months 12
+            'n_a'=n_a # survey size 1000
             
             )
 ```
 **Note: for the list object usually named 'data' or 'dat' in JAGS context, do not use arrow but use equal sign to define elements of the list.**
 ``` {r run the first model without error }
-interations = 1000
-burnin= floor(interations/2)
 chains=2
 # inits = list()
 simple.model <- jags.model(file='basic_model.txt',
@@ -129,17 +136,21 @@ simple.model
 ```{r}
 params= c('o_t')
 samples <- coda.samples(simple.model, params, n.iter = 1000)
+# guess it's getting posterior samples ?
 ```
 
-# Q1: is init necessary? and it's a characteristic of Gibbs sampling?
 
 ```{r }
+interations = 1000
+burnin= floor(interations/2)
 summary(window(samples), start=burnin)
 ```
 
 ```{r include=FALSE}
 plot(samples)
 ```
+# q1: what is the equivalent plot that we can see we have enough iteration? 
+
 
 ### Boxplots of O_t
 
@@ -148,24 +159,31 @@ plot(samples)
 ```{r yield a data frame}
 temp = as.matrix(samples)
 colnames(temp) <- seq(1,12)
-head(temp)
 df_o_t <- as.data.frame(temp)
 head(df_o_t)
 ```
 
 
 ```{r tidy the data frame}
-df_o_t <- gather(df_o_t, key = 'month',value = 'o_t')
-df_o_t$month <- factor(df_o_t$month,levels = seq(1,12))
-str(df_o_t)
+trace_o_t <- gather(df_o_t, key = 'month',value = 'o_t')
+trace_o_t$month <- factor(trace_o_t$month,levels = seq(1,12))
+str(trace_o_t)
 ```
 
 ```{r}
+# real values of the data set from pymc3 samples
 o_t_values=data.frame('month'=seq(1,12),'o_t'=df$o_t)
+# factorizing the months for box plot visualization
 o_t_values$month <- factor(o_t_values$month,levels = seq(1,12))
 
-ggplot()+geom_point(aes(x=o_t_values$month, y=o_t_values$o_t),color='red')+geom_boxplot(aes(x=month,y=o_t),data = df_o_t)
+ggplot()+
+  # boxplot from the trace 
+  geom_boxplot(aes(x=month,y=o_t), color='grey',alpha = 0.01,data = trace_o_t)+
+  # real values as red dots
+  geom_point(aes(x=o_t_values$month, y=o_t_values$o_t),color='red')
+
 ```
+
 ### Predictive Posterior Checks
 
 
@@ -202,7 +220,7 @@ df_u_t$month <- factor(df_u_t$month,levels = seq(1,12))
 u_t_values=data.frame('month'=seq(1,12),'u_t'=df$u_t)
 u_t_values$month <- factor(u_t_values$month,levels = seq(1,12))
 
-ggplot()+geom_point(aes(x=u_t_values$month, y=u_t_values$u_t),color='red')+geom_boxplot(aes(x=month,y=u_t),data = df_u_t)
+ggplot()+geom_boxplot(aes(x=month,y=u_t),data = df_u_t)+geom_point(aes(x=u_t_values$month, y=u_t_values$u_t),color='red')
 ```
 
 ### $x_A$: Predictive Posterior Checks
