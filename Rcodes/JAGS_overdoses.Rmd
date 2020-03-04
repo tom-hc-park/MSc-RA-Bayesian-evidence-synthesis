@@ -87,16 +87,16 @@ for (i in 1:n) {
 }", file='basic_model.txt')
 ```
 
-Pre-set variables.
+Pre-set variables.  
 ```{r Defining Values}
-n_T <-  length(df$o_t) # we have 12 samples
+n_T <- length(df$o_t)
 n_a <- 1000
 N <- 10000
 u_t <- df$u_t
 x_a <- df$x_a
 ```
 
-Define the list providing the values of the variables and the parameters for the priors of the model. 
+Define the list providing the values of the variables and the parameters for the priors of the model.   
 ```{r from variable name to \'variable_name\'}
 dat <- list(
             # priors for ambulance model
@@ -128,7 +128,7 @@ simple.model <- jags.model(file='basic_model.txt',
 simple.model
 ```
 
-### O_t
+### O_t  
 
 ```{r}
 params= c('o_t','p_a')
@@ -145,7 +145,7 @@ summary(window(samples), start=burnin)
 ```
 
 ```{r include=FALSE}
-plot(samples)
+# plot(samples)
 ```
 # q1: what is the equivalent plot that we can see we have enough iteration? 
 
@@ -164,7 +164,7 @@ length(p_a)
 colnames(temp) <- seq(1,12)
 df_o_t <- as.data.frame(temp)
 head(df_o_t)
-str(df_o_t)
+
 ```
 
 
@@ -194,7 +194,7 @@ ggplot()+
 
 ```{r}
 df_u_t <- data.frame()
-
+m=length(p_a)
 for (i in 1:m) {
   obs <- rbinom(n=12,size = as.numeric(df_o_t[i,]),prob =p_a[i])
   df_u_t=rbind(df_u_t,obs)
@@ -319,7 +319,7 @@ test_robust <- function(file=file, random=1, N=10000, p_a=0.8, bias = -0.2, n_a=
  
   ## tidy x_a
   df_x_a <- vector() 
-  for (i in 1:n) {
+  for (i in 1:n_T) {
     obs <- rbinom(m,n_a,p_a)
     df_x_a <- cbind(df_x_a,obs)
   }
