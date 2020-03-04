@@ -1,5 +1,5 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}% 
-\contentsline {section}{\numberline {2}methods}{3}{section.2}% 
+\contentsline {section}{\numberline {2}Methods}{3}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Simulation}{4}{subsection.2.1}% 
 \contentsline {subsubsection}{\numberline {2.1.1}Markov chain Monte Carlo}{5}{subsubsection.2.1.1}% 
 \contentsline {subsubsection}{\numberline {2.1.2}Likelihood}{5}{subsubsection.2.1.2}% 

@@ -1,19 +1,16 @@
 model{
 ## define the priors
+
 p_a ~ dbeta(alpha, beta)
 mu_z ~ dunif(mu_a, mu_b)
 sigma_z ~ dunif(sigma_a, sigma_b)
 
 
-
-# unify variable names: 
-# z_t <- z lmb_t <- lambda
-# length unification: z_t is length 12 vector
-
  ## ambulance model
 for (i in 1:n) {
   #Likelihood
   x_a[i] ~ dbin(p_a, n_a) # each survey result for month
+ 
 }
 
 # overdose 
@@ -25,7 +22,7 @@ for (i in 1:n) {
 
   ## overdose model
   o_t[i] ~ dpois(lmb_t[i]*N) # total overdoses per month
-# Note that from pymc3 gamma was used instead of Pois dist
+  # Note that from pymc3 gamma was used instead of Pois dist
   u_t[i] ~ dbin(p_a, o_t[i]) # ambulanced overdoses per month
 }
 

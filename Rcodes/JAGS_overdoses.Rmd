@@ -6,8 +6,8 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Basic Model: Ambulance + Overdose
-### Ambulance Call-outs Model
+# Basic Model: Ambulance + Overdose
+## Ambulance Call-outs Model
 $n_{A}$: sample size   
 $x_{A}$: the total number who confirmed they did call an ambulance  
 $p_{A}$: probability of a person call an ambulance   
@@ -16,7 +16,7 @@ $$x_{A} \sim Bin(n_{A},p_{A})$$
 **Suppose the prior of $p_A$ is noninformative.** 
 $$p(p_A) \sim Beta(1,1)$$
   
-### Overdose Model  
+## Overdose Model  
 Now we plug in this values into the overdose model and obtain possible $O_t$ values **assuming we have $U_t$ values.**
 
 Also, we have priors.
@@ -58,20 +58,17 @@ The model defined as follows.
 ```{r Enter the models}
 cat("model{
 ## define the priors
+
 p_a ~ dbeta(alpha, beta)
 mu_z ~ dunif(mu_a, mu_b)
 sigma_z ~ dunif(sigma_a, sigma_b)
 
 
-
-# unify variable names: 
-# z_t <- z lmb_t <- lambda
-# length unification: z_t is length 12 vector
-
  ## ambulance model
 for (i in 1:n) {
   #Likelihood
   x_a[i] ~ dbin(p_a, n_a) # each survey result for month
+ 
 }
 
 # overdose 
@@ -83,7 +80,7 @@ for (i in 1:n) {
 
   ## overdose model
   o_t[i] ~ dpois(lmb_t[i]*N) # total overdoses per month
-# Note that from pymc3 gamma was used instead of Pois dist
+  # Note that from pymc3 gamma was used instead of Pois dist
   u_t[i] ~ dbin(p_a, o_t[i]) # ambulanced overdoses per month
 }
 
@@ -92,7 +89,7 @@ for (i in 1:n) {
 
 Pre-set variables.
 ```{r Defining Values}
-n <-  length(df$o_t) # we have 12 samples
+n_T <-  length(df$o_t) # we have 12 samples
 n_a <- 1000
 N <- 10000
 u_t <- df$u_t
@@ -116,13 +113,13 @@ dat <- list(
             'u_t'=u_t, # giving data 
             'x_a'=x_a,   # giving data
             'N'=N, # the population 10000
-            'n'= n, # total months 12
+            'n'= n_T, # total months 12
             'n_a'=n_a # survey size 1000
             
             )
 ```
 **Note: for the list object usually named 'data' or 'dat' in JAGS context, do not use arrow but use equal sign to define elements of the list.**
-``` {r run the first model without error }
+``` {r run the first model}
 chains=2
 # inits = list()
 simple.model <- jags.model(file='basic_model.txt',
@@ -134,10 +131,11 @@ simple.model
 ### O_t
 
 ```{r}
-params= c('o_t')
+params= c('o_t','p_a')
 samples <- coda.samples(simple.model, params, n.iter = 1000)
 # guess it's getting posterior samples ?
 ```
+
 
 
 ```{r }
@@ -157,10 +155,16 @@ plot(samples)
 # q2: I see two elements from the samples list. Which one I should use it or should I use both?
 
 ```{r yield a data frame}
-temp = as.matrix(samples)
+
+pst_mtx = as.matrix(samples)
+temp = pst_mtx[,1:12]
+p_a <- pst_mtx[,13]
+head(temp)
+length(p_a)
 colnames(temp) <- seq(1,12)
 df_o_t <- as.data.frame(temp)
 head(df_o_t)
+str(df_o_t)
 ```
 
 
@@ -168,6 +172,7 @@ head(df_o_t)
 trace_o_t <- gather(df_o_t, key = 'month',value = 'o_t')
 trace_o_t$month <- factor(trace_o_t$month,levels = seq(1,12))
 str(trace_o_t)
+head(trace_o_t,n = 24)
 ```
 
 ```{r}
@@ -178,77 +183,304 @@ o_t_values$month <- factor(o_t_values$month,levels = seq(1,12))
 
 ggplot()+
   # boxplot from the trace 
-  geom_boxplot(aes(x=month,y=o_t), color='grey',alpha = 0.01,data = trace_o_t)+
+  geom_boxplot(aes(x=month,y=o_t), color='grey',data = trace_o_t)+
   # real values as red dots
   geom_point(aes(x=o_t_values$month, y=o_t_values$o_t),color='red')
 
 ```
 
-### Predictive Posterior Checks
+## Predictive Posterior Checks
 
 
 ```{r}
-params= c('u_t','x_a')
-ppc <- coda.samples(simple.model, params, n.iter = 1000)
+df_u_t <- data.frame()
+
+for (i in 1:m) {
+  obs <- rbinom(n=12,size = as.numeric(df_o_t[i,]),prob =p_a[i])
+  df_u_t=rbind(df_u_t,obs)
+}
+colnames(df_u_t) <- factor(seq(1,12),levels = seq(1,12))
+str(df_u_t)
 ```
 
-```{r}
-summary(window(ppc),start=burnin)
-
-```
-
-```{r eval=FALSE, include=FALSE}
-plot(ppc)
-```
 ### $U_t$: Predictive Posterior Checks
 
 ```{r}
-temp = as.matrix(ppc)
-
-df_u_t=temp[,1:12]
-df_x_a=temp[,13:24]
-
-
-test <- as.matrix(df_u_t)
-colnames(test) <- seq(1,12)
-mtx_u_t <- as.data.frame(test)
-
-df_u_t <- gather(mtx_u_t, key = 'month',value = 'u_t')
-
-df_u_t$month <- factor(df_u_t$month,levels = seq(1,12))
-
+ppc_u_t <- gather(df_u_t, key = 'month',value = 'u_t')
+summary(ppc_u_t)
 u_t_values=data.frame('month'=seq(1,12),'u_t'=df$u_t)
-u_t_values$month <- factor(u_t_values$month,levels = seq(1,12))
+# u_t_values$month <- factor(u_t_values$month,levels = seq(1,12))
+ppc_u_t$month <- factor(ppc_u_t$month,levels = seq(1,12))
 
-ggplot()+geom_boxplot(aes(x=month,y=u_t),data = df_u_t)+geom_point(aes(x=u_t_values$month, y=u_t_values$u_t),color='red')
+ggplot()+geom_boxplot(aes(x=month,y=u_t),data = ppc_u_t)+geom_point(aes(x=u_t_values$month, y=u_t_values$u_t),color='red')
 ```
 
+# todo: finish this part.
 ### $x_A$: Predictive Posterior Checks
+
+```{r Generate posterior predictive samples of $x_a$}
+
+df_x_a <- vector()
+for (i in 1:n_T) {
+  obs <- rbinom(m,n_a,p_a)
+  df_x_a <- cbind(df_x_a,obs)
+}
+
+head(df_x_a)
+colnames(df_x_a) <- seq(1:12)
+```
+
 
 ```{r}
 
-temp = as.matrix(ppc)
-df_x_a=temp[,13:24]
+df_x_a <- as.data.frame(df_x_a)
+ppc_x_a <- gather(df_x_a, key = 'month',value = 'x_a')
 
 
-test <- as.matrix(df_x_a)
-colnames(test) <- seq(1,12)
-
-mtx_x_a <- as.data.frame(test)
-
-
-df_x_a <- gather(mtx_x_a, key = 'month',value = 'x_a')
-
-
-df_x_a$month <- factor(df_x_a$month,levels = seq(1,12))
+ppc_x_a$month <- factor(ppc_x_a$month,levels = seq(1,12))
 
 
 x_a_values=data.frame('month'=seq(1,12),'x_a'=df$x_a)
 x_a_values$month <- factor(x_a_values$month,levels = seq(1,12))
 
-ggplot()+geom_point(aes(x=x_a_values$month, y=x_a_values$x_a),color='red')+geom_boxplot(aes(x=month,y=x_a),data = df_x_a)
+ggplot()+geom_boxplot(aes(x=month,y=x_a),data = ppc_x_a)+geom_point(aes(x=x_a_values$month, y=x_a_values$x_a),color='red')
 ```
 
+# Contamination of $p_A$
+
+Now, suppose the survey data gives us a wrong (biased) $p_A$ value. 
+
+Bias = $\theta -\hat{\theta} = p_A- \hat{p}_A$   
+$\hat{p}_A = p_A + bias(p_A)$  
+
+Three more data sets are given: unbiased, overestimated, underestimated $p_A$. 
+
+
+```{r}
+## write a function that led to compare o_t, u_t and x_a. 
+#first we need a fuction that gives us data, model, trace, and ppc.
+test_robust <- function(file=file, random=1, N=10000, p_a=0.8, bias = -0.2, n_a=1000, n_T=12) {
+  df <- read.csv(file = file)
+  df$X <- NULL 
+  df$month <- seq(1:12)
+# obtain the (biased) data 
+  dat <- list(
+            # priors for ambulance model
+            'alpha' = 1,
+            'beta' =  1, 
+            
+            # priors for overdose model 
+            'mu_a'=(-10),
+            'mu_b'=0,
+            'sigma_a'=0,
+            'sigma_b'=5,
+            
+            # likelihood 
+            'u_t'=df$u_t, # giving data 
+            'x_a'=df$x_a,   # giving data
+            'N'=N, # the population 10000
+            'n'= n, # total months 12
+            'n_a'=n_a # survey size 1000
+            
+            )
+# run the model 
+  chains=2
+  # target 1 to save
+  simple.model <- jags.model(file='basic_model.txt',
+                          data=dat,
+                          n.chains = chains)
+
+# get the samples of O_t, p_a
+  params= c('o_t','p_a')
+  # target 2 to save
+  samples <- coda.samples(simple.model, params, n.iter = 1000)
+
+  # tidy p_a: target 3 
+  p_a <- pst_mtx[,13]
+
+  ## tidy o_t
+  pst_mtx = as.matrix(samples)
+  temp = pst_mtx[,1:12]
+  colnames(temp) <- seq(1,12)
+  df_o_t <- as.data.frame(temp)
+  trace_o_t <- gather(df_o_t, key = 'month',value = 'o_t')
+  trace_o_t$month <- factor(trace_o_t$month,levels = seq(1,12))
+  # real values of the data set from pymc3 samples
+  # o_t_values=data.frame('month'=seq(1,12),'o_t'=df$o_t)
+  # # factorizing the months for box plot visualization
+  # o_t_values$month <- factor(o_t_values$month,levels = seq(1,12))
+  # boxplots of o_t
+
+  # tidy u_t pp samples
+  df_u_t <- data.frame()
+  for (i in 1:m) {
+   obs <- rbinom(n=12,size = as.numeric(df_o_t[i,]),prob =p_a[i])
+   df_u_t=rbind(df_u_t,obs)
+  }
+  colnames(df_u_t) <- factor(seq(1,12),levels = seq(1,12))
+  ppc_u_t <- gather(df_u_t, key = 'month',value = 'u_t')
+  ppc_u_t$month <- factor(ppc_u_t$month,levels = seq(1,12))
+  # u_t_values=data.frame('month'=seq(1,12),'u_t'=df$u_t)
+ 
+  ## tidy x_a
+  df_x_a <- vector() 
+  for (i in 1:n) {
+    obs <- rbinom(m,n_a,p_a)
+    df_x_a <- cbind(df_x_a,obs)
+  }
+  colnames(df_x_a) <- seq(1:12)
+  df_x_a <- as.data.frame(df_x_a)
+  ppc_x_a <- gather(df_x_a, key = 'month',value = 'x_a')
+  ppc_x_a$month <- factor(ppc_x_a$month,levels = seq(1,12))
+  # x_a_values=data.frame('month'=seq(1,12),'x_a'=df$x_a)
+  # x_a_values$month <- factor(x_a_values$month,levels = seq(1,12))
+  ppc = list('u_t'=ppc_u_t, 'x_a'=ppc_x_a)
+  mylist=list('data'=df,'model'=simple.model,'trace'=trace_o_t,'ppc'=ppc)
+  return (mylist)
+}
+
+# then visualization function which gives us three different types of boxplots.
+```
+
+
+```{r}
+my_list_unbiased = test_robust(file = './basic_data.csv', bias =0)
+my_list_under = test_robust(file = './under_p_a_data.csv',bias=-0.2)
+my_list_over = test_robust(file='./over_p_a_data.csv',bias = +0.1)
+```
+
+```{r Check whether we use the same data set}
+print(my_list_unbiased$data$u_t)
+print(my_list_under$data$u_t)
+print(my_list_over$data$u_t)
+
+print(my_list_unbiased$data$x_a)
+print(my_list_under$data$x_a)
+print(my_list_over$data$x_a)
+```
+```{r}
+ head(my_list_unbiased$ppc$u_t)
+```
+
+```{r}
+# finish this function
+visualization <- function(mylist= None, post= F, u_t = F, x_a = F, string='string') {
+  data= mylist$data
+  if (post == T) {
+    # boxplots of o_t
+    trace_o_t = mylist$trace
+  p <- ggplot()+
+  # boxplot from the trace 
+  geom_boxplot(aes(x=month,y=o_t), color='grey',data = trace_o_t)+
+  # real values as red dots
+  geom_point(aes(x=o_t_values$month, y=o_t_values$o_t),color='red')
+
+  }
+  
+  if (u_t == T) {
+    ppc_u_t = mylist$ppc$u_t
+    # boxplots of u_t
+  p <- ggplot()+geom_boxplot(aes(x=month,y=u_t),data = ppc_u_t)+geom_point(aes(x=data$month, y=data$u_t),color='red')
+  
+  }
+  
+  if (x_a == T) {
+    p <- ppc_x_a = mylist$ppc$x_a
+    ggplot()+geom_boxplot(aes(x=month,y=x_a),data = ppc_x_a)+geom_point(aes(x=data$month, y=data$x_a),color='red')
+  }
+  return(p)
+}
+```
+
+```{r}
+visualization(my_list_unbiased, post= T)
+```
+
+# Trim here and make a function and give us the plots.
+```{r}
+## Trim here and make a function and give us the plots.
+df <- read.csv('./basic_data.csv')
+df$X <- NULL 
+# obtain the (biased) data 
+dat <- list(
+            # priors for ambulance model
+            'alpha' = 1,
+            'beta' =  1, 
+            
+            # priors for overdose model 
+            'mu_a'=(-10),
+            'mu_b'=0,
+            'sigma_a'=0,
+            'sigma_b'=5,
+            
+            # likelihood 
+            'u_t'=df$u_t, # giving data 
+            'x_a'=df$x_a,   # giving data
+            'N'=N, # the population 10000
+            'n'= n, # total months 12
+            'n_a'=n_a # survey size 1000
+            
+            )
+# run the model 
+chains=2
+simple.model <- jags.model(file='basic_model.txt',
+                          data=dat,
+                          n.chains = chains)
+
+# get the samples of O_t, p_a
+params= c('o_t','p_a')
+samples <- coda.samples(simple.model, params, n.iter = 1000)
+
+# tidy p_a
+p_a <- pst_mtx[,13]
+
+## tidy o_t
+pst_mtx = as.matrix(samples)
+temp = pst_mtx[,1:12]
+colnames(temp) <- seq(1,12)
+df_o_t <- as.data.frame(temp)
+trace_o_t <- gather(df_o_t, key = 'month',value = 'o_t')
+trace_o_t$month <- factor(trace_o_t$month,levels = seq(1,12))
+# real values of the data set from pymc3 samples
+o_t_values=data.frame('month'=seq(1,12),'o_t'=df$o_t)
+# factorizing the months for box plot visualization
+o_t_values$month <- factor(o_t_values$month,levels = seq(1,12))
+# boxplots of o_t
+ggplot()+
+  # boxplot from the trace 
+  geom_boxplot(aes(x=month,y=o_t), color='grey',data = trace_o_t)+
+  # real values as red dots
+  geom_point(aes(x=o_t_values$month, y=o_t_values$o_t),color='red')
+
+# tidy u_t pp samples
+df_u_t <- data.frame()
+for (i in 1:m) {
+  obs <- rbinom(n=12,size = as.numeric(df_o_t[i,]),prob =p_a[i])
+  df_u_t=rbind(df_u_t,obs)
+}
+colnames(df_u_t) <- factor(seq(1,12),levels = seq(1,12))
+ppc_u_t <- gather(df_u_t, key = 'month',value = 'u_t')
+ppc_u_t$month <- factor(ppc_u_t$month,levels = seq(1,12))
+u_t_values=data.frame('month'=seq(1,12),'u_t'=df$u_t)
+# boxplots of u_t
+ggplot()+geom_boxplot(aes(x=month,y=u_t),data = ppc_u_t)+geom_point(aes(x=u_t_values$month, y=u_t_values$u_t),color='red')
+
+## tidy x_a
+df_x_a <- vector() 
+for (i in 1:n) {
+  obs <- rbinom(m,n_a,p_a)
+  df_x_a <- cbind(df_x_a,obs)
+}
+colnames(df_x_a) <- seq(1:12)
+df_x_a <- as.data.frame(df_x_a)
+ppc_x_a <- gather(df_x_a, key = 'month',value = 'x_a')
+ppc_x_a$month <- factor(ppc_x_a$month,levels = seq(1,12))
+x_a_values=data.frame('month'=seq(1,12),'x_a'=df$x_a)
+x_a_values$month <- factor(x_a_values$month,levels = seq(1,12))
+
+
+ggplot()+geom_boxplot(aes(x=month,y=x_a),data = ppc_x_a)+geom_point(aes(x=x_a_values$month, y=x_a_values$x_a),color='red')
+```
 
 
 ## Reference 
