@@ -279,7 +279,7 @@ test_robust <- function(file=file, random=1, N=10000, p_a=0.8, bias = -0.2, n_a=
             'u_t'=df$u_t, # giving data 
             'x_a'=df$x_a,   # giving data
             'N'=N, # the population 10000
-            'n'= n, # total months 12
+            'n'= n_T, # total months 12
             'n_a'=n_a # survey size 1000
             
             )
@@ -293,7 +293,7 @@ test_robust <- function(file=file, random=1, N=10000, p_a=0.8, bias = -0.2, n_a=
 # get the samples of O_t, p_a
   params= c('o_t','p_a')
   # target 2 to save
-  samples <- coda.samples(simple.model, params, n.iter = 1000)
+  samples <- coda.samples(simple.model, params, n.iter = 2000)
 
   # tidy p_a: target 3 
   p_a <- pst_mtx[,13]
@@ -305,11 +305,7 @@ test_robust <- function(file=file, random=1, N=10000, p_a=0.8, bias = -0.2, n_a=
   df_o_t <- as.data.frame(temp)
   trace_o_t <- gather(df_o_t, key = 'month',value = 'o_t')
   trace_o_t$month <- factor(trace_o_t$month,levels = seq(1,12))
-  # real values of the data set from pymc3 samples
-  # o_t_values=data.frame('month'=seq(1,12),'o_t'=df$o_t)
-  # # factorizing the months for box plot visualization
-  # o_t_values$month <- factor(o_t_values$month,levels = seq(1,12))
-  # boxplots of o_t
+
 
   # tidy u_t pp samples
   df_u_t <- data.frame()
@@ -320,7 +316,6 @@ test_robust <- function(file=file, random=1, N=10000, p_a=0.8, bias = -0.2, n_a=
   colnames(df_u_t) <- factor(seq(1,12),levels = seq(1,12))
   ppc_u_t <- gather(df_u_t, key = 'month',value = 'u_t')
   ppc_u_t$month <- factor(ppc_u_t$month,levels = seq(1,12))
-  # u_t_values=data.frame('month'=seq(1,12),'u_t'=df$u_t)
  
   ## tidy x_a
   df_x_a <- vector() 
@@ -332,8 +327,6 @@ test_robust <- function(file=file, random=1, N=10000, p_a=0.8, bias = -0.2, n_a=
   df_x_a <- as.data.frame(df_x_a)
   ppc_x_a <- gather(df_x_a, key = 'month',value = 'x_a')
   ppc_x_a$month <- factor(ppc_x_a$month,levels = seq(1,12))
-  # x_a_values=data.frame('month'=seq(1,12),'x_a'=df$x_a)
-  # x_a_values$month <- factor(x_a_values$month,levels = seq(1,12))
   ppc = list('u_t'=ppc_u_t, 'x_a'=ppc_x_a)
   mylist=list('data'=df,'model'=simple.model,'trace'=trace_o_t,'ppc'=ppc)
   return (mylist)
@@ -385,19 +378,33 @@ visualization <- function(mylist= None, post= F, u_t = F, x_a = F, string='strin
   }
   
   if (x_a == T) {
-    p <- ppc_x_a = mylist$ppc$x_a
-    ggplot()+geom_boxplot(aes(x=month,y=x_a),data = ppc_x_a)+geom_point(aes(x=data$month, y=data$x_a),color='red')
+    ppc_x_a = mylist$ppc$x_a
+    p <- ggplot()+geom_boxplot(aes(x=month,y=x_a),data = ppc_x_a)+geom_point(aes(x=data$month, y=data$x_a),color='red')
   }
   return(p)
 }
 ```
 
 ```{r}
-visualization(my_list_unbiased, post= T)
+visualization(my_list_unbiased, post=T)
+visualization(my_list_under,post= T)
+visualization(my_list_over,post=T)
+```
+
+```{r}
+visualization(my_list_unbiased, u_t=T)
+visualization(my_list_under,u_t= T)
+visualization(my_list_over,u_t=T)
+```
+
+```{r}
+visualization(my_list_unbiased, x_a=T)
+visualization(my_list_under,x_a= T)
+visualization(my_list_over,x_a=T)
 ```
 
 # Trim here and make a function and give us the plots.
-```{r}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 ## Trim here and make a function and give us the plots.
 df <- read.csv('./basic_data.csv')
 df$X <- NULL 
