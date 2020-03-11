@@ -1,12 +1,13 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}% 
 \contentsline {section}{\numberline {2}Methods}{3}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Simulation}{4}{subsection.2.1}% 
-\contentsline {subsubsection}{\numberline {2.1.1}Markov chain Monte Carlo}{5}{subsubsection.2.1.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Markov chain Monte Carlo}{4}{subsubsection.2.1.1}% 
 \contentsline {subsubsection}{\numberline {2.1.2}Likelihood}{5}{subsubsection.2.1.2}% 
 \contentsline {subsubsection}{\numberline {2.1.3}Prior Distributions}{5}{subsubsection.2.1.3}% 
 \contentsline {subsection}{\numberline {2.2}Early Result }{5}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Posterior Distribution}{6}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Posterior Distribution}{5}{subsubsection.2.2.1}% 
 \contentsline {subsubsection}{\numberline {2.2.2}Posterior Predictive Check}{7}{subsubsection.2.2.2}% 
 \contentsline {subsection}{\numberline {2.3}Early Result: Contamination of $p_A$ }{7}{subsection.2.3}% 
 \contentsline {subsubsection}{\numberline {2.3.1}Posterior Distribution}{8}{subsubsection.2.3.1}% 
 \contentsline {subsubsection}{\numberline {2.3.2}Posterior Predictive Check}{9}{subsubsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.4}Variying the Assumptions}{10}{subsection.2.4}% 

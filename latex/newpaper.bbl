@@ -18,6 +18,11 @@ Buxton J Balshaw R Otterstatter M Macdougall L et~al. Irvine~MA, Kuo~M.
   during a synthetic-opioid overdose epidemic.
 \newblock {\em Addiction}, 2019.
 
+\bibitem{pymc3}
+Salvatier J., Wiecki T.V., and Fonnesbeck C.
+\newblock Probabilistic programming in python using pymc3.
+\newblock {\em PeerJ Computer Science}, 2016.
+
 \bibitem{bda_galman}
 Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald
   Rubin.

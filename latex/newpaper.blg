@@ -8,6 +8,10 @@ I was expecting a `,' or a `}'---line 35 of file sample.bib
  :  title     = {BC Overdose Prevention Services Guide},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Illegal end of database file---line 62 of file sample.bib
+ : }
+ :  
+I'm skipping whatever remains of this entry
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
@@ -16,45 +20,45 @@ Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatte
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
 while executing---line 944 of file unsrt.bst
-You've used 5 entries,
+You've used 6 entries,
             1791 wiz_defined-function locations,
-            466 strings with 4091 characters,
-and the built_in function-call counts, 704 in all, are:
-= -- 49
-> -- 33
+            471 strings with 4215 characters,
+and the built_in function-call counts, 864 in all, are:
+= -- 61
+> -- 44
 < -- 0
-+ -- 14
-- -- 9
-* -- 22
-:= -- 115
-add.period$ -- 12
-call.type$ -- 5
-change.case$ -- 3
++ -- 18
+- -- 12
+* -- 30
+:= -- 145
+add.period$ -- 15
+call.type$ -- 6
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 33
-empty$ -- 88
-format.name$ -- 9
-if$ -- 160
+cite$ -- 6
+duplicate$ -- 41
+empty$ -- 102
+format.name$ -- 12
+if$ -- 194
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 3
-newline$ -- 25
-num.names$ -- 4
-pop$ -- 26
+int.to.str$ -- 6
+missing$ -- 4
+newline$ -- 30
+num.names$ -- 5
+pop$ -- 29
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 22
+skip$ -- 25
 stack$ -- 0
 substring$ -- 0
-swap$ -- 5
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 4
-width$ -- 6
-write$ -- 46
-(There were 5 error messages)
+while$ -- 5
+width$ -- 7
+write$ -- 56
+(There were 6 error messages)
