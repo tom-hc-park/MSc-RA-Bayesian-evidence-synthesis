@@ -401,16 +401,70 @@ visualization(my_list_unbiased, x_a=T)
 visualization(my_list_under,x_a= T)
 visualization(my_list_over,x_a=T)
 ```
-############# Below here is for the purpose of debugging ##################
+# Uncertainty of N
+Now we suppose the population size of BC, N, is unknown. We may have some information about the population size and transform it into a prior distribution. Let's assume from the point that we don't have a good understanding of the sample size. But N should be at least bigger than the sample size of survey, the ambulance attended overdoses. We have 12 data points of $U_t$. We also have 12 data points of $x_A$. 
+
+$$N \geq max(\vec{U_t}, \vec{x_A})$$
+
+Where $\vec{U_t}, \vec{x_A}$ are the vectors of $U_t$ and $x_A$.
+
+Then, we need a theoretical maximum value of N. BC is a province of Canada. For now, since I do not have a good idea about the maximum possible number of N, let's just say two times of the real value is the maximum. 
+
+$$N \in  \{a, a+1, a+2, ..., b\} \\ \textbf{where } a= \max(\vec{U_t}, n_A), b= 2 \times \textbf{real value of  N}$$
+
+However, in the model file below, we will use a prior such that 
+$$N \in  \{0,1,2, ..., b\} \\ \textbf{where }  b= 2 \times \textbf{real value of  N}$$ since we don't know how to construct such prior as described below. 
+
+```{r Enter the models}
+cat("model{
+## define the priors
 
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-## Trim here and make a function and give us the plots.
-df <- read.csv('./under_p_a_data.csv')
-df$X <- NULL 
-df$bias <- NULL
-# obtain the (biased) data 
-dat <- list(
+p_a ~ dbeta(alpha, beta)
+mu_z ~ dunif(mu_a, mu_b)
+sigma_z ~ dunif(sigma_a, sigma_b)
+
+# Uncertain N takes in to the model
+N ~ dcat(p_i)
+
+ ## ambulance model
+for (i in 1:n) {
+  #Likelihood
+  x_a[i] ~ dbin(p_a, n_a) # each survey result for month
+ 
+}
+
+# overdose 
+for (i in 1:n) {
+
+  ## the latent variables
+  z_t[i]~ dnorm(mu_z, 1/(sigma_z^2))
+  lmb_t[i] <- exp(z_t[i])
+
+  ## overdose model
+  o_t[i] ~ dpois(lmb_t[i]*N) # total overdoses per month
+  # Note that from pymc3 gamma was used instead of Pois dist
+  u_t[i] ~ dbin(p_a, o_t[i]) # ambulanced overdoses per month
+}
+
+}", file='N_uncertain_model.txt')
+```
+
+
+Pre-set variables.  
+```{r Defining Values}
+p_i <- seq(1:(2*N))
+n_T <- length(df$o_t)
+n_a <- 1000
+# N <- 10000
+u_t <- df$u_t
+x_a <- df$x_a
+```
+
+Define the list providing the values of the variables and the parameters for the priors of the model.   
+```{r from variable name to \'variable_name\'}
+dat.N <- list(# prior for N
+            'p_i' = p_i,
             # priors for ambulance model
             'alpha' = 1,
             'beta' =  1, 
@@ -422,95 +476,44 @@ dat <- list(
             'sigma_b'=5,
             
             # likelihood 
-            'u_t'=df$u_t, # giving data 
-            'x_a'=df$x_a,   # giving data
-            'N'=N, # the population 10000
+            'u_t'=u_t, # giving data 
+            'x_a'=x_a,   # giving data
             'n'= n_T, # total months 12
             'n_a'=n_a # survey size 1000
             
             )
-# run the model 
-head(df)
 ```
 
-```{r}
+``` {r run the first model}
 chains=2
-under.model <- jags.model(file='basic_model.txt',
-                          data=dat,
-                          n.chains = chains)
-
-```
-
-```{r}
 # inits = list()
-
-
-# get the samples of O_t, p_a
-params= c('o_t','p_a')
-samples <- coda.samples(under.model, params, n.iter = 1000)
-pst_mtx = as.matrix(samples)
-head(pst_mtx)
-# tidy p_a
-p_a <- pst_mtx[,13]
-head(p_a)
-```
-
-
-```{r}
-
-## tidy o_t
-pst_mtx = as.matrix(samples)
-temp = pst_mtx[,1:12]
-colnames(temp) <- seq(1,12)
-df_o_t <- as.data.frame(temp)
-trace_o_t <- gather(df_o_t, key = 'month',value = 'o_t')
-trace_o_t$month <- factor(trace_o_t$month,levels = seq(1,12))
-# real values of the data set from pymc3 samples
-o_t_values=data.frame('month'=seq(1,12),'o_t'=df$o_t)
-# factorizing the months for box plot visualization
-o_t_values$month <- factor(o_t_values$month,levels = seq(1,12))
-# boxplots of o_t
-ggplot()+
-  # boxplot from the trace 
-  geom_boxplot(aes(x=month,y=o_t), color='grey',data = trace_o_t)+
-  # real values as red dots
-  geom_point(aes(x=o_t_values$month, y=o_t_values$o_t),color='red')
+simple.N.model <- jags.model(file='N_uncertain_model.txt',
+                          data=dat.N,
+                          n.chains = chains)
+simple.N.model
 ```
 
 ```{r}
+test <- coda.samples(model = simple.N.model,variable.names = c('o_t','p_a','N'), n.iter = 1000)
+interations = 1000
+burnin= floor(interations/2)
+summary(window(test), start=burnin)
+head(test)
+```
 
-
-# tidy u_t pp samples
-df_u_t <- data.frame()
-for (i in 1:m) {
-  obs <- rbinom(n=12,size = as.numeric(df_o_t[i,]),prob =p_a[i])
-  df_u_t=rbind(df_u_t,obs)
-}
-colnames(df_u_t) <- factor(seq(1,12),levels = seq(1,12))
-ppc_u_t <- gather(df_u_t, key = 'month',value = 'u_t')
-ppc_u_t$month <- factor(ppc_u_t$month,levels = seq(1,12))
-u_t_values=data.frame('month'=seq(1,12),'u_t'=df$u_t)
-# boxplots of u_t
-ggplot()+geom_boxplot(aes(x=month,y=u_t),data = ppc_u_t)+geom_point(aes(x=u_t_values$month, y=u_t_values$u_t),color='red')
+```{r get the samples of N and show a distribution}
+pst_mtx.N = as.matrix(test)
+head(pst_mtx.N)
+N <- pst_mtx.N[,1]
 ```
 ```{r}
-## tidy x_a
-m=length(p_a)
-df_x_a <- vector() 
-for (i in 1:n_T) {
-  obs <- rbinom(m,n_a,p_a)
-  df_x_a <- cbind(df_x_a,obs)
-}
+ggplot(data = as.data.frame(N), aes(x= N)) +geom_histogram()+ geom_vline(xintercept =10000)
+```
 
-colnames(df_x_a) <- seq(1:12)
-df_x_a <- as.data.frame(df_x_a)
-ppc_x_a <- gather(df_x_a, key = 'month',value = 'x_a')
-ppc_x_a$month <- factor(ppc_x_a$month,levels = seq(1,12))
-x_a_values=data.frame('month'=seq(1,12),'x_a'=df$x_a)
-x_a_values$month <- factor(x_a_values$month,levels = seq(1,12))
-
-
-ggplot()+geom_boxplot(aes(x=month,y=x_a),data = ppc_x_a)+geom_point(aes(x=x_a_values$month, y=x_a_values$x_a),color='red')
+It took a lot of time to fit the bayesian model this time. We have overestimated N value whose mode is around 17000 while the real value is 10000. Unif(0,20000) has 10000 as its mean. I guess the b was too large. 
+I will wait for the reply from Paul. 
+```{r}
+plot(test)
 ```
 
 

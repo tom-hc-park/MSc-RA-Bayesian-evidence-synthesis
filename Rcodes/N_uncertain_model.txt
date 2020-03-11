@@ -1,0 +1,32 @@
+model{
+## define the priors
+
+
+p_a ~ dbeta(alpha, beta)
+mu_z ~ dunif(mu_a, mu_b)
+sigma_z ~ dunif(sigma_a, sigma_b)
+
+# Uncertain N takes in to the model
+N ~ dcat(p_i)
+
+ ## ambulance model
+for (i in 1:n) {
+  #Likelihood
+  x_a[i] ~ dbin(p_a, n_a) # each survey result for month
+ 
+}
+
+# overdose 
+for (i in 1:n) {
+
+  ## the latent variables
+  z_t[i]~ dnorm(mu_z, 1/(sigma_z^2))
+  lmb_t[i] <- exp(z_t[i])
+
+  ## overdose model
+  o_t[i] ~ dpois(lmb_t[i]*N) # total overdoses per month
+  # Note that from pymc3 gamma was used instead of Pois dist
+  u_t[i] ~ dbin(p_a, o_t[i]) # ambulanced overdoses per month
+}
+
+}

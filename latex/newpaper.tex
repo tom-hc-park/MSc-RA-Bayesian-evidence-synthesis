@@ -108,7 +108,7 @@ Note that now $O_t$ can be estimated because $p_A$ can be infered from the surve
 \subsection{Simulation}
 
 \normalsize 
-The first simulation simplifies the assumptions of variables as much as possible; we assumed $N= 10000, n_{A}=1000$. The assumptions will change later to see the impact of the likelihood over the posterior distributions of variables of interest; the total population size for a region, N, could vary over time or it can be staritified for a better realization of the reality. The survey size could also vary such as $n_{A}=100$ or $n_{A}=10000$ in later examples.  \\
+The first simulation simplifies the assumptions of variables as much as possible; we assumed $N= 10000, n_{A}=1000$.  \\
 
 \subsubsection{Markov chain Monte Carlo}
 The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). The technique is a popular method to obtain posterior samples from distributions where analytic forms do not exist or are hard to be derived. \textbf{[Further explanation is going to be added.]} [attempt:brief explaination of MCMC and related topics]\\
@@ -118,10 +118,10 @@ The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). T
 
 \normalsize 
 There exist two data sets; survey data ($n_A, x_A$), and ambulance attended overdose data ($U_t$). The two data sets are simulated as follows. 
-The true value of $p_A$ was set $p_A=0.8$ for the survey data.
+The true value of $p_A$ was set as $p_A=0.8$ for the survey data. [n_A? the setup described here above has a single x ]
 It is assumed that the data was collected for a year (t=1,2,3, ..., 12) and 
 $x_t$ values were independentally generated from the Binomial distribution (\ref{ambulance}).  In terms of overdose data, It is assumed that the true values of parameters for overdose model were $\mu=\log0.05,\ \sigma=1$.
-The vector of $O_t$ was generated following the overdose model (\ref{overdose}). The vector of $U_t$ was generated from the Binomial relation of the two variables ($\ref{over_amb}$). The two generated vectors have the same length with the survey data (t=1,2,3, ..., 12). [Delete: Then the 12 sueveys were combined into a single survey since $p_A$ is assumed fixed across time in this contexts.] Note that only $U_t$ and $x_t$ are known as the likelihood and $p_A$ needs to be estimated first so as to estimate $O_t$ which is the ultimate interest of the research.\\
+The vector of $O_t$ was generated following the overdose model (\ref{overdose}). The vector of $U_t$ was generated from the Binomial relation of the two variables ($\ref{over_amb}$). The two generated vectors have the same length with the survey data (t=1,2,3, ..., 12).  Note that only $U_t$ and $x_t$ are known as the likelihood and $p_A$ needs to be estimated first so as to estimate $O_t$ which is the ultimate interest of the research.\\
 
 
 \subsubsection{Prior Distributions}
@@ -130,7 +130,7 @@ The vector of $O_t$ was generated following the overdose model (\ref{overdose}).
 \begin{equation}
 \label{nonin_prior_amb}
 p(p_A) \sim Beta(1,1)
-\text{			noninformative prior of ambulance model}
+\text{			noninformative prior for ambulance model}
 \end{equation} 
 
 \begin{equation}
@@ -139,7 +139,7 @@ p(p_A) \sim Beta(1,1)
 \mu \sim U(-10,0)\\
 \sigma \sim U(0,5)
 \end{aligned}\right\} 
-\text{			noninformative prior of overdose model}
+\text{			noninformative prior for overdose model}
 \end{equation}
 
 This leads the posterior distribution of variables of interest to heavily depend on the likelihood. Later, the noninformative priors will be changed and the impact of the changes over posteriors will be investigated. \\
@@ -228,6 +228,9 @@ Figure \ref{contam_xt}  are the boxplots of posterior predictive samples of $x_A
 	\caption[two early result box plots:xa]{Boxplot of posterior samples of $x_A$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $x_A$ values are shown as red dots.}
 	\label{contam_xt}
 \end{figure}
+
+\subsection{Variying the Assumptions}
+The assumptions will change later to see the impact of the likelihood over the posterior distributions of variables of interest; the total population size for a region, N, could vary over time or it can be staritified for a better realization of the reality. The survey size could also vary such as $n_{A}=100$ or $n_{A}=10000$ in later examples. 
  
 \bibliographystyle{unsrt}
 \bibliography{sample.bib}
