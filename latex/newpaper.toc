@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.2}Early Result }{5}{subsection.2.2}% 
 \contentsline {subsubsection}{\numberline {2.2.1}Posterior Distribution}{5}{subsubsection.2.2.1}% 
 \contentsline {subsubsection}{\numberline {2.2.2}Posterior Predictive Check}{7}{subsubsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Early Result: Contamination of $p_A$ }{7}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.3}Early Result: Contamination of $p_A$ }{8}{subsection.2.3}% 
 \contentsline {subsubsection}{\numberline {2.3.1}Posterior Distribution}{8}{subsubsection.2.3.1}% 
 \contentsline {subsubsection}{\numberline {2.3.2}Posterior Predictive Check}{9}{subsubsection.2.3.2}% 
 \contentsline {subsection}{\numberline {2.4}Variying the Assumptions}{10}{subsection.2.4}% 

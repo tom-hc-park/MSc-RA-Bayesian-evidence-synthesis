@@ -158,6 +158,15 @@ Figure \ref{pst_ot} is the boxplot of posterior samples of $O_t$. It is shown th
 	\label{pst_ot}
 \end{figure}
 
+Figure \ref{hst_ot} is the histogram of posterior samples of total overdoses per year ($O_1 + O_2 + ... + O_{12}$). 2000 samples were collected and shown as the histogram.  It is seen that the plot is bell shaped and not skewed. The total number of overdoses per year is around 10900 to 11000. [mention about credible interval] \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/hist_sum_ot.png}
+	\caption{Histogram of posterior samples of total overdoses per year}
+	\label{hst_ot}
+\end{figure}
+
 \newpage
 \subsubsection{Posterior Predictive Check}
 Posterior predictive checking is a model validation technique that we simulate some replicated data under the fitted model then compare the new data to the observed data. If the model fits, then replicated data generated under the model should look similar to observed data. To put it another way, the observed data should look plausible under the posterior predictive distribution. This is really a self-consistency check: an observed discrepancy can be due to model misfit or chance. \cite{bda_galman}
