@@ -6,6 +6,8 @@ output:
   pdf_document: default
   html_document: default
 ---
+# Make sure I used only useful posterior samples for the parameters.
+
 # Basic Model: Ambulance + Overdose
 ## Ambulance Call-outs Model
 $n_{A}$: sample size   
@@ -402,19 +404,16 @@ visualization(my_list_under,x_a= T)
 visualization(my_list_over,x_a=T)
 ```
 # Uncertainty of N
-Now we suppose the population size of BC, N, is unknown. We may have some information about the population size and transform it into a prior distribution. Let's assume from the point that we don't have a good understanding of the sample size. But N should be at least bigger than the sample size of survey, the ambulance attended overdoses. We have 12 data points of $U_t$. We also have 12 data points of $x_A$. 
+Now we suppose the population size of BC, N, is unknown. Notice that the prior distribution of N should reflect our prior knowledge about N which is even before we encounter the data set. Hence any information driven from the data set ($O_t, x_A$) cannot affect the prior of N. Suppose we have some information about the population size and transform it into a prior distribution.
 
-$$N \geq max(\vec{U_t}, \vec{x_A})$$
+$$N \sim N(10000,1000)$$
+The first prior we test is normal distribution where $\pm 20\%$ covers most of the support of N. Since $\pm2\sigma$ covers 95% of the distribution of Normal distribution, we set $\sigma = 1000$.
 
-Where $\vec{U_t}, \vec{x_A}$ are the vectors of $U_t$ and $x_A$.
+# Now the problem is that the trace plot of N.
 
-Then, we need a theoretical maximum value of N. BC is a province of Canada. For now, since I do not have a good idea about the maximum possible number of N, let's just say two times of the real value is the maximum. 
+# todo: read the doing bayesian book and get the better idea about how to deal with this situation.
 
-$$N \in  \{a, a+1, a+2, ..., b\} \\ \textbf{where } a= \max(\vec{U_t}, n_A), b= 2 \times \textbf{real value of  N}$$
-
-However, in the model file below, we will use a prior such that 
-$$N \in  \{0,1,2, ..., b\} \\ \textbf{where }  b= 2 \times \textbf{real value of  N}$$ since we don't know how to construct such prior as described below. 
-
+Notice that JAGS takes precison, which is $1/\sigma^2$ for its argument.
 ```{r Enter the models}
 cat("model{
 ## define the priors
@@ -425,7 +424,7 @@ mu_z ~ dunif(mu_a, mu_b)
 sigma_z ~ dunif(sigma_a, sigma_b)
 
 # Uncertain N takes in to the model
-N ~ dcat(p_i)
+N ~ dnorm(mu_N,(1/(sigma_N)^2))
 
  ## ambulance model
 for (i in 1:n) {
@@ -453,7 +452,6 @@ for (i in 1:n) {
 
 Pre-set variables.  
 ```{r Defining Values}
-p_i <- seq(1:(2*N))
 n_T <- length(df$o_t)
 n_a <- 1000
 # N <- 10000
@@ -463,8 +461,10 @@ x_a <- df$x_a
 
 Define the list providing the values of the variables and the parameters for the priors of the model.   
 ```{r from variable name to \'variable_name\'}
-dat.N <- list(# prior for N
-            'p_i' = p_i,
+dat.N <- list(# priors for N
+            'mu_N' = 10000,
+            'sigma_N' = 1000,
+            
             # priors for ambulance model
             'alpha' = 1,
             'beta' =  1, 
@@ -494,27 +494,32 @@ simple.N.model
 ```
 
 ```{r}
-test <- coda.samples(model = simple.N.model,variable.names = c('o_t','p_a','N'), n.iter = 1000)
-interations = 1000
+test <- coda.samples(model = simple.N.model,variable.names = c('o_t','p_a','N'), n.iter = 10000)
+interations = 10000
 burnin= floor(interations/2)
 summary(window(test), start=burnin)
-head(test)
+# head(test)
+```
+```{r}
+plot(test)
 ```
 
 ```{r get the samples of N and show a distribution}
 pst_mtx.N = as.matrix(test)
 head(pst_mtx.N)
 N <- pst_mtx.N[,1]
+length(N)
 ```
+
+```{r}
+plot(N )
+```
+
+
 ```{r}
 ggplot(data = as.data.frame(N), aes(x= N)) +geom_histogram()+ geom_vline(xintercept =10000)
 ```
 
-It took a lot of time to fit the bayesian model this time. We have overestimated N value whose mode is around 17000 while the real value is 10000. Unif(0,20000) has 10000 as its mean. I guess the b was too large. 
-I will wait for the reply from Paul. 
-```{r}
-plot(test)
-```
 
 
 ## Reference 

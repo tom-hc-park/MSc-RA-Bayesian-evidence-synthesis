@@ -7,7 +7,7 @@ mu_z ~ dunif(mu_a, mu_b)
 sigma_z ~ dunif(sigma_a, sigma_b)
 
 # Uncertain N takes in to the model
-N ~ dcat(p_i)
+N ~ dnorm(mu_N,(1/(sigma_N)^2))
 
  ## ambulance model
 for (i in 1:n) {

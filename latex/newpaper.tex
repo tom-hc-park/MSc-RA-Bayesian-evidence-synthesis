@@ -1,9 +1,16 @@
-\documentclass[]{article}
+\PassOptionsToPackage{margin=1in}{geometry}
+\documentclass[12pt]{article}
+\usepackage{wordlike} 
+%\usepackage{mathptmx}
+%\usepackage[scaled=.90]{helvet}
+%\usepackage{courier}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{amsmath,amssymb,amsthm} % For including math equations, theorems, symbols, etc
 \usepackage{subfig}
 \graphicspath{{Figures/}} 
+\usepackage{setspace}
+
 \usepackage{hyperref}
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \RequirePackage{xcolor} % [dvipsnames]
@@ -31,6 +38,7 @@
 	pdfproducer={LaTeX with hyperref and ClassicThesis} % PDF producer
 }
 
+
 %opening
 \title{Bayesian Evidence Synthesis:opioid crisis}
 \author{Hyeongcheol Park* \& Paul Gustafson* \& Micheal A Irvine*\textsuperscript{1}}
@@ -41,32 +49,32 @@
 \tableofcontents % Print the table of contents
 \listoffigures % Print the list of figures
 \listoftables % Print the list of tables
-
+\doublespacing
 
 \begin{abstract}
 
 \end{abstract}
 
 \section{Introduction}
-The opioid crisis is a major issue in North America including British Columbia, Canada. British Columbia is in the midst of a drug overdose crisis due to illicit opioids and the circumstances are getting worse. According to the BC Coroners Service, there were more than 930 apparent illicit drug overdose deaths in BC from Jan. 1 to Dec. 31, 2016. This compares to 518 in 2015, an increase of 79.2\%. \cite{bccdc_opioid}  The goal of this project is to apply Bayesian evidence synthesis to better understand the opoid crisis in British Columbia, Canada.  \\ 
+The opioid crisis is a major issue in North America including British Columbia, Canada. British Columbia is in the midst of a drug overdose crisis due to illicit opioids and the circumstances are getting worse. According to the BC Coroners Service, there were more than 930 apparent illicit drug overdose deaths in BC from Jan. 1 to Dec. 31, 2016. This compares to 518 in 2015, an increase of 79.2\%. \cite{bccdc_opioid}  The goal of this project is to apply Bayesian evidence synthesis to better understand the opioid crisis in British Columbia, Canada.  \\ 
 
-One difficulty in coping with the opioid crisis is that the total number of overdoses is unknown. The reason is that the use of prescription opioids often leads to use of illicit opioids and the illicit usage cannot be known. Many of those who become addicted to opioids do so after initially receiving a prescription. The highly addictive nature of these pain relievers makes it easy for the human brain to crave more. It is only after their prescription ends that many users realize they’ve become dependent on the effects of opioids  to function “normally.” At that point, they are either forced to get clean and endure the pain that comes with the withdrawal symptoms of opioids or look for another means of getting their high. This is often the time where people will turn to illicit drugs or other analogues. Because prescription opioids are so expensive, this is when many users turn to heroin. It is often cheaper, more potent, and easier to locate than what they were taking before. In fact, about 80\% of people using heroin started with a prescription to another opioid. After using heroin, however, 23\% of individuals develop opioid addiction.\cite{opioid_desc} \\
+One difficulty in coping with the opioid crisis is that the total number of overdoses is unknown. The reason is that the use of prescription opioids often leads to use of illicit opioids and the extend of  illicit usage cannot be known. Many of those who become addicted to opioids do so after initially receiving a prescription. The highly addictive nature of these pain relievers makes it easy for the human brain to crave more. It is only after their prescription ends that many users realize they’ve become dependent on the effects of opioids  to function “normally.” At that point, they are either forced to get clean and endure the pain that comes with the withdrawal symptoms of opioids or look for another means of getting their high. This is often the time where people will turn to illicit drugs or other analogues. Because prescription opioids are so expensive,  many users turn to heroin. It is often cheaper, more potent, and easier to locate than what they were taking before. In fact, about 80\% of people using heroin started with a prescription to another opioid. After using heroin, however, 23\% of individuals develop opioid addiction.\cite{opioid_desc} \\
 
-Since the total number of overdoses is unknown, this number needs to be estimated. Bayesian statistics can be a way to approach the problem and give us a good estimate of the number [\textbf{defensible? depending on the data, a precise estimate may not be possible}]. Bayesian statistics is a theory in the field of statistics based on the Bayesian interpretation of probability where probability expresses a degree of belief in an event. \cite{wiki_bayes} Detailed explanation is provided at the following section. [attempt: explain Bayesian statistics]\\
+Since the total number of overdoses is unknown, this number needs to be estimated. Bayesian statistics can be a way to approach the problem and give us a good estimate of the number with a defensible range of uncertainty. Bayesian statistics is a theory in the field of statistics based on the Bayesian interpretation of probability where probability expresses a degree of belief in an event. \cite{wiki_bayes} Further explanation is provided at the following section. [todo: explain Bayesian statistics a little bit more here]\\
 
-All examples here were performed in Python 3.7 using the library pyMC (reference) and JAGS (reference). Training was performed using No U-Turn Sampling (NUTS) over two chains with 1000 iterations (is it sample size?). Fitting was performed on a GHz Intel Core i5 with 8GM of LPDD3 RAM and typically had wall times under ten minutes. Data processing was carried out using the Pandas and SciPy library [reference]. Data visualization was performed using the libraries Seaborn and Matplotlib [ref]. Code for all examples in this study are provided. \\
 
 \section{Methods}
 
 \normalsize
-
-The number of overdoses is our ultimate target of estimation. To achive the goal in context of Bayesian statistics, we use our prior belief and available data set about the target of estimation. The posterior belief is coming from both of these sources of the information. The following equation express the idea in a mathmatical form:
+[\textbf{phrase differently: the prior and the data relate to all the unknown parameter, but as a last stage hou focuz on one target.}]
+The number of overdoses is our ultimate target of estimation. To achieve the goal in context of Bayesian statistics, we use our prior belief and available data set about the target of estimation. The posterior belief is coming from both of these sources of the information. The following equation express the idea in a mathmatical form:
 \begin{equation}
 \label{bayes_thm}
 \left.\begin{aligned}
 p(O_t| y ) = \frac{ p(O_t, y)   }{ p(y)} = \frac{ p(O_t) p(y| O_t)}{ p(y)} \propto p(O_t) p(y| O_t) \end{aligned}\right.
 \end{equation}
-where $O_t$ is the total number of overdoses in a given month $t$ in British Columbia, and $y$ represents the collected data set providing relevant samples of the target variable. In Bayesian concepts, the variable of interest $O_t$ is a fixed number but the number is yielded from a certain distribution where the distribution describes knowledge about $O_t$; That is, $O_t$ is considered to be a sample of a random variable. The problem, however, is that the data $y$ is not available. Hence it is needed to approach the estimation in a indirect fashion. Figure \ref{simple_draw} shows an example of how the estimation can be proceeded. \\ 
+[\textbf{Question: to make this flow better, maybe you want a version of (2) which generically describes parameter and latent varaibles given observed data.}]
+where $O_t$ is the total number of overdoses in a given month $t$ in British Columbia, and $y$ represents the collected data set providing relevant samples of the target variable. In Bayesian concepts, the variable of interest $O_t$ is a fixed number but the number is yielded from a certain distribution where the distribution describes knowledge about $O_t$; That is, $O_t$ is considered to be a sample of a random variable. The problem, however, is that the data $y$ is not available. Hence it is needed to approach the estimation in an indirect fashion. Figure \ref{simple_draw} shows an example of how the estimation can be proceeded. \\ 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Figures/simple_drawing}
@@ -74,7 +82,9 @@ where $O_t$ is the total number of overdoses in a given month $t$ in British Col
 	\label{simple_draw}
 \end{figure}
 
- The simplest conceptual model described in Figure \ref{simple_draw} is to take an underlying log-rate $z_t$ that is independent and identically distributed across months according to a normal distribution with mean $\mu$ and variance $\sigma^2$. \cite{Irvine:modelling} Then denote $\lambda_{t}^{OD}$ the rate of overdose at time $t$. It is assumed that the total overdose $O_t$ follows Poisson distribution with parameter $\lambda_{t}^{OD}N$ where the population of the region of interest is $N$. Note that the population size, N, is unknown and vary over time in reality but it is assumed known constant for the investigator here for simplicity. 
+[\textbf{need more explicitness
+	t:month, considering T months all together}]
+ The simplest conceptual model described in Figure \ref{simple_draw} is to take an underlying log-rate $z_t$ that is independent and identically distributed across months according to a normal distribution with mean $\mu$ and variance $\sigma^2$. \cite{Irvine:modelling} Then let $\lambda_{t}^{OD}$ denote the rate of overdose at time $t$. It is assumed that the number of overdoses in the month, $O_t$, follows Poisson distribution with parameter $\lambda_{t}^{OD}N$ where the population of the region of interest is $N$. Note that the population size, N, is unknown and vary over time in reality but it is assumed known and constant for the investigator here for simplicity. 
  
  \begin{equation}
  \label{overdose}
@@ -86,7 +96,7 @@ where $O_t$ is the total number of overdoses in a given month $t$ in British Col
  \text{		overdose model} 
  \end{equation}
  
-Since estimation of $O_t$ is not straightforward as none of the variables ($\mu$, $\sigma$, $N$) determining $O_t$  is known, we assume there was a survey conducted to infer $O_t$. The survey asked witnesses of opioid overdoses in danger whether someone called an ambulance. This provides estimate of the proportion of ambulance call $p_A$ among the overdoses. Let $n_{A}$ the sample size of the survey and $x_{A}$ to be the total number who confirmed they did call ambulance. It is assumed that $x_{A}$ follows a Binomial distribution:
+Since estimation of $O_t$ is not straightforward as some of the variables ($\mu$, $\sigma$) determining $O_t$ is known, we assume there was a survey conducted to infer $O_t$. The survey [\textbf{survey doesn't do this directly, but it 'helps to support' inference about Ot}] asked witnesses of opioid overdoses whether someone called an ambulance. This provides an estimate of the proportion of ambulance call $p_A$ among the overdoses. For the moment $p_A$ is assumed constant across time for simplicity. Let $n_{A}$ be the sample size of the survey, and $x_{A}$ be the total number who confirmed that an ambulance was called. It is assumed that $x_{A}$ follows a Binomial distribution:
 
 \begin{equation}
 \label{ambulance}
@@ -95,7 +105,7 @@ x_{A} \sim Bin(n_{A},p_{A})\end{aligned}\right.
 \text{ambulance call-outs model}
 \end{equation}
 
-Let \(U_t\) the number of  ambulance-attended overdoses at a time point $t$. In general, the data of ambulance-attended overdoses \(U_t\) can be obtained. It is assumed that  \(U_t\) follows Binomial distribution: 
+Let \(U_t\) be the number of  ambulance-attended overdoses at a time point $t$. In general, the data of ambulance-attended overdoses \(U_t\) can be obtained. It is assumed that  \(U_t\) follows a Binomial distribution: 
 \begin{equation}
 \label{over_amb}
 \left.
@@ -103,13 +113,13 @@ U_t \sim Bin(O_t, p_A)
 \right.
 \end{equation}
 
-Note that now $O_t$ can be estimated because $p_A$ can be infered from the survey data and the data regarding $U_t$ is given.  For the moment $p_A$ is assumed constant across time for simplicity. We suggest a simple model as a start where the model only combines Overdose Model (\ref{overdose}) and Ambulance Call-outs Model (\ref{ambulance}) with the relation (\ref{over_amb}). The next step is to run some simulations to figure out how different types of inputs lead some changes of output. \\
+Note that now $O_t$ can be estimated because $p_A$ can be infered from the survey data and the data regarding $U_t$ is given. We suggest a simple model as a start where the model only combines Overdose Model (\ref{overdose}) and Ambulance Call-outs Model (\ref{ambulance}) with the relation (\ref{over_amb}). The next step is to run some simulations to figure out how different types of inputs lead some changes of output. \\
 
 \subsection{Simulation}
 
 \normalsize 
-The first simulation simplifies the assumptions of variables as much as possible; we assumed $N= 10000, n_{A}=1000$.  \\
-
+The first simulation assumed $N= 10000, n_{A}=1000$.  \\
+[\textbf{Q;Before moving on to simulation, you should write out how the generative(generable) model factors, and mention Fig1 again.}]
 \subsubsection{Markov chain Monte Carlo}
 The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). The technique is a popular method to obtain posterior samples from distributions where analytic forms do not exist or are hard to be derived. \textbf{[Further explanation is going to be added.]} [attempt:brief explaination of MCMC and related topics]\\
 
@@ -117,9 +127,9 @@ The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). T
 \subsubsection{Likelihood}
 
 \normalsize 
-There exist two data sets; survey data ($n_A, x_A$), and ambulance attended overdose data ($U_t$). The two data sets were simulated as follows. 
-It was assumed that the two data sets were collected for a year (t=1,2,3, ..., 12). The true value of $p_A$ was set as $p_A=0.8$ and the survey sample size $n_A$ was set as $n_A=1000$ for every months. The $x_A$ values for each month were independentally generated from the Binomial distribution (\ref{ambulance}).  In terms of the overdose data, It is assumed that the true values of parameters for overdose model were $\mu=\log0.05,\ \sigma=1$.
-The vector of $O_t$ was generated following the overdose model (\ref{overdose}). The vector of $U_t$ was generated from the Binomial relation of the two variables ($\ref{over_amb}$). The two generated vectors have the same length with the survey data (t=1,2,3, ..., 12).  Note that only $U_t$ and $x_A$ are known as the likelihood and $p_A$ needs to be estimated first in order to estimate $O_t$ which is the ultimate interest of the research.\\
+There exist two data sets: the survey data ($n_A, x_A$), and the ambulance attended overdose data ($U_{1:T}$). The two data sets were simulated as follows. 
+It was assumed that the two data sets were collected for a year (T=12). The true value of $p_A$ was set as $p_A=0.8$ and the survey sample size $n_A$ was set as $n_A=1000$ for every months [one survey or 12?]. The $x_A$ values for each month were independentally generated from the Binomial distribution (\ref{ambulance}).  In terms of the overdose data, it is assumed that the true values of parameters for overdose model were $\mu=\log0.05,\ \sigma=1$.
+The vector of $O_t$ was generated following the overdose model (\ref{overdose}). The vector of $U_t$ was generated from the Binomial relation of the two variables ($\ref{over_amb}$). The two generated vectors have the same length with the survey data (t=1,2,3, ..., 12).  Note that only $U_t$ and $x_A$ are known as the likelihood [intended meaning?] and $p_A$ needs to be estimated first in order to estimate $O_t$ which is the ultimate interest of the research.\\
 
 
 \subsubsection{Prior Distributions}
@@ -140,9 +150,12 @@ p(p_A) \sim Beta(1,1)
 \text{			noninformative prior for overdose model}
 \end{equation}
 
-This leads the posterior distribution of variables of interest to heavily depend on the likelihood. Later, the noninformative priors will be changed and the impact of the changes over posteriors will be investigated. \\
+This leads the posterior distribution of variables of interest to heavily depend on the likelihood. Later, the noninformative priors will be changed and the impact of the changes to posteriors will be investigated. \\
 
-\subsection{Early Result } 
+\subsection{Initial Result} 
+
+[\textbf{combine the two paragraph into one.}]
+All examples here were performed in Python 3.7 using the library pyMC (reference) and JAGS (reference). Training was performed using No U-Turn Sampling (NUTS) over two chains with 1000 iterations (is it sample size?). Fitting was performed on a GHz Intel Core i5 with 8GM of LPDD3 RAM and typically had wall times under ten minutes. Data processing was carried out using the Pandas and SciPy library [reference]. Data visualization was performed using the libraries Seaborn and Matplotlib [ref]. Code for all examples in this study are provided. 
 
 The result from the simple case scenario is illustrated below. Markov chain Monte Carlo packege PYMC3 3.8\cite{pymc3} was used  with Python 3.7 for the simulation. Figures were generated by Python 3.7. The results were verified with JAGS 4.3.0 and R 3.6.2.
 
