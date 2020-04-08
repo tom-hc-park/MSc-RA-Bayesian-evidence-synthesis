@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  3 APR 2020 22:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  7 APR 2020 21:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -240,6 +240,18 @@ Package caption Info: float package is loaded.
 \sf@top=\skip52
 \sf@bottom=\skip53
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks29
+\SOUL@lasttoken=\toks30
+\SOUL@cmds=\toks31
+\SOUL@buffer=\toks32
+\SOUL@token=\toks33
+\SOUL@spaceskip=\skip54
+\SOUL@ttwidth=\dimen130
+\SOUL@uldp=\dimen131
+\SOUL@ulht=\dimen132
+)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
@@ -291,7 +303,7 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen130
+\@linkdim=\dimen133
 \Hy@linkcounter=\count113
 \Hy@pagecounter=\count114
 
@@ -319,10 +331,10 @@ Package hyperref Info: Bookmarks ON on input line 4772.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5125.
-\XeTeXLinkMargin=\dimen131
+\XeTeXLinkMargin=\dimen134
 \Fld@menulength=\count117
-\Field@Width=\dimen132
-\Fld@charsize=\dimen133
+\Field@Width=\dimen135
+\Fld@charsize=\dimen136
 Package hyperref Info: Hyper figures OFF on input line 6380.
 Package hyperref Info: Link nesting OFF on input line 6385.
 Package hyperref Info: Hyper index ON on input line 6388.
@@ -348,7 +360,7 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip54
+\Hy@SectionHShift=\skip55
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -370,31 +382,31 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 39.
+Package hyperref Info: Option `colorlinks' set `true' on input line 40.
 
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 39.
+(hyperref)                setting the option has no effect on input line 40.
 
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 39.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 40.
 (./newpaper.aux)
 \openout1 = `newpaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 47.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -435,16 +447,16 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count123
-\scratchdimen=\dimen134
+\scratchdimen=\dimen137
 \scratchbox=\box31
 \nofMPsegments=\count124
 \nofMParguments=\count125
-\everyMPshowfont=\toks29
+\everyMPshowfont=\toks34
 \MPscratchCnt=\count126
-\MPscratchDim=\dimen135
+\MPscratchDim=\dimen138
 \MPnumerator=\count127
 \makeMPintoPDFobject=\count128
-\everyMPtoPDFconversion=\toks30
+\everyMPtoPDFconversion=\toks35
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -467,7 +479,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 46.
+Package hyperref Info: Link coloring ON on input line 47.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -477,57 +489,57 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count129
 )
-LaTeX Info: Redefining \ref on input line 46.
-LaTeX Info: Redefining \pageref on input line 46.
-LaTeX Info: Redefining \nameref on input line 46.
+LaTeX Info: Redefining \ref on input line 47.
+LaTeX Info: Redefining \pageref on input line 47.
+LaTeX Info: Redefining \nameref on input line 47.
 
 (./newpaper.out) (./newpaper.out)
 \@outlinefile=\write3
 \openout3 = `newpaper.out'.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 48.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 49.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 48.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 48.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 48
+(Font)              scaled to size 18.66588pt on input line 49.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 49
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 48
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 49
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 48
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 49
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 48
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 49
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
 
 (./newpaper.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
@@ -547,229 +559,249 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \openout6 = `newpaper.lot'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
 [2]
-<Figures/simple_drawing.png, id=106, 304.13625pt x 484.81125pt>
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+
+ []
+
+[3] [4]
+<Figures/simple_drawing.png, id=131, 1284.8pt x 722.7pt>
 File: Figures/simple_drawing.png Graphic file (type png)
 <use Figures/simple_drawing.png>
-Package pdftex.def Info: Figures/simple_drawing.png  used on input line 80.
-(pdftex.def)             Requested size: 236.01561pt x 376.23526pt.
- [3] [4 <./Figures/simple_drawing.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Package pdftex.def Info: Figures/simple_drawing.png  used on input line 142.
+(pdftex.def)             Requested size: 642.39844pt x 361.3491pt.
 
+Overfull \hbox (97.03677pt too wide) in paragraph at lines 142--143
+ [][] 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 116.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 116.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 116.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
-(Font)              scaled to size 15.55188pt on input line 116.
+(Font)              scaled to size 15.55188pt on input line 147.
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 128--130
-
- []
-
-[6]
 Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
-<Figures/earlyresult1_ot.png, id=157, 1156.32pt x 505.89pt>
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
+
+ []
+
+[6 <./Figures/simple_drawing.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+<Figures/earlyresult1_ot.png, id=155, 1156.32pt x 505.89pt>
 File: Figures/earlyresult1_ot.png Graphic file (type png)
 <use Figures/earlyresult1_ot.png>
-Package pdftex.def Info: Figures/earlyresult1_ot.png  used on input line 166.
+Package pdftex.def Info: Figures/earlyresult1_ot.png  used on input line 197.
 (pdftex.def)             Requested size: 472.03123pt x 206.51308pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
-
- []
-
-[8 <./Figures/earlyresult1_ot.png>]
-<Figures/hist_sum_ot.png, id=165, 433.62pt x 289.08pt>
-File: Figures/hist_sum_ot.png Graphic file (type png)
-<use Figures/hist_sum_ot.png>
-Package pdftex.def Info: Figures/hist_sum_ot.png  used on input line 175.
-(pdftex.def)             Requested size: 472.03123pt x 314.70277pt.
- [9 <./Figures/hist_sum_ot.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 182--184
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-
- []
-
-<Figures/early_r_ppc1_ut.png, id=175, 845.1575pt x 597.23125pt>
-File: Figures/early_r_ppc1_ut.png Graphic file (type png)
-<use Figures/early_r_ppc1_ut.png>
-Package pdftex.def Info: Figures/early_r_ppc1_ut.png  used on input line 189.
-(pdftex.def)             Requested size: 236.01561pt x 166.77707pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 189.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 189.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 189.
-<Figures/early_r_ppc1_xt.png, id=176, 845.1575pt x 597.23125pt>
-File: Figures/early_r_ppc1_xt.png Graphic file (type png)
-<use Figures/early_r_ppc1_xt.png>
-Package pdftex.def Info: Figures/early_r_ppc1_xt.png  used on input line 190.
-(pdftex.def)             Requested size: 236.01561pt x 166.77707pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
-[10 <./Figures/early_r_ppc1_ut.png> <./Figures/early_r_ppc1_xt.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 199.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 199.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 199.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
-
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
-<Figures/early_contamination_underestimated-o_t.png, id=187, 939.51pt x 597.231
-25pt>
-File: Figures/early_contamination_underestimated-o_t.png Graphic file (type png
-)
-<use Figures/early_contamination_underestimated-o_t.png>
-Package pdftex.def Info: Figures/early_contamination_underestimated-o_t.png  us
-ed on input line 208.
-(pdftex.def)             Requested size: 236.01561pt x 150.02736pt.
-<Figures/early_contamination_overestimated-o_t.png, id=188, 939.51pt x 597.2312
-5pt>
-File: Figures/early_contamination_overestimated-o_t.png Graphic file (type png)
+<Figures/hist_sum_ot.png, id=158, 433.62pt x 289.08pt>
+File: Figures/hist_sum_ot.png Graphic file (type png)
+<use Figures/hist_sum_ot.png>
+Package pdftex.def Info: Figures/hist_sum_ot.png  used on input line 206.
+(pdftex.def)             Requested size: 472.03123pt x 314.70277pt.
+[8]
 
-<use Figures/early_contamination_overestimated-o_t.png>
-Package pdftex.def Info: Figures/early_contamination_overestimated-o_t.png  use
-d on input line 209.
-(pdftex.def)             Requested size: 236.01561pt x 150.02736pt.
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 221--223
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./Figures/earlyresult1_ot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
+
+[10 <./Figures/hist_sum_ot.png>]
+<Figures/early_r_ppc1_ut.png, id=181, 845.1575pt x 597.23125pt>
+File: Figures/early_r_ppc1_ut.png Graphic file (type png)
+<use Figures/early_r_ppc1_ut.png>
+Package pdftex.def Info: Figures/early_r_ppc1_ut.png  used on input line 220.
+(pdftex.def)             Requested size: 236.01561pt x 166.77707pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 220.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 220.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 220.
+<Figures/early_r_ppc1_xt.png, id=182, 845.1575pt x 597.23125pt>
+File: Figures/early_r_ppc1_xt.png Graphic file (type png)
+<use Figures/early_r_ppc1_xt.png>
+Package pdftex.def Info: Figures/early_r_ppc1_xt.png  used on input line 221.
+(pdftex.def)             Requested size: 236.01561pt x 166.77707pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
-[12 <./Figures/early_contamination_underestimated-o_t.png> <./Figures/early_con
-tamination_overestimated-o_t.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 228--230
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 230.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 230.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 230.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
-<Figures/early_contamination_underestimated-u_t.png, id=208, 845.1575pt x 597.2
+[11 <./Figures/early_r_ppc1_ut.png> <./Figures/early_r_ppc1_xt.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+<Figures/early_contamination_underestimated-o_t.png, id=191, 939.51pt x 597.231
+25pt>
+File: Figures/early_contamination_underestimated-o_t.png Graphic file (type png
+)
+<use Figures/early_contamination_underestimated-o_t.png>
+Package pdftex.def Info: Figures/early_contamination_underestimated-o_t.png  us
+ed on input line 239.
+(pdftex.def)             Requested size: 236.01561pt x 150.02736pt.
+<Figures/early_contamination_overestimated-o_t.png, id=192, 939.51pt x 597.2312
+5pt>
+File: Figures/early_contamination_overestimated-o_t.png Graphic file (type png)
+
+<use Figures/early_contamination_overestimated-o_t.png>
+Package pdftex.def Info: Figures/early_contamination_overestimated-o_t.png  use
+d on input line 240.
+(pdftex.def)             Requested size: 236.01561pt x 150.02736pt.
+[12 <./Figures/early_contamination_underestimated-o_t.png> <./Figures/early_con
+tamination_overestimated-o_t.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+
+LaTeX Warning: Reference `bayes_thm' on page 13 undefined on input line 259.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--261
+
+ []
+
+[13]
+<Figures/early_contamination_underestimated-u_t.png, id=212, 845.1575pt x 597.2
 3125pt>
 File: Figures/early_contamination_underestimated-u_t.png Graphic file (type png
 )
 <use Figures/early_contamination_underestimated-u_t.png>
 Package pdftex.def Info: Figures/early_contamination_underestimated-u_t.png  us
-ed on input line 233.
+ed on input line 264.
 (pdftex.def)             Requested size: 236.01561pt x 166.77707pt.
-<Figures/early_contamination_overestimated-u_t.png, id=209, 845.1575pt x 597.23
+<Figures/early_contamination_overestimated-u_t.png, id=213, 845.1575pt x 597.23
 125pt>
 File: Figures/early_contamination_overestimated-u_t.png Graphic file (type png)
 
 <use Figures/early_contamination_overestimated-u_t.png>
 Package pdftex.def Info: Figures/early_contamination_overestimated-u_t.png  use
-d on input line 234.
+d on input line 265.
 (pdftex.def)             Requested size: 236.01561pt x 166.77707pt.
-<Figures/early_contamination_underestimated-x_a.png, id=215, 845.1575pt x 597.2
+<Figures/early_contamination_underestimated-x_a.png, id=219, 845.1575pt x 597.2
 3125pt>
 File: Figures/early_contamination_underestimated-x_a.png Graphic file (type png
 )
 <use Figures/early_contamination_underestimated-x_a.png>
 Package pdftex.def Info: Figures/early_contamination_underestimated-x_a.png  us
-ed on input line 243.
+ed on input line 274.
 (pdftex.def)             Requested size: 236.01561pt x 166.77707pt.
-<Figures/early_contamination_overestimated-x_a.png, id=216, 845.1575pt x 597.23
+<Figures/early_contamination_overestimated-x_a.png, id=220, 845.1575pt x 597.23
 125pt>
 File: Figures/early_contamination_overestimated-x_a.png Graphic file (type png)
 
 <use Figures/early_contamination_overestimated-x_a.png>
 Package pdftex.def Info: Figures/early_contamination_overestimated-x_a.png  use
-d on input line 244.
+d on input line 275.
 (pdftex.def)             Requested size: 236.01561pt x 166.77707pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] (./newpaper.bbl
+[14 <./Figures/early_contamination_underestimated-u_t.png> <./Figures/early_con
+tamination_overestimated-u_t.png>] (./newpaper.bbl
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 9.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [14 <./Figures/early_contamination_underestimated-u_t.png> <./Figures/early_c
-ontamination_overestimated-u_t.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
- [15 <./Figures/early_contamination_underestimated-x_a.png> <./Figures/early_co
-ntamination_overestimated-x_a.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
+) [15 <./Figures/early_contamination_underestimated-x_a.png> <./Figures/early_c
+ontamination_overestimated-x_a.png>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 285.
+ [16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 285.
  (./newpaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 285.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 285.
 Package rerunfilecheck Info: File `newpaper.out' has not changed.
 (rerunfilecheck)             Checksum: 27D2955553EFA8E67FFAF0CE6A6452FA;997.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 285.
  ) 
 Here is how much of TeX's memory you used:
- 8657 strings out of 492616
- 129777 string characters out of 6129482
- 236235 words of memory out of 5000000
- 12344 multiletter control sequences out of 15000+600000
- 64515 words of font info for 143 fonts, out of 8000000 for 9000
+ 8827 strings out of 492616
+ 131903 string characters out of 6129482
+ 239720 words of memory out of 5000000
+ 12508 multiletter control sequences out of 15000+600000
+ 64828 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,10n,49p,1218b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -784,10 +816,10 @@ ts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/ur
 w/symbol/usyr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utm
 b8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on newpaper.pdf (15 pages, 289934 bytes).
+Output written on newpaper.pdf (16 pages, 298575 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 246 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
  160 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,6 +8,7 @@
 \usepackage{float}
 \usepackage{amsmath,amssymb,amsthm} % For including math equations, theorems, symbols, etc
 \usepackage{subfig}
+\usepackage{soul}
 \graphicspath{{Figures/}} 
 \usepackage{setspace}
 
@@ -66,23 +67,44 @@ Since the total number of overdoses is unknown, this number needs to be estimate
 \section{Methods}
 
 \normalsize
-[\textbf{phrase differently: the prior and the data relate to "all the unknown parameter", but as a last stage you focus on one target.}]
-The number of overdoses is our ultimate target of estimation. To achieve the goal in context of Bayesian statistics, we use our prior belief and available data set about the target of estimation. The posterior belief is coming from both of these sources of the information. The following equation express the idea in a mathmatical form:
+[\textbf{phrase differently: the prior and the data relate to "all the unknown parameter", but as a last stage you focus on one target.}]\\  
+
+[\textbf{following the comment, the first attempt:}]\\  
+The number of overdoses is our ultimate target of estimation. To achieve the goal in context of Bayesian statistics, we use our prior belief and available data set about the target of estimation. The posterior belief is coming from both of these sources of the information. Let $\theta$ denote all the unknown variables and let $Y$ denote all the related data sets. The following equation express the idea of Bayesian generative models in a mathmatical form:
+\begin{equation}
+\label{generic_bayes_thm}
+\left.\begin{aligned}
+p(\theta| Y ) = \frac{ p(\theta, Y)   }{ p(y)} = \frac{ p(\theta) p(Y|\theta)}{ p(Y)} \propto p(\theta) p(Y| \theta) \end{aligned}\right.
+\end{equation}
+[\textbf{Question: to make this flow better, maybe you want a  version of (1) which generically describes parameter and latent varaibles given observed data.}]
+The equation \ref{generic_bayes_thm} states that the posterior belief of unobserved variables, $p(\theta|Y)$, is proportional to the mixture of the prior belief of the varaibles, $p(\theta)$, and the related data sets given the prior belief, $p(Y|\theta)$. Notice that the vector $\theta$ from equation \ref{generic_bayes_thm} includes parameters and latent variables, and hence it contains the total number of overdoses.  
+
+Let us assume that we are interested in the opioid crisis from month 1 to month T.  Let the subscript 1:T for any variable denote the variable of every target months and subscription t for any variable denote the variable of the month t. Then the target variable, the total number of overdoses from month 1 to month T  in British Columbia, is denoted by $O_{1:T}$.
+\iffalse
+Let $O_t$ denote the total number of overdoses in a given month $t$. 
+\fi
+In Bayesian concepts, the variable of interest $O_{1:T}$ is a vector of fixed number but the numbers are yielded from a certain distribution where the distribution describes knowledge about $O_{1:T}$; that is, each $O_t$ is considered to be a sample of a random variable. 
+The simplest conceptual model is to take an underlying log-rate $z_t$ for each month $t$ where $z_t$ is independent and identically distributed across months according to a normal distribution with mean $\mu$ and variance $\sigma^2$. \cite{Irvine:modelling} Then let $\lambda_{t}^{OD}$ denote the rate of overdose at month $t$. It is assumed that the number of overdoses in the month, $O_t$, follows Poisson distribution with parameter $\lambda_{t}^{OD}N$ where the population of the region of interest is $N$. Note that the population size, N, is unknown and vary over time in reality but it is assumed known and constant for the investigator here for simplicity. The mechanism is named as overdose model  and is illustrated in mathmatical form below:
+
+\iffalse
+{The number of overdoses is our ultimate target of estimation. To achieve the goal in context of Bayesian statistics, we use our prior belief and available data set about the target of estimation. The posterior belief is coming from both of these sources of the information. The following equation express the idea in a mathmatical form:
+\fi
+
+\iffalse
 \begin{equation}
 \label{bayes_thm}
 \left.\begin{aligned}
 p(O_t| y ) = \frac{ p(O_t, y)   }{ p(y)} = \frac{ p(O_t) p(y| O_t)}{ p(y)} \propto p(O_t) p(y| O_t) \end{aligned}\right.
 \end{equation}
-[\textbf{Question: to make this flow better, maybe you want a graph figure version of (1) which generically describes parameter and latent varaibles given observed data.}]
-where $O_t$ is the total number of overdoses in a given month $t$ in British Columbia, and $y$ represents the collected data set providing relevant samples of the target variable. In Bayesian concepts, the variable of interest $O_t$ is a fixed number but the number is yielded from a certain distribution where the distribution describes knowledge about $O_t$; That is, $O_t$ is considered to be a sample of a random variable. The problem, however, is that the data $y$ is not available. Hence it is needed to approach the estimation in an indirect fashion. \\ 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.5\linewidth]{Figures/simple_drawing}
-	\caption{Example of estimating the total overdoses indirectly given two data sets: ambulance attended overdoses and survey data.}
-	\label{simple_draw}
-\end{figure}
+\fi
 
-Figure \ref{simple_draw} shows an example of how the estimation can be proceeded. It is assumed that we are interested in the opioid crisis from month 1 to month T; subscript 1:T for any variable denotes the variable of every target months and subscription t denotes month t. The simplest conceptual model described in Figure \ref{simple_draw} is to take an underlying log-rate $z_t$ where that is independent and identically distributed across months according to a normal distribution with mean $\mu$ and variance $\sigma^2$. \cite{Irvine:modelling} Then let $\lambda_{t}^{OD}$ denote the rate of overdose at month $t$. It is assumed that the number of overdoses in the month, $O_t$, follows Poisson distribution with parameter $\lambda_{t}^{OD}N$ where the population of the region of interest is $N$. Note that the population size, N, is unknown and vary over time in reality but it is assumed known and constant for the investigator here for simplicity. 
+\iffalse
+where $O_t$ is the total number of overdoses in a given month $t$ in British Columbia, and $y$ represents the collected data set providing relevant samples of the target variable. In Bayesian concepts, the variable of interest $O_t$ is a fixed number but the number is yielded from a certain distribution where the distribution describes knowledge about $O_t$; That is, $O_t$ is considered to be a sample of a random variable. The problem, however, is that the data $y$ is not available. Hence it is needed to approach the estimation in an indirect fashion. 
+\fi
+
+\iffalse
+ It is assumed that we are interested in the opioid crisis from month 1 to month T; subscript 1:T for any variable denotes the variable of every target months and subscription t denotes month t. The simplest conceptual model described in Figure \ref{simple_draw} is to take an underlying log-rate $z_t$ where that is independent and identically distributed across months according to a normal distribution with mean $\mu$ and variance $\sigma^2$. \cite{Irvine:modelling} Then let $\lambda_{t}^{OD}$ denote the rate of overdose at month $t$. It is assumed that the number of overdoses in the month, $O_t$, follows Poisson distribution with parameter $\lambda_{t}^{OD}N$ where the population of the region of interest is $N$. Note that the population size, N, is unknown and vary over time in reality but it is assumed known and constant for the investigator here for simplicity. 
+\fi
  
  \begin{equation}
  \label{overdose}
@@ -94,7 +116,9 @@ Figure \ref{simple_draw} shows an example of how the estimation can be proceeded
  \text{		overdose model} 
  \end{equation}
  
-Since estimation of $O_t$ is not straightforward as some of the variables ($\mu$, $\sigma$) determining $O_t$ is not known, we assume there was a survey conducted to help to support the inference about  $O_t$. The survey asked witnesses of opioid overdoses whether someone called an ambulance for each month. This provides an estimate of the proportion of ambulance call $p_{A,t}$ among the overdoses. For the moment $p_{A,t}$ is assumed constant across time for simplicity. Let $n_{A,t}$ be the sample size of the survey, and $x_{A,t}$ be the total number who confirmed that an ambulance was called. It is assumed that $x_{A}$ follows a Binomial distribution:
+
+ 
+Since estimation of $O_t$ is not straightforward as some of the variables ($\mu$, $\sigma$) determining $O_t$ is not known, we assume there was a survey conducted to help to support the inference about  $O_t$. The survey asked witnesses of opioid overdoses whether someone called an ambulance for each month. This provides an estimate of the proportion of ambulance call $p_{A,t}$ among the overdoses. For the moment $p_{A,t}$ is assumed constant across time for simplicity. Let $n_{A,t}$ be the sample size of the survey at month $t$, and $x_{A,t}$ be the total number who confirmed that an ambulance was called at the month $t$. It is assumed that $x_{A,t}$ follows a Binomial distribution with number of trials, $n_{A,t}$, and  success probability for each trial, $p_{A,t}$. The mechanism is named as ambulance call-outs model and is illustrated in mathmatical form below:
 
 \begin{equation}
 \label{ambulance}
@@ -103,7 +127,7 @@ x_{A,t} \sim Bin(n_{A,t},p_{A,t})\end{aligned}\right.
 \text{ambulance call-outs model}
 \end{equation}
 
-Let \(U_t\) be the number of  ambulance-attended overdoses at a time point $t$. In general, the data of ambulance-attended overdoses \(U_t\) can be obtained. It is assumed that  \(U_t\) follows a Binomial distribution: 
+Now the estimated $p_{A,t}$ can help to infer $O_t$ if there is a data regarding the number of  ambulance-attended overdoses. Let \(U_t\) be the number of ambulance-attended overdoses at a time point $t$. In general, the data of ambulance-attended overdoses \(U_t\) can be obtained. It is assumed that  \(U_t\) follows a Binomial distribution: 
 \begin{equation}
 \label{over_amb}
 \left.
@@ -111,7 +135,14 @@ U_t \sim Bin(O_t, p_{A,t})
 \right.
 \end{equation}
 
-Note that now $O_t$ can be estimated because $p_{A,t}$ can be infered from the survey data and the data regarding $U_t$ is given. We suggest a simple model as a start where the model only combines Overdose Model (\ref{overdose}) and Ambulance Call-outs Model (\ref{ambulance}) with the relation (\ref{over_amb}). The next step is to run some simulations to figure out how different types of inputs lead some changes of output. \\
+Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the survey data and the data regarding $U_t$ is given. Figure \ref{simple_draw} shows an example of how the estimation can be proceeded. The variables that can be observed (N, $U_{1:T}$, and $X_{A,1:T}$) are drawn in the square box and the parameters ($\mu, \sigma^2$) and the latent variables ($\lambda_{1:T}, O_{1:T}, P_{A,1:T})$) that are not observarble from possible data sets are drawn in the circle box. We suggest a simple model as a start where the model only combines Overdose Model \ref{overdose} and Ambulance Call-outs Model \ref{ambulance} with the relation \ref{over_amb}. The next step is to run some simulations to figure out how different types of inputs lead some changes of output.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=200mm,scale=0.5]{Figures/simple_drawing}
+	\caption{Example of estimating the total number of overdoses indirectly given two data sets: ambulance attended overdoses and survey data.}
+	\label{simple_draw}
+\end{figure}
 
 \subsection{Simulation}
 
