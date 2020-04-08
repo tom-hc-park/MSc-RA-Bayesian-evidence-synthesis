@@ -77,7 +77,7 @@ The number of overdoses is our ultimate target of estimation. To achieve the goa
 p(\theta| Y ) = \frac{ p(\theta, Y)   }{ p(y)} = \frac{ p(\theta) p(Y|\theta)}{ p(Y)} \propto p(\theta) p(Y| \theta) \end{aligned}\right.
 \end{equation}
 [\textbf{Question: to make this flow better, maybe you want a  version of (1) which generically describes parameter and latent varaibles given observed data.}]
-The equation \ref{generic_bayes_thm} states that the posterior belief of unobserved variables, $p(\theta|Y)$, is proportional to the mixture of the prior belief of the varaibles, $p(\theta)$, and the related data sets given the prior belief, $p(Y|\theta)$. Notice that the vector $\theta$ from equation \ref{generic_bayes_thm} includes parameters and latent variables, and hence it contains the total number of overdoses.  
+where $p(\cdot)$ is probability density (or mass) function. The equation \ref{generic_bayes_thm} states that the posterior belief of unobserved variables, $p(\theta|Y)$, is proportional to the mixture of the prior belief of the varaibles, $p(\theta)$, and the related data sets given the prior belief, $p(Y|\theta)$. Notice that the vector $\theta$ from equation \ref{generic_bayes_thm} includes parameters and latent variables, and hence it contains the total number of overdoses.  
 
 Let us assume that we are interested in the opioid crisis from month 1 to month T.  Let the subscript 1:T for any variable denote the variable of every target months and subscription t for any variable denote the variable of the month t. Then the target variable, the total number of overdoses from month 1 to month T  in British Columbia, is denoted by $O_{1:T}$.
 \iffalse
@@ -146,6 +146,18 @@ Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the surve
 
 We suggest a simple model in figure \ref{simple_draw} as a start where the model only combines Overdose Model \ref{overdose} and Ambulance Call-outs Model \ref{ambulance} with the relation \ref{over_amb}. The next step is to run some simulations to figure out how different types of inputs lead some changes of output.
 
+\subsection{Generative Models}
+
+[\textbf{draft:}] A generative model described in figure \ref{simple_draw} at a month $t$ can be written as follows given some a priori assumptions:
+
+\begin{equation}
+\label{gen_model}
+\left.\begin{aligned}
+p(\theta) & =p(\mu,\sigma^2,\lambda_t, N, O_t, p_{A,t}, n_{A,t}, x_{A,t}, U_t) \\
+& = p(\mu)p(\sigma^2)p(\lambda_t|\mu, \sigma^2)p(N)p(O_t|\lambda_t, N)p(p_{A,t})p(n_{A,t})p(x_{A,t}|p_{A,t},n_{A,t})p(U_t|O_t, p_{A,t}) \\
+& \propto p(\mu)p(\sigma^2)p(\lambda_t|\mu, \sigma^2)p(O_t|\lambda_t, N)p(p_{A,t})p(x_{A,t}|p_{A,t},n_{A,t})p(U_t|O_t, p_{A,t}) 
+ \end{aligned}\right.
+\end{equation}
 
 \subsection{Simulation}
 
