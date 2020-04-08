@@ -135,7 +135,7 @@ U_t \sim Bin(O_t, p_{A,t})
 \right.
 \end{equation}
 
-Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the survey data and the data regarding $U_t$ is given. Figure \ref{simple_draw} shows an example of how the estimation can be proceeded. The variables that can be observed (N, $U_{1:T}$, and $X_{A,1:T}$) are drawn in the square box and the parameters ($\mu, \sigma^2$) and the latent variables ($\lambda_{1:T}, O_{1:T}, P_{A,1:T})$) that are not observarble from possible data sets are drawn in the circle box. We suggest a simple model as a start where the model only combines Overdose Model \ref{overdose} and Ambulance Call-outs Model \ref{ambulance} with the relation \ref{over_amb}. The next step is to run some simulations to figure out how different types of inputs lead some changes of output.
+Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the survey data and the data regarding $U_t$ is given. Figure \ref{simple_draw} shows an example of how the estimation can be proceeded. The variables that can be observed (N, $U_{1:T}$, and $x_{A,1:T}$) are drawn in the square boxes and the parameters ($\mu, \sigma^2$) and the latent variables ($\lambda_{1:T}, O_{1:T}, p_{A,1:T} $) that are not observarble from possible data sets are drawn in the circle boxes. Variables that need prior distributions have asterisks on their draws. The arrows indicate which variables affects which variables; for example, there is an arrow from $\mu, \sigma^2$ to $\lambda_{1:T}$ since $\mu, \sigma^2$ is the parameters of $\lambda_{1:T}$, and the two arrows from  $\lambda_{1:T}$ and $N$ to $O_{1:T}$ indicate that both $N$ and $\lambda_{1:T}$ affects the value of $O_{1:T}$ since the product of $\lambda_{1:T}$ and $N$ is the parameter of the distribution of $O_{1:T}$.
 
 \begin{figure}[htb]
 	\centering
@@ -143,6 +143,9 @@ Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the surve
 	\caption{Example of estimating the total number of overdoses indirectly given two data sets: ambulance attended overdoses and survey data.}
 	\label{simple_draw}
 \end{figure}
+
+We suggest a simple model in figure \ref{simple_draw} as a start where the model only combines Overdose Model \ref{overdose} and Ambulance Call-outs Model \ref{ambulance} with the relation \ref{over_amb}. The next step is to run some simulations to figure out how different types of inputs lead some changes of output.
+
 
 \subsection{Simulation}
 
