@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  11 APR 2020 18:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  11 APR 2020 19:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**newpaper.tex
-(./newpaper.tex
+**researchpaper.tex
+(./researchpaper.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -389,8 +389,8 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 40.
 
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 40.
-(./newpaper.aux)
-\openout1 = `newpaper.aux'.
+(./researchpaper.aux)
+\openout1 = `researchpaper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
@@ -407,7 +407,8 @@ LaTeX Font Info:    ... okay on input line 47.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 47.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 *geometry* driver: auto-detecting
@@ -493,9 +494,9 @@ LaTeX Info: Redefining \ref on input line 47.
 LaTeX Info: Redefining \pageref on input line 47.
 LaTeX Info: Redefining \nameref on input line 47.
 
-(./newpaper.out) (./newpaper.out)
+(./researchpaper.out) (./researchpaper.out)
 \@outlinefile=\write3
-\openout3 = `newpaper.out'.
+\openout3 = `researchpaper.out'.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
@@ -541,22 +542,22 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
 
-(./newpaper.toc
+(./researchpaper.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 )
 \tf@toc=\write4
-\openout4 = `newpaper.toc'.
+\openout4 = `researchpaper.toc'.
 
- (./newpaper.lof)
+ (./researchpaper.lof)
 \tf@lof=\write5
-\openout5 = `newpaper.lof'.
+\openout5 = `researchpaper.lof'.
 
- (./newpaper.lot)
+ (./researchpaper.lot)
 \tf@lot=\write6
-\openout6 = `newpaper.lot'.
+\openout6 = `researchpaper.lot'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 60--61
@@ -780,16 +781,16 @@ d on input line 295.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [15 <./Figures/early_contamination_underestimated-u_t.png> <./Figures/early_con
-tamination_overestimated-u_t.png>] (./newpaper.bbl [16 <./Figures/early_contami
-nation_underestimated-x_a.png> <./Figures/early_contamination_overestimated-x_a
-.png>])
+tamination_overestimated-u_t.png>] (./researchpaper.bbl [16 <./Figures/early_co
+ntamination_underestimated-x_a.png> <./Figures/early_contamination_overestimate
+d-x_a.png>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 305.
  [17]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 305.
- (./newpaper.aux)
+ (./researchpaper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 305.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 305.
-Package rerunfilecheck Info: File `newpaper.out' has not changed.
+Package rerunfilecheck Info: File `researchpaper.out' has not changed.
 (rerunfilecheck)             Checksum: 9C49AE64A647988A30086855A3D0B55D;1068.
 
 
@@ -799,12 +800,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 305.
  ) 
 Here is how much of TeX's memory you used:
  8800 strings out of 492616
- 131489 string characters out of 6129482
+ 131594 string characters out of 6129482
  239833 words of memory out of 5000000
  12482 multiletter control sequences out of 15000+600000
  64313 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,49p,1218b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,49p,1223b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -816,7 +817,7 @@ dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/urw/symbol/usyr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/t
 imes/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on newpaper.pdf (17 pages, 291991 bytes).
+Output written on researchpaper.pdf (17 pages, 291991 bytes).
 PDF statistics:
  313 PDF objects out of 1000 (max. 8388607)
  259 compressed objects within 3 object streams

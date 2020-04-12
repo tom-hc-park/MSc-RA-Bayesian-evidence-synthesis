@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: newpaper.aux
+The top-level auxiliary file: researchpaper.aux
 The style file: alpha.bst
 Database file #1: sample.bib
 Warning--entry type for "bccdc_opioid" isn't style-file defined
@@ -36,7 +36,7 @@ Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatte
 while executing---line 1250 of file alpha.bst
 You've used 7 entries,
             2543 wiz_defined-function locations,
-            587 strings with 5315 characters,
+            587 strings with 5325 characters,
 and the built_in function-call counts, 2084 in all, are:
 = -- 187
 > -- 98
