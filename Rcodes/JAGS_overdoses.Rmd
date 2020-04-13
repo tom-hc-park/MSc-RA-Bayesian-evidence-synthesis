@@ -52,7 +52,9 @@ Todo: build a pipeline to connect the python (pymc3) and R (JAGS)
 ```{r}
 df <- read.csv('./basic_data.csv')
 df$X <- NULL 
-head(df)
+# head(df)
+
+knitr::kable(df, "pandoc")
 ```
 Now we set the model which defines the relations of overdose model and ambulance call model.
 

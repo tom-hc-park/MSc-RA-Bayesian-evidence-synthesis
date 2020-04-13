@@ -148,35 +148,32 @@ We suggest a simple model in figure \ref{simple_draw} as a start where the model
 
 \subsection{Generative Models}
 
-[\textbf{done?: mentioning how generative model factors and mentioning fig 1 again.}] A generative model described in figure \ref{simple_draw} at a month $t$ can be written as follows given some a priori assumptions:
+[\textbf{done?: comments: Before moving on to simulation, you should write out how the generative(generable) model factors, and mention Fig1 again.}] The amalgamation of the prior distribution and the statistical model can be referred to as the generative model.[reference] A generative model described in figure \ref{simple_draw} at a month $t$ can be written as follows given some a priori assumptions:
 
 \begin{equation}
 \label{gen_model}
 \left.\begin{aligned}
-p(\theta) & =p(\mu,\sigma^2,\lambda_t, N, O_t, p_{(A,t)}, n_{(A,t)}, x_{(A,t)}, U_t) \\
+p(\theta, Y) & =p(\mu,\sigma^2,\lambda_t, N, O_t, p_{(A,t)}, n_{(A,t)}, x_{(A,t)}, U_t) \\
 & = p(\mu)p(\sigma^2|\mu)p(\lambda_t|\mu, \sigma^2)p(N)p(O_t|\lambda_t, N)p(p_{(A,t)})p(n_{(A,t)})p(x_{(A,t)}|p_{(A,t)},n_{(A,t)})p(U_t|O_t, p_{(A,t)}) \\
 & \propto p(\mu)p(\sigma^2)p(\lambda_t|\mu, \sigma^2)p(O_t|\lambda_t, N)p(p_{(A,t)})p(x_{(A,t)}|p_{(A,t)},n_{(A,t)})p(U_t|O_t, p_{(A,t)}) 
  \end{aligned}\right.
 \end{equation}
 
-The chain rule for random variables \cite{chain_rule} is used to the joint distribution of all variables at the first line of equation \ref{gen_model} such that the second line of the equation is derived.
+where $\theta = (\mu, ,\sigma^2,\lambda_t, O_t, p_{(A,t)})$ and $ Y = ( N, n_{(A,t)}, x_{(A,t)}, U_t)$. The chain rule for random variables \cite{chain_rule} is used to the joint distribution of all variables at the first line of equation \ref{gen_model} such that the second line of the equation is derived.
 A priori independence assumptions and conditional independence assumptions were presumed so that the second line of the equation is simplified. For example, it is asumed that  $\sigma^2$ and $\mu$ are independent to each other and $p_{A,t}$ and also all the variables from overdose model \ref{overdose}, ($\mu, \sigma^2, \lambda_t, N, O_t$), are independent to each other. 
-Note that as a function of unknown variables, the function from the second line of the equation \ref{gen_model} is proportional to the function from the third line of the equation since $N$ and $n_{(A,t)}$ are presumed to be known and constants such that the density functions of the known variables are merely constants. Therefore the third line of the equation is the simplified generative model of interest.
+Note that as a function of unknown variables, the function from the second line of the equation \ref{gen_model} is proportional to the function from the third line of the equation since $N$ and $n_{(A,t)}$ are presumed to be known and constants such that the density functions of the known variables are merely constants. Therefore the third line of the equation is the ultimate generative model of interest.
 
 
 \subsection{Simulation}
 
 \normalsize 
-The first simulation assumed $N= 10000, n_{A}=1000$.  [\textbf{Q;Before moving on to simulation, you should write out how the generative(generable) model factors, and mention Fig1 again.}]\\
-
-\subsubsection{Markov chain Monte Carlo}
-The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). The technique is a popular method to obtain posterior samples from distributions where analytic forms do not exist or are hard to be derived. \textbf{[Further explanation is going to be added.]} [attempt:brief explaination of MCMC and related topics]\\
-
+Simulation can be used to predict the performance of the Bayesian models. In order to measure the performance of the simplified model, a data set was simulated and the process is described in this chapter. 
 
 \subsubsection{Likelihood}
 
 \normalsize 
-There exist two data sets: the survey data ($n_{A,1:T}, x_{A,1:T}$), and the ambulance attended overdose data ($U_{1:T}$). The two data sets were simulated as follows. It was assumed that the two data sets were collected for a year (T=12). In terms of the survey data, it is assumed that  we have 12 survey data sets where each survey data set was collected for each month . The true value of $p_{A,t}$ was set as $p_{A,t}=0.8$ and the survey sample size $n_{A,t}$ was set as $n_{A,t}=1000$ for every months (t=1:T). The $x_{A,t}$ values for each month were independentally generated from the Binomial distribution (\ref{ambulance}).  In terms of the overdose data, it is assumed that the true values of parameters for overdose model were $\mu=\log0.05,\ \sigma=1$.
+There exist two data sets: the survey data ($n_{A,1:T}, x_{A,1:T}$), and the ambulance attended overdose data ($U_{1:T}$). The two data sets were simulated as follows. It was assumed that the two data sets were collected for a year (T=12). In terms of the survey data, it is assumed that  we have 12 survey data sets where each survey data set was collected for each month . The true value of $p_{A,t}$ was set as $p_{A,t}=0.8$ and the survey sample size $n_{A,t}$ was set as $n_{A,t}=1000$ for every months (t=1:T). The $x_{A,t}$ values for each month were independentally generated from the Binomial distribution (\ref{ambulance}).  
+In terms of the overdose data, it is assumed that the total number of population were $N = 10000$ the true values of parameters for overdose model were $\mu=\log0.05,\ \sigma=1$.
 The vector of $O_t$ was generated following the overdose model (\ref{overdose}). The vector of $U_t$ was generated from the Binomial relation of the two variables ($\ref{over_amb}$). The two generated vectors have the same length with the survey data (T=12).  Note that only $U_t$ and $x_{A,t}$ are the only known as the data set in real world and $p_{A,t}$ needs to be estimated first in order to estimate $O_t$ which is the ultimate interest of the research.\\
 
 
@@ -198,7 +195,25 @@ p(p_A) \sim Beta(1,1)
 \text{			noninformative prior for overdose model}
 \end{equation}
 
-This leads the posterior distribution of variables of interest to heavily depend on the likelihood. Later, the noninformative priors will be changed and the impact of the changes to posteriors will be investigated. \\
+This leads the posterior distribution of variables of interest to heavily depend on the likelihood. Later, the noninformative priors will be changed and the impact of the changes to posteriors will be investigated. 
+
+\subsubsection{Markov Chain Monte Carlo}
+
+[Why do we need MCMC? Because we don't have platinum, golden, and silver grails.]\\
+Posterior distribution of the unseen variables, parameters ($\mu, \sigma^2, p_{A,1:T}$) and the latent variables ($\lambda_{1:T}, O_{1:T}$), given the seen variables, $Y$=($N, n_{(A,1:T)} x_{(A,1:T)}, U_{1:T}$), is the key to make any inference for any of the unseen variables, $\theta$. For the inference about the variable of interest, $O_{1:T}$, the marginal posterior distribution, $p(O_{1:T}|Y)$, is essential which can be obtained by integrating the joint posterior distribution, $p(\theta|Y)$, over all the other unseen variables except $O_{1:T}$. 
+However, in general it is severely complicated and almost impossible to perform such multiple integrations because $p(\theta|Y)$ is a complex distribution of high dimensions. Moreover, $p(O_{1:T}|Y)$ may not have closed form nor follow a known parametric distribution, which lead the general inference procedure laborious.\\ 
+Markov Chain Monte Carlo (MCMC) is a detour to obtain posterior samples from $p(\theta|Y)$ without explicitly knowing the distribution.  MCMC technique allows us to generate Monte Carlo realizations of samples, $\theta_{(i)}$, which are dependent, with the distribution of each sample, $p(\theta_{(i)})$, converging to $p(\theta|Y)$.\cite{paul}.\\
+[general explanation of what is MC and MC, how it works.]
+
+
+ Generative model auto pilot conceptunally there's only\\
+ one distribution of unseen stuff given the seen stuff we can use the distribution to make whatever inference claims that we need to make, such as point estimation, credibal interval, inference about parameters or latent variables. 
+
+[Two types of bronze grails, NUTS, metropolis]
+
+[explain all the figures below was derived by NUTS, and python]
+
+The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). The technique is a popular method to obtain posterior samples from distributions where analytic forms do not exist or are hard to be derived. \textbf{[Further explanation is going to be added.]} [attempt:brief explaination of MCMC and related topics]
 
 \subsection{Initial Result} 
 
@@ -219,7 +234,7 @@ Figure \ref{pst_ot} is the boxplot of posterior samples of $O_t$. It is shown th
 	\label{pst_ot}
 \end{figure}
 
-Let $O_T$ denote the total overdose per year ($O_T = \sum_{t=1}^{12}O_t $). Figure \ref{hst_ot} is the histogram of posterior samples of the total number of overdoses $O_T$ per year. 2000 samples were collected and shown as the histogram.  It is seen that the plot is bell shaped and not skewed. The total number of overdoses per year is inferred to be around 10900 to 11000. [mention about credible interval] [\textbf{not on density scale (count only has meaning relative to chosen MCMC number iterations))}]\\
+Let $O_+$ denote the total overdose per year ($O_+ = \sum_{t=1}^{12}O_t $). Figure \ref{hst_ot} is the histogram of posterior samples of the total number of overdoses $O_+$ per year. 2000 samples were collected and shown as the histogram.  It is seen that the plot is bell shaped and not skewed. The total number of overdoses per year is inferred to be around 10900 to 11000. [mention about credible interval] \\
 
 \begin{figure}[h]
 	\centering

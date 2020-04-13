@@ -17,6 +17,11 @@ Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald
 \newblock CRC Press, 6000 Broken Sound Parkway NW, Suite 300 Boca Raton, FL
   33487-2742, 2014.
 
+\bibitem[Gus20]{paul}
+Paul Gustafson.
+\newblock {Lecture note 1 in STATISTICAL THEORY FOR THE DESIGN AND ANALYSIS OF
+  CLINICAL STUDIES: Bayesian Inference in Latent Variable Models}, March 2020.
+
 \bibitem[IM19]{Irvine:modelling}
 Buxton J Balshaw R Otterstatter M Macdougall L et~al. Irvine~MA, Kuo~M.
 \newblock Modelling the combined impact of interventions in averting deaths
@@ -25,7 +30,7 @@ Buxton J Balshaw R Otterstatter M Macdougall L et~al. Irvine~MA, Kuo~M.
 
 \bibitem[JTC16]{pymc3}
 Salvatier J., Wiecki T.V., and Fonnesbeck C.
-\newblock Probabilistic programming in python using pymc3.
+\newblock {Probabilistic programming in Python using PyMC3}.
 \newblock {\em PeerJ Computer Science}, 2016.
 
 \bibitem[Smi19]{opioid_desc}
