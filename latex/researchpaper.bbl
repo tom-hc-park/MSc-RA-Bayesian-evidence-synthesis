@@ -6,6 +6,13 @@
 \newblock Chain rule (probability) --- {W}ikipedia{,} the free encyclopedia,
   2020.
 
+\bibitem[Den16]{jags}
+Matthew~J. Denwood.
+\newblock {runjags}: An {R} package providing interface utilities, model
+  templates, parallel computing methods and additional distributions for {MCMC}
+  models in {JAGS}.
+\newblock {\em Journal of Statistical Software}, 71(9):1--25, 2016.
+
 \bibitem[fDC19]{bccdc_opioid}
 BC~Center for Disease~Control.
 \newblock {BC Overdose Prevention Services Guide}, 2019.
@@ -32,6 +39,21 @@ Buxton J Balshaw R Otterstatter M Macdougall L et~al. Irvine~MA, Kuo~M.
 Salvatier J., Wiecki T.V., and Fonnesbeck C.
 \newblock {Probabilistic programming in Python using PyMC3}.
 \newblock {\em PeerJ Computer Science}, 2016.
+
+\bibitem[Kru10]{doing_bayes}
+John~K. Kruschke.
+\newblock {\em Doing Bayesian Data Analysis: A Tutorial with R and BUGS}.
+\newblock Academic Press, Inc., USA, 1st edition, 2010.
+
+\bibitem[{R C}13]{r_lan}
+{R Core Team}.
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria, 2013.
+
+\bibitem[Rat02]{gill}
+Boca Raton.
+\newblock {\em Bayesian methods for the social and behavioral sciences.}
+\newblock Florida: CRC Press, 2002.
 
 \bibitem[Smi19]{opioid_desc}
 Cooper Smith.
