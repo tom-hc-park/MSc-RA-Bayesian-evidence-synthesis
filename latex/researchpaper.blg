@@ -5,7 +5,7 @@ The style file: alpha.bst
 Database file #1: sample.bib
 Warning--entry type for "bccdc_opioid" isn't style-file defined
 --line 33 of file sample.bib
-I was expecting a `,' or a `}'---line 78 of file sample.bib
+I was expecting a `,' or a `}'---line 84 of file sample.bib
  : 
  : @misc{paul,
 (Error may have been on previous line)
@@ -27,6 +27,7 @@ Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatte
 while executing---line 1185 of file alpha.bst
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
 while executing---line 1185 of file alpha.bst
+Warning--to sort, need author or key in markov
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
 while executing---line 1250 of file alpha.bst
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
@@ -35,45 +36,45 @@ Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatte
 while executing---line 1250 of file alpha.bst
 Too many commas in name 1 of "Irvine MA, Kuo M, Buxton J, Balshaw R, Otterstatter M, Macdougall L, et al." for entry Irvine:modelling
 while executing---line 1250 of file alpha.bst
-You've used 12 entries,
+You've used 14 entries,
             2543 wiz_defined-function locations,
-            615 strings with 6031 characters,
-and the built_in function-call counts, 3481 in all, are:
-= -- 321
-> -- 138
+            621 strings with 6227 characters,
+and the built_in function-call counts, 3999 in all, are:
+= -- 369
+> -- 158
 < -- 9
-+ -- 42
-- -- 42
-* -- 203
-:= -- 580
-add.period$ -- 30
-call.type$ -- 12
-change.case$ -- 63
-chr.to.int$ -- 12
-cite$ -- 14
-duplicate$ -- 156
-empty$ -- 291
-format.name$ -- 59
-if$ -- 706
++ -- 49
+- -- 48
+* -- 231
+:= -- 651
+add.period$ -- 33
+call.type$ -- 14
+change.case$ -- 73
+chr.to.int$ -- 14
+cite$ -- 18
+duplicate$ -- 176
+empty$ -- 343
+format.name$ -- 66
+if$ -- 819
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 9
-newline$ -- 58
-num.names$ -- 33
-pop$ -- 94
+newline$ -- 65
+num.names$ -- 36
+pop$ -- 113
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 90
 quote$ -- 0
-skip$ -- 132
+skip$ -- 158
 stack$ -- 0
-substring$ -- 101
-swap$ -- 13
+substring$ -- 117
+swap$ -- 15
 text.length$ -- 9
 text.prefix$ -- 7
 top$ -- 0
-type$ -- 84
-warning$ -- 1
-while$ -- 26
-width$ -- 16
-write$ -- 140
+type$ -- 100
+warning$ -- 2
+while$ -- 29
+width$ -- 18
+write$ -- 158
 (There were 13 error messages)

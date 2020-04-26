@@ -26,8 +26,13 @@ Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald
 
 \bibitem[Gus20]{paul}
 Paul Gustafson.
-\newblock {Lecture note 1 in STATISTICAL THEORY FOR THE DESIGN AND ANALYSIS OF
+\newblock {Lecture notes in STATISTICAL THEORY FOR THE DESIGN AND ANALYSIS OF
   CLINICAL STUDIES: Bayesian Inference in Latent Variable Models}, March 2020.
+
+\bibitem[HG11]{hoffman2011nouturn}
+Matthew~D. Hoffman and Andrew Gelman.
+\newblock The no-u-turn sampler: Adaptively setting path lengths in hamiltonian
+  monte carlo, 2011.
 
 \bibitem[IM19]{Irvine:modelling}
 Buxton J Balshaw R Otterstatter M Macdougall L et~al. Irvine~MA, Kuo~M.
@@ -44,6 +49,9 @@ Salvatier J., Wiecki T.V., and Fonnesbeck C.
 John~K. Kruschke.
 \newblock {\em Doing Bayesian Data Analysis: A Tutorial with R and BUGS}.
 \newblock Academic Press, Inc., USA, 1st edition, 2010.
+
+\bibitem[mar20]{markov}
+Markov chain--- {W}ikipedia{,} the free encyclopedia, 2020.
 
 \bibitem[{R C}13]{r_lan}
 {R Core Team}.

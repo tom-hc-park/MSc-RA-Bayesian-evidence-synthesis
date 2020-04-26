@@ -61,7 +61,7 @@ The opioid crisis is a major issue in North America including British Columbia, 
 
 One difficulty in coping with the opioid crisis is that the total number of overdoses is unknown. The reason is that the use of prescription opioids often leads to use of illicit opioids and the extent of illicit usage cannot be known. Many of those who become addicted to opioids do so after initially receiving a prescription. The highly addictive nature of these pain relievers makes it easy for the human brain to crave more. It is only after their prescription ends that many users realize they’ve become dependent on the effects of opioids  to function “normally.” At that point, they are either forced to get clean and endure the pain that comes with the withdrawal symptoms of opioids or look for another means of getting their high. This is often the time where people will turn to illicit drugs or other analogues. Because prescription opioids are so expensive,  many users turn to heroin. It is often cheaper, more potent, and easier to locate than what they were taking before. In fact, about 80\% of people using heroin started with a prescription to another opioid. After using heroin, however, 23\% of individuals develop opioid addiction.\cite{opioid_desc} \\
 
-Since the total number of overdoses is unknown, this number needs to be estimated. Bayesian statistics can be a way to approach the problem and give us a good estimate of the number with a defensible range of uncertainty. Bayesian statistics is a theory in the field of statistics based on the Bayesian interpretation of probability where probability expresses a degree of belief in an event. \cite{wiki_bayes} Further explanation is provided at the following section. [todo: explain Bayesian statistics a little bit more here]\\
+Since the total number of overdoses is unknown, this number needs to be estimated. Bayesian statistics can be a way to approach the problem and give us a good estimate of the number with a defensible range of uncertainty. Bayesian statistics is a theory in the field of statistics based on the Bayesian interpretation of probability where probability expresses a degree of belief in an event. \cite{wiki_bayes} Further explanation is provided at the following section.\\
 
 
 \section{Methods}
@@ -74,7 +74,7 @@ The number of overdoses is our ultimate target of estimation. To achieve the goa
 p(\theta| Y ) = \frac{ p(\theta, Y)   }{ p(Y)} = \frac{ p(\theta) p(Y|\theta)}{ p(Y)} \propto p(\theta) p(Y| \theta), \end{aligned}\right.
 \end{equation}
 
-where $p(\cdot)$ is probability density (or mass) function. The equation \ref{generic_bayes_thm} states that the posterior belief of unobserved variables, $p(\theta|Y)$, is proportional to the mixture of the prior belief of the variables, $p(\theta)$, and the related data sets given the prior belief, $p(Y|\theta)$. Notice that the vector $\theta$ from equation \ref{generic_bayes_thm} includes parameters and latent variables, and hence it contains the total number of overdoses.  
+where $p(\cdot)$ is probability density (or mass) function. The equation \ref{generic_bayes_thm} states that the posterior belief of unobserved variables, $p(\theta|Y)$, is proportional to the mixture of the prior belief of the variables, $p(\theta)$, and the related data sets given the prior belief, $p(Y|\theta)$. Notice that the vector $\theta$ from equation \ref{generic_bayes_thm} includes parameters and latent variables, and hence it contains the total number of overdoses. \\
 
 Let us assume that we are interested in the opioid crisis from month 1 to month T.  Let the subscript 1:T for any variable denote the variable for all target months and subscript t for any variable denote the variable of the month t. Then the target variable, the total number of overdoses from month 1 to month T  in British Columbia, is denoted by $O_{1:T}$.
 \iffalse
@@ -108,9 +108,9 @@ where $O_t$ is the total number of overdoses in a given month $t$ in British Col
  \left.\begin{aligned}
  z_{t} \sim N(\mu, \sigma^{2}), \\
  \lambda_{t}^{OD} = \exp(z_{t}),\\
- O_{t} \sim Poi(\lambda_{t}^{OD}N)
+ O_{t} \sim Poi(\lambda_{t}^{OD}N).
  \end{aligned}\right\} 
- \text{(overdose model).} 
+ \text{(overdose model)} 
  \end{equation}
  
 
@@ -132,7 +132,7 @@ U_t \sim Bin(O_t, p_{A,t}).
 \right.
 \end{equation}
 
-Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the survey data and the data regarding $U_t$ is given. Figure \ref{simple_draw} shows an example of how the estimation can proceed. The variables that can be observed (N, $U_{1:T}$, and $x_{A,1:T}$) are drawn in squares and the parameters ($\mu, \sigma^2$) and the latent variables ($\lambda_{1:T}, O_{1:T}, p_{A,1:T} $) that are not observarble from possible data sets are drawn in circles. Variables that need prior distributions are indicated with asterisks. The arrows indicate which variables affects which variables; for example, there is an arrow from $(\mu, \sigma^2)$ to $\lambda_{1:T}$ since $\mu, \sigma^2$ are the parameters of $\lambda_{1:T}$, and the two arrows from  $\lambda_{1:T}$ and $N$ to $O_{1:T}$ indicate that both $N$ and $\lambda_{1:T}$ affects the value of $O_{1:T}$ since the product of $\lambda_{1:T}$ and $N$ is the parameter of the distribution of $O_{1:T}$.
+Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the survey data and the data regarding $U_t$ is given. Figure \ref{simple_draw} shows an example of how the estimation can proceed. The variables that can be observed (N, $U_{1:T}$, and $x_{A,1:T}$) are drawn in squares and the parameters ($\mu, \sigma^2$) and the latent variables ($\lambda_{1:T}, O_{1:T}, p_{A,1:T} $) that are not observarble from possible data sets are drawn in circles. Variables that need prior distributions are indicated with asterisks. The arrows indicate which variables affects which variables; for example, there is an arrow from $(\mu, \sigma^2)$ to $\lambda_{1:T}$ since $\mu, \sigma^2$ are the parameters of $\lambda_{1:T}$, and the two arrows from  $\lambda_{1:T}$ and $N$ to $O_{1:T}$ indicate that both $N$ and $\lambda_{1:T}$ affects the value of $O_{1:T}$ since the product of $\lambda_{1:T}$ and $N$ is the parameter of the distribution of $O_{1:T}$.\\
 
 \begin{figure}[htb]
 	\centering
@@ -144,7 +144,7 @@ Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the surve
 We suggest a simple model in figure \ref{simple_draw} as a start where the model only combines Overdose Model \ref{overdose} and Ambulance Call-outs Model \ref{ambulance} with the relation \ref{over_amb}. The next step is to run some simulations to figure out how different types of inputs lead some changes of output.
 
 \subsection{Generative Models}
-The amalgamation of the prior distribution and the statistical model can be referred to as the generative model.[reference] A generative model described in figure \ref{simple_draw} at a month $t$ can be written as follows given some a priori assumptions:
+The amalgamation of the prior distribution and the statistical model can be referred to as the generative model.\cite{paul} A generative model described in figure \ref{simple_draw} at a month $t$ can be written as follows given some a priori assumptions:
 
 \begin{equation}
 \label{gen_model}
@@ -156,7 +156,9 @@ p(\theta, Y) & =p(\mu,\sigma^2,\lambda_t, N, O_t, p_{(A,t)}, n_{(A,t)}, x_{(A,t)
 \end{equation}
 where $\theta = (\mu, ,\sigma^2,\lambda_t, O_t, p_{(A,t)})$ and $ Y = ( N, n_{(A,t)}, x_{(A,t)}, U_t)$. The chain rule for random variables \cite{chain_rule} is used to the joint distribution of all variables at the first line of equation \ref{gen_model} such that the second line of the equation is derived.
 A priori independence assumptions and conditional independence assumptions were presumed so that the second line of the equation is simplified. For example, it is asumed that  $\sigma^2$ and $\mu$ are independent to each other and $p_{A,t}$ and also all the variables from overdose model \ref{overdose}, ($\mu, \sigma^2, \lambda_t, N, O_t$), are independent to each other. 
-Note that as a function of unknown variables, the function from the second line of the equation \ref{gen_model} is proportional to the function from the third line of the equation since $N$ and $n_{(A,t)}$ are presumed to be known and constants such that the density functions of the known variables are merely constants. Therefore the third line of the equation is the ultimate generative model of interest.
+Note that as a function of unknown variables, the function from the second line of the equation \ref{gen_model} is proportional to the function from the third line of the equation since $N$ and $n_{(A,t)}$ are presumed to be known and constants such that the density functions of the known variables are merely constants. Therefore the third line of the equation is the ultimate generative model of interest.\\
+
+Conceptunally, generative model yields the posterior distribution $p(\theta|Y)$ on auto pilot since there exists only one distribution of $\theta$ given $Y$. we can use the distribution to make any inference claims that we need to make about parameters or latent variables such as point estimation and credibal interval.\\
 
 
 \subsection{Simulation}
@@ -194,27 +196,32 @@ This leads the posterior distribution of variables of interest to heavily depend
 
 \subsubsection{Markov Chain Monte Carlo}
 
-[Why do we need MCMC? Because we don't have platinum, golden, and silver grails.]\\
-The posterior distribution of the unseen variables, parameters ($\mu, \sigma^2, p_{A,1:T}$) and the latent variables ($\lambda_{1:T}, O_{1:T}$), given the seen variables, $Y$=($N, n_{(A,1:T)} x_{(A,1:T)}, U_{1:T}$), is the key to make any inference for any of the unseen variables, $\theta$. For the inference about the variable of interest, $O_{1:T}$, the marginal posterior distribution, $p(O_{1:T}|Y)$, is essential which can be obtained by integrating the joint posterior distribution, $p(\theta|Y)$, over all the other unseen variables except $O_{1:T}$. 
-However, in general it is severely complicated and almost impossible to perform such multiple integrations because $p(\theta|Y)$ is a complex distribution of high dimension. Moreover, $p(O_{1:T}|Y)$ may not have closed-form nor follow a known parametric distribution, which makes the general inference procedure laborious.\\ 
-Markov Chain Monte Carlo (MCMC) is a detour to obtain posterior samples from $p(\theta|Y)$ without explicitly knowing the distribution.  MCMC technique allows us to generate Monte Carlo realizations of samples, $\theta_{(i)}$, which are dependent, with the distribution of each sample, $p(\theta_{(i)})$, converging to $p(\theta|Y)$.\cite{paul}.
-[general explanation of what is MC and MC, how it works.]\\ 
-
-
- Generative model auto pilot conceptunally there's only\\
- one distribution of unseen stuff given the seen stuff we can use the distribution to make whatever inference claims that we need to make, such as point estimation, credibal interval, inference about parameters or latent variables.\\
- Assessing the properties of a target distribution by generating representative random values is a case of a Monte Carlo simulation. Any simulation that samples a lot of random values from a distribution is called a Monte Carlo simulation, named after the dice and spinners and shufflings of the famous casino locale. This appellation is attributed to the mathematician von Neumann, or sometimes to Metropolis \cite{gill}.\\
- The Metropolis algorithm is a specific type of Monte Carlo process. It generates a random walk such that each step in the walk is completely independent of the steps before the current position. The proposed next step has no dependence on where the walk has been before, and the decision to reject or accept the proposed step has no dependence on where the walk has been before. Any such process in which each step has no memory for states before the current one is called a (first order) Markov process, and a succession of such steps is a Markov chain. The Metropolis algorithm is an example of a Markov chain Monte Carlo (MCMC) process. \cite{doing_bayes}\\
+The posterior distribution of the unseen variables-parameters ($\mu, \sigma^2, p_{A,1:T}$) and the latent variables ($\lambda_{1:T}, O_{1:T}$) given the seen variables, $Y$=($N, n_{(A,1:T)} x_{(A,1:T)}, U_{1:T}$), is the key to make any inference for any of the unseen variables $\theta$. For the inference about the variable of interest $O_{1:T}$, the marginal posterior distribution $p(O_{1:T}|Y)$ is essential which can be obtained by integrating the joint posterior distribution $p(\theta|Y)$ over all the other unseen variables except $O_{1:T}$. However, in general it is severely complicated and almost impossible to perform such multiple integrations because $p(\theta|Y)$ is a complex distribution of high dimension. Moreover, $p(O_{1:T}|Y)$ may not have closed-form nor follow a known parametric distribution, which makes the general inference procedure laborious.\\ 
  
-[Two types of bronze grails, NUTS, metropolis]
+Markov Chain Monte Carlo (MCMC) is a detour to obtain posterior samples from $p(\theta|Y)$ without explicitly knowing the distribution.  A Markov chain is a stochastic model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event. In continuous-time, it is known as a Markov process. \cite{markov} Monte Carlo refers to the way how the inference of the target distribution is proceeded. Assessing the properties of a target distribution by generating representative random values is a case of a Monte Carlo simulation and any simulation that samples a lot of random values from a distribution is called a Monte Carlo simulation. \cite{gill}. MCMC technique allows us to generate Monte Carlo realizations of samples $\theta_{(i)}$ which are dependent, with the distribution of each sample $p(\theta_{(i)})$ converging to $p(\theta|Y)$.\cite{paul}.
 
-[explain all the figures below was derived by NUTS, and python]
+\paragraph{Algorithms}
 
-The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). The technique is a popular method to obtain posterior samples from distributions where analytic forms do not exist or are hard to be derived. \textbf{[Further explanation is going to be added.]} [attempt:brief explaination of MCMC and related topics]
+Gibbs sampling is a type of Metropolis algorithm that is used in JAGS. The Metropolis algorithm is a specific type of Monte Carlo process. It generates a random walk such that each step in the walk is completely independent of the steps before the current position. The proposed next step has no dependence on where the walk has been before, and the decision to reject or accept the proposed step has no dependence on where the walk has been before. The Metropolis algorithm is an example of a MCMC process. \cite{doing_bayes} \\
+
+The No-U-Turn Sampler (NUTS) is a Hamiltonian Monte Carlo (HMC) Method that is used in pyMC3. HMC is a MCMC algorithm that avoids the random walk behavior and sensitivity to correlated parameters that plague many MCMC methods by taking a series of steps informed by first-order gradient information. These features allow it to converge to high-dimensional target distributions much more quickly than simpler methods such as random walk Metropolis or Gibbs sampling. However HMC’s performance is highly sensitive to two user-specified parameters: a step size and a desired number of steps. \cite{hoffman2011nouturn} Moreover, NUTS struggles to samples discrete random variables and hence it is recommended to approximate discrete random variables to continuous ones. The Poisson distribution from \ref{overdose} was approximated to Gamma distribution with the same parameter ($\lambda_{t}^{OD}N$) in pyMC3.
+
+\paragraph{Assessing Convergence}
+
+While independent samples of $\theta$ from the posterior distribution $p(\theta|Y)$ is of interest for any inference purpose, samples of $\theta_{(i)}$ generated by MCMC technique are (1), dependent samples and (2), the distribution of each sample $p(\theta_{(i)})$ are not exactly but only converges to $p(\theta|Y)$. It is essential to measure how well Monte Carlo realizations of samples approximate to the possible samples from the independent and identical posterior distribution. There are a few steps to examine the level of convergence.\\
+
+First, it is mandatory to throw away some initial samples of Markov Chain realizations. Note that a value of $\theta_{(i)}$  from a lot of iteration better represents a sample from the posterior distribuion than some $\theta_{(j)}$ value from some early period of iterations ($i > j$). Since the convergence takes enough number of iterations, it is necessary to discard a chunk of the iterations from $\theta_{(1)}$ to $\theta_{(n)}$ for a large number $n$ enough to obtain the proper samples to represent the samples of interest from the posterior distribution. The period of iterations to be discarded is called burn-in period.
+\\
+
+Secondly, it is strongly recommended to have multiple starting points to assure the convergence. A visual way to check the convergence is to see a plot of  iteration numbers in x axis and their values for each iteration in y axis (trace plot). Note that $p(\theta_{(i)})$ converges to  $p(\theta|Y)$ regardless of the initial position of $\theta_{(1)}$, but the location of a initial position affects the number of iterations of MCMC algorithm for the convergence. Looking at only a single chain of iterations and their values may mislead us to believe that the number of iterations is enough while the trace of the values are staying at a local area before it reaches to the target distribution. By having more than one initial points and checking that the chains get mixed well and are stationary at a certain iteration point, we can verify that the algorithm reaches the desirable target distribution. 
+\\
+
+Lastly, numerical measures such as $\hat{R}$ and effective sample size can help us to examine the degree of convergence as well as looking at the trace plot of multiple chains of iterations. $\hat{R}$ is a measure of convergence where values for $\hat{R}$ near 1 suggest convergence. Effective sample size is a crude measure of the number of independent (effective) sample size from the total number of samples generated from a certain Markov chain. Both criteria is accessible after a generative model is fitted from a summary report of MCMC packages. The values of $\hat{R}$ and effective sample size in this report are obtainaed from JAGS. \\
+
 
 \subsection{Initial Result} 
 
-All examples here were performed in Python 3.8 with the library pyMC3 \cite{pymc3} and also in  R 3.6.2 \cite{r_lan} with the JAGS 4.3.0\cite{jags} library. Figures in this section Fitting was performed on a GHz Intel Core i5 with 8GM of LPDD3 RAM and typically had wall times under ten minutes. Code for all examples in this study are provided. 
+The achievement of the simulation was done by Markov chain Monte Carlo (MCMC). All examples here were performed in Python 3.8 with the library pyMC3 \cite{pymc3} and also in R 3.6.2 \cite{r_lan} with the JAGS 4.3.0 \cite{jags} library. All visualizations were the results from Python and pyMC3. Fitting was performed on a GHz Intel Core i5 with 8GM of LPDD3 RAM and typically had wall times under ten minutes. Code for all examples in this study are provided. 
 
 \subsubsection{Posterior Distribution}
 
@@ -248,7 +255,7 @@ Figure \ref{ppc_ut} is the boxplot of posterior predictive samples of $U_t$. It 
 	\centering
 	\subfloat[ppc of $U_t$]{\includegraphics[width=.50\columnwidth]{Figures/early_r_ppc1_ut.png}\label{ppc_ut}}
 	\subfloat[ppc of $p_A$]{\includegraphics[width=.50\columnwidth]{early_r_ppc1_xt}\label{ppc_xt}}
-	\caption[two early result box plots:]{Boxplots of posterior predictive samples of $U_t$ and $x_A$ (1000 samples) with the actual data point of simulated $U_t$,$x_A$ value. The simulated values are shown as a red dots.}
+	\caption[Initial result: box plots of predictive posterior samples of $U_t$ and $x_A$]{Boxplots of posterior predictive samples of $U_t$ and $x_A$ (1000 samples) with the actual data point of simulated $U_t$,$x_A$ value. The simulated values are shown as a red dots.}
 	
 \end{figure}
 
@@ -267,7 +274,7 @@ Both underestimation and overestimation were considered for the analysis. In ter
 	\centering
 	\subfloat[ppc of $O_t$: underestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-o_t.png}\label{under_ot}}
 	\subfloat[ppc of $O_t$: overestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-o_t}\label{over_ot}}
-	\caption[two early result box plots:]{Boxplot of posterior samples of $O_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $O_t$ values are shown as red dots.}
+	\caption[Initial result: box plot of posterior samples of $O_t$ ]{Boxplot of posterior samples of $O_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $O_t$ values are shown as red dots.}
 	\label{contam_ot}
 \end{figure}
 
@@ -292,7 +299,7 @@ The possible explanation is that the contaminations of  $p_A$ and $O_t$ (from $p
 	\centering
 	\subfloat[ppc of $U_t$: underestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-u_t.png}\label{under_ut}}
 	\subfloat[ppc of $U_t$: overestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-u_t}\label{over_ut}}
-	\caption[two early result box plots:ut]{Boxplot of posterior samples of $U_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $U_t$ values are shown as red dots.}
+	\caption[Initial result: boxplot of posterior samples of $U_t$]{Box plot of posterior samples of $U_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $U_t$ values are shown as red dots.}
 	\label{contam_ut}
 \end{figure}
 
@@ -302,7 +309,7 @@ Figure \ref{contam_xt}  gives the boxplots of posterior predictive samples of $x
 	\centering
 	\subfloat[ppc of $x_A$: underestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-x_a.png}\label{under_xa}}
 	\subfloat[ppc of $x_A$: overestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-x_a.png}\label{over_xa}}
-	\caption[two early result box plots:xa]{Boxplot of posterior samples of $x_A$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $x_A$ values are shown as red dots.}
+	\caption[Initial result: b	oxplot of posterior samples of $x_A$]{Boxplot of posterior samples of $x_A$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $x_A$ values are shown as red dots.}
 	\label{contam_xt}
 \end{figure}
 
