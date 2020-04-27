@@ -1,22 +1,22 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Example of estimating the total number of overdoses indirectly given two data sets: ambulance attended overdoses and survey data.\relax }}{6}{figure.caption.4}% 
-\contentsline {figure}{\numberline {2}{\ignorespaces Boxplot of posterior samples of $O_t$ (2000 samples for each month) with simulated $O_t$ values as red dots.\relax }}{12}{figure.caption.5}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces Histogram of posterior samples of total overdoses per year\relax }}{13}{figure.caption.6}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Example of estimating the total number of overdoses}}{6}{figure.caption.4}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Initial result: boxplot of posterior samples of $O_t$}}{12}{figure.caption.5}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Initial result: histogram of posterior samples of total overdoses per year}}{13}{figure.caption.6}% 
 \contentsline {figure}{\numberline {4}{\ignorespaces Initial result: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$}}{14}{figure.caption.7}% 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $U_t$}}}{14}{subfigure.4.1}% 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $x_{A,t}$}}}{14}{subfigure.4.2}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces Initial result: box plot of posterior samples of $O_t$ }}{15}{figure.caption.8}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Contaminated $p_{A,t}$: boxplot of posterior samples of $O_t$ }}{15}{figure.caption.8}% 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $O_t$: underestimated $p_{A,t}$}}}{15}{subfigure.5.1}% 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $O_t$: overestimated $p_{A,t}$}}}{15}{subfigure.5.2}% 
-\contentsline {figure}{\numberline {6}{\ignorespaces Initial result: boxplot of posterior samples of $U_t$}}{17}{figure.caption.9}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Contaminated $p_{A,t}$: boxplot of posterior samples of $U_t$}}{17}{figure.caption.9}% 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $U_t$: underestimated $p_{A,t}$}}}{17}{subfigure.6.1}% 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $U_t$: overestimated $p_{A,t}$}}}{17}{subfigure.6.2}% 
-\contentsline {figure}{\numberline {7}{\ignorespaces Initial result: b oxplot of posterior samples of $x_{A,t}$}}{18}{figure.caption.10}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Contaminated $p_{A,t}$:: boxplot of posterior samples of $x_{A,t}$}}{18}{figure.caption.10}% 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $x_{A,t}$: underestimated $p_{A,t}$}}}{18}{subfigure.7.1}% 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $x_{A,t}$: overestimated $p_{A,t}$}}}{18}{subfigure.7.2}% 
 \contentsline {figure}{\numberline {8}{\ignorespaces Generative model with unoberservable $N$\relax }}{19}{figure.caption.11}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces Trace plot of $N$\relax }}{20}{figure.caption.12}% 
-\contentsline {figure}{\numberline {10}{\ignorespaces Boxplot of posterior samples of $N$ (20000 samples for each month)\relax }}{21}{figure.caption.13}% 
-\contentsline {figure}{\numberline {11}{\ignorespaces Boxplot of posterior samples of $O_t$ (20000 samples for each month) with simulated $O_t$ values as red dots.\relax }}{22}{figure.caption.14}% 
-\contentsline {figure}{\numberline {12}{\ignorespaces Initial result: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$}}{23}{figure.caption.15}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Unobserved $N$: trace plot of latent variable $N$}}{20}{figure.caption.12}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Unobserved $N$: boxplot of posterior samples of $N$}}{21}{figure.caption.13}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Unobserved $N$: boxplot of posterior samples of $O_t$}}{22}{figure.caption.14}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Unobserved $N$: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$}}{23}{figure.caption.15}% 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $U_t$}}}{23}{subfigure.12.1}% 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $x_{A,t}$}}}{23}{subfigure.12.2}% 

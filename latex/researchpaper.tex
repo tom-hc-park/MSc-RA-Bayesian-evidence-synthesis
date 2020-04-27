@@ -133,7 +133,7 @@ Note that $O_t$ can be estimated because $p_{A,t}$ can be infered from the surve
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=200mm,scale=0.5]{Figures/simple_drawing}
-	\caption{Example of estimating the total number of overdoses indirectly given two data sets: ambulance attended overdoses and survey data.}
+	\caption[Example of estimating the total number of overdoses]{Example of estimating the total number of overdoses indirectly given two data sets: ambulance attended overdoses and survey data.}
 	\label{simple_draw}
 \end{figure}
 
@@ -227,7 +227,7 @@ Figure \ref{pst_ot} is the boxplot of posterior samples of $O_t$. It is shown th
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/earlyresult1_ot.png}
-	\caption{Boxplot of posterior samples of $O_t$ (2000 samples for each month) with simulated $O_t$ values as red dots.}
+	\caption[Initial result: boxplot of posterior samples of $O_t$]{Boxplot of posterior samples of $O_t$ (2000 samples for each month) with simulated $O_t$ values as red dots.}
 	\label{pst_ot}
 \end{figure}
 
@@ -236,7 +236,7 @@ Let $O_+$ denote the total overdose per year ($O_+ = \sum_{t=1}^{12}O_t $). Figu
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/hist_sum_ot.png}
-	\caption{Histogram of posterior samples of total overdoses per year}
+	\caption[Initial result: histogram of posterior samples of total overdoses per year]{Histogram of posterior samples of total overdoses per year}
 	\label{hst_ot}
 \end{figure}
 
@@ -269,7 +269,7 @@ Both underestimation and overestimation were considered for the analysis. In ter
 	\centering
 	\subfloat[ppc of $O_t$: underestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-o_t.png}\label{under_ot}}
 	\subfloat[ppc of $O_t$: overestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-o_t}\label{over_ot}}
-	\caption[Initial result: box plot of posterior samples of $O_t$ ]{Boxplot of posterior samples of $O_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $O_t$ values are shown as red dots.}
+	\caption[Contaminated $p_{A,t}$: boxplot of posterior samples of $O_t$ ]{Boxplot of posterior samples of $O_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $O_t$ values are shown as red dots.}
 	\label{contam_ot}
 \end{figure}
 
@@ -294,7 +294,7 @@ The possible explanation is that the contaminations of  $p_{A,t}$ and $O_t$ (fro
 	\centering
 	\subfloat[ppc of $U_t$: underestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-u_t.png}\label{under_ut}}
 	\subfloat[ppc of $U_t$: overestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-u_t}\label{over_ut}}
-	\caption[Initial result: boxplot of posterior samples of $U_t$]{Box plot of posterior samples of $U_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $U_t$ values are shown as red dots.}
+	\caption[Contaminated $p_{A,t}$: boxplot of posterior samples of $U_t$]{Box plot of posterior samples of $U_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $U_t$ values are shown as red dots.}
 	\label{contam_ut}
 \end{figure}
 
@@ -304,7 +304,7 @@ Figure \ref{contam_xt}  gives the boxplots of posterior predictive samples of $x
 	\centering
 	\subfloat[ppc of $x_{A,t}$: underestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-x_a.png}\label{under_xa}}
 	\subfloat[ppc of $x_{A,t}$: overestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-x_a.png}\label{over_xa}}
-	\caption[Initial result: b	oxplot of posterior samples of $x_{A,t}$]{Boxplot of posterior samples of $x_{A,t}$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $x_{A,t}$ values are shown as red dots.}
+	\caption[Contaminated $p_{A,t}$:: boxplot of posterior samples of $x_{A,t}$]{Boxplot of posterior samples of $x_{A,t}$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $x_{A,t}$ values are shown as red dots.}
 	\label{contam_xt}
 \end{figure}
 
@@ -344,7 +344,7 @@ Both MCMC algorithms from pyMC3 and JAGS suffered from relatievely long running 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/not_mixed_N.png}
-	\caption{Trace plot of $N$}
+	\caption[Unobserved $N$: trace plot of latent variable $N$]{Trace plot of latent variable $N$}
 	\label{trace_N}
 \end{figure}
 
@@ -352,8 +352,8 @@ The reason of having a mixing issue is because too much inference has been asked
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{Figures/hist_N.png}
-	\caption{Boxplot of posterior samples of $N$ (20000 samples for each month)}
+	\includegraphics[width=0.7\linewidth]{Figures/hist_N.png}
+	\caption[Unobserved $N$: boxplot of posterior samples of $N$]{Boxplot of posterior samples of $N$ (20000 samples for each month)}
 	\label{hist_unk_n}
 \end{figure}
 
@@ -361,7 +361,8 @@ Posterior samples of $O_t$ was accurate as before. [mention that although the mi
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/unknown_N_ot.png}
-	\caption{Boxplot of posterior samples of $O_t$ (20000 samples for each month) with simulated $O_t$ values as red dots.}
+
+	\caption[Unobserved $N$: boxplot of posterior samples of $O_t$]{Boxplot of posterior samples of $O_t$ (20000 samples for each month) with simulated $O_t$ values as red dots.}
 	\label{pst_ot_unk_n}
 \end{figure}
 
@@ -372,7 +373,7 @@ Posterior samples of $O_t$ was accurate as before. [mention that although the mi
 	\centering
 	\subfloat[ppc of $U_t$]{\includegraphics[width=.50\columnwidth]{Figures/unk_N_ppc1_ut.png}\label{ppc_ut_unk_n}}
 	\subfloat[ppc of $x_{A,t}$]{\includegraphics[width=.50\columnwidth]{unk_N_ppc1_xt}\label{ppc_xt_unk_n}}
-	\caption[Initial result: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$]{Boxplots of posterior predictive samples of $U_t$ and $x_{A,t}$ (1000 samples) with the actual data point of simulated $U_t$,$x_{A,t}$ value. The simulated values are shown as a red dots.}
+	\caption[Unobserved $N$: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$]{Boxplots of posterior predictive samples of $U_t$ and $x_{A,t}$ (1000 samples each) with the actual data point of simulated $U_t$, $x_{A,t}$ value. The simulated values are shown as a red dots.}
 	
 \end{figure}
 
