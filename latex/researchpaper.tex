@@ -350,11 +350,32 @@ Both MCMC algorithms from pyMC3 and JAGS suffered from relatievely long running 
 
 The reason of having a mixing issue is because too much inference has been asked to the data set. ~
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/hist_N.png}
+	\caption{Boxplot of posterior samples of $N$ (20000 samples for each month)}
+	\label{hist_unk_n}
+\end{figure}
 
-
-Posterior samples of $O_t$ was accurate as before.
+Posterior samples of $O_t$ was accurate as before. [mention that although the mixing was not possible with the maximum capacity of the computer, at least the proper prior seems to help a lot for the estimation of $O_t$ which depends on the N. ][put the figure and briefly explain that the the estimation for the variable is not hugely affected.]
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/unknown_N_ot.png}
+	\caption{Boxplot of posterior samples of $O_t$ (20000 samples for each month) with simulated $O_t$ values as red dots.}
+	\label{pst_ot_unk_n}
+\end{figure}
 
 \subsubsection{Posterior Predictive Check}
+
+[put the figures and briefly explain that the the estimation for the variables are not hugely affected.]
+\begin{figure}[htb]
+	\centering
+	\subfloat[ppc of $U_t$]{\includegraphics[width=.50\columnwidth]{Figures/unk_N_ppc1_ut.png}\label{ppc_ut_unk_n}}
+	\subfloat[ppc of $x_{A,t}$]{\includegraphics[width=.50\columnwidth]{unk_N_ppc1_xt}\label{ppc_xt_unk_n}}
+	\caption[Initial result: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$]{Boxplots of posterior predictive samples of $U_t$ and $x_{A,t}$ (1000 samples) with the actual data point of simulated $U_t$,$x_{A,t}$ value. The simulated values are shown as a red dots.}
+	
+\end{figure}
+
 \iffalse
 could vary over time or it can be staritified for a better realization of the reality. The survey size could also vary such as $n_{A}=100$ or $n_{A}=10000$ in later examples. 
 \fi
@@ -369,8 +390,7 @@ However, Bayesian models have their own weaknesses. In cases where the problems 
 Note that the robustness of models shoud be confirmed. If there exist some contaminations of data sets, the result of posterior estimations may not be trustworthy and therefore it is needed to confirm how robust the result of models is from the contaimiations. Likewise, it is generally recommended to apply more than one MCMC algorithms to the generative model to confirm that Monte Carlo realizations of  samples are robust to different types of the algorithms.\\
  
 Lastly, notice that it is not reasonable to provide few data sets and ask Bayesian generative models to yield decent results; the models are not a god-like solver for every qnatitative problems. It is shown from the previous section that asking about the total population size $N$ is too much to ask for the model while the survey data $(n_{A,1:T}, x_{A,1:T})$ and the data of the number of ambulance-attended overdoses $(U_{1:T})$ are only provided.	\\
- 
- nevertheless, the bayesian generative model is 
+
 \bibliographystyle{alpha}
 \bibliography{sample.bib}
 \end{document}

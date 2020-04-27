@@ -15,3 +15,8 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $x_{A,t}$: overestimated $p_{A,t}$}}}{18}{subfigure.7.2}% 
 \contentsline {figure}{\numberline {8}{\ignorespaces Generative model with unoberservable $N$\relax }}{19}{figure.caption.11}% 
 \contentsline {figure}{\numberline {9}{\ignorespaces Trace plot of $N$\relax }}{20}{figure.caption.12}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Boxplot of posterior samples of $N$ (20000 samples for each month)\relax }}{21}{figure.caption.13}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Boxplot of posterior samples of $O_t$ (20000 samples for each month) with simulated $O_t$ values as red dots.\relax }}{22}{figure.caption.14}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Initial result: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$}}{23}{figure.caption.15}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {ppc of $U_t$}}}{23}{subfigure.12.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ppc of $x_{A,t}$}}}{23}{subfigure.12.2}% 

@@ -511,26 +511,26 @@ MCMCsummary(test)
 
 
 ```{r}
-MCMCtrace(test)
+MCMCtrace(test) 
+# better than #plot(test)
 ```
 
-
-```{r}
-plot(test)
-```
 
 ```{r get the samples of N and show a distribution}
 pst_mtx.N = as.matrix(test)
 head(pst_mtx.N)
 N <- pst_mtx.N[,1]
+head(N)
 length(N)
 ```
 
-
-
 ```{r}
-ggplot(data = as.data.frame(N), aes(x= N)) +geom_histogram()+ geom_vline(xintercept =10000)
+
+hist(N)
 ```
+
+## get the $O_t$, $U_t$, $x_{A,t}$ ommitted for now.
+
 
 
 
