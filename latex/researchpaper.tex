@@ -340,25 +340,26 @@ N \sim Normal(10000,1000)
 
 where the prior information suggests that $N$ is most likely around 10000 and $\pm 20\%$ of the point estimation covers  95\% of the symmetric support of $N$.
 \subsubsection{Posterior Distribution}
-Both MCMC algorithms from pyMC3 and JAGS suffered from relatievely long running time of the algorithms and the convergence issue of the trace of $N$. From the trace plot of $N$, two chains of the variable covered a common distribution but neither sequence appeared stationary after 10000000 iterations and the effective sample size for N was 56271. Figure \ref{trace_N} shows the trace plot and the posterior density plot of N. It is shown that the two chains cross over each other multiple times but they do not seem stationary even with 10000000 iterations. The posterior distribution seems to be roughly symmetric at the center 10000. 
-\begin{figure}[h]
+Both MCMC algorithms from pyMC3 and JAGS suffered from relatievely long running time of the algorithms and the convergence issue of the trace of $N$. The reason of having the stationarity issue is that too much inference has been asked to the data sets. Only two data sets, $U_{1:T}$ and $(n_{A,1:T}, x_{A,1:T})$, are given and the task was to generate posterior samples of 5 random variables, $N, \mu, \sigma^2, \lambda_{1:T}, O_{1:T}, p_{A,1:T}$. Figure \ref{trace_N} shows the trace plot and the posterior density plot of $N$. From the trace plot of $N$ it is seen that the chains are mixed well but not stationary and thus not convenging; two chains of the variable covered a common distribution but neither sequence appeared stable even after 10000000 iterations. The effective sample size for N was only 56271. The posterior distribution seems to be roughly symmetric at the center 10000. 
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/not_mixed_N.png}
 	\caption[Unobserved $N$: trace plot of latent variable $N$]{Trace plot of latent variable $N$}
 	\label{trace_N}
 \end{figure}
 
-The reason of having a mixing issue is because too much inference has been asked to the data set. ~
+Figure \ref{hist_unk_n} shows the posterior samples of $N$. Due to the computational cost and the restriction of computing power of the research device, only 20000 samples were generated from the model. The plot reveals that the posterior distribution is centered around the true value, 10000, and symmetric around the center. The result is likely to be due to the prior distribution. The prior distribution was providing exact and accurate information about $N$ such that the posterior distribution remains the similar shape although there is a convergence issue. Further research is recommended to investigate the effect of prior distribution to the posteior distribution of $N$.	
 
-\begin{figure}[h]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/hist_N.png}
 	\caption[Unobserved $N$: boxplot of posterior samples of $N$]{Boxplot of posterior samples of $N$ (20000 samples for each month)}
 	\label{hist_unk_n}
 \end{figure}
 
-Posterior samples of $O_t$ was accurate as before. [mention that although the mixing was not possible with the maximum capacity of the computer, at least the proper prior seems to help a lot for the estimation of $O_t$ which depends on the N. ][put the figure and briefly explain that the the estimation for the variable is not hugely affected.]
-\begin{figure}[h]
+Figure \ref{pst_ot_unk_n} shows that the inference of $O_{1:T}$ as accurate as before. This was possible as the proper prior distribution of $N$ yields acceptable estimation of $N$ which dominates the estimation of $O_t$ with $\mu, \sigma^2$ from figure \ref{draw_N}. Any distortion of the prior distribution of $N$ may affect the inference result of $O_{1:T}$.
+
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/unknown_N_ot.png}
 
@@ -368,19 +369,15 @@ Posterior samples of $O_t$ was accurate as before. [mention that although the mi
 
 \subsubsection{Posterior Predictive Check}
 
-[put the figures and briefly explain that the the estimation for the variables are not hugely affected.]
+Figure \ref{ppc_unk_n} is the boxplot of posterior predictive samples of $U_t$ and $x_{A,t}$. It is shown that the posterior predictive estimates of $U_t$ and $x_{A,t}$ are failry accurate for the same reason regarding the accuracy of the posterior distribution of $O_t$.
+
 \begin{figure}[htb]
 	\centering
 	\subfloat[ppc of $U_t$]{\includegraphics[width=.50\columnwidth]{Figures/unk_N_ppc1_ut.png}\label{ppc_ut_unk_n}}
 	\subfloat[ppc of $x_{A,t}$]{\includegraphics[width=.50\columnwidth]{unk_N_ppc1_xt}\label{ppc_xt_unk_n}}
 	\caption[Unobserved $N$: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$]{Boxplots of posterior predictive samples of $U_t$ and $x_{A,t}$ (1000 samples each) with the actual data point of simulated $U_t$, $x_{A,t}$ value. The simulated values are shown as a red dots.}
-	
+	\label{ppc_unk_n}
 \end{figure}
-
-\iffalse
-could vary over time or it can be staritified for a better realization of the reality. The survey size could also vary such as $n_{A}=100$ or $n_{A}=10000$ in later examples. 
-\fi
-
 
 \section{Conclusion}
  
