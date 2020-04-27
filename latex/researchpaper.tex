@@ -52,10 +52,6 @@
 \listoftables % Print the list of tables
 \doublespacing
 
-\begin{abstract}
-
-\end{abstract}
-
 \section{Introduction}
 The opioid crisis is a major issue in North America including British Columbia, Canada. British Columbia is in the midst of a drug overdose crisis due to illicit opioids and the circumstances are getting worse. According to the BC Coroners Service, there were more than 930 apparent illicit drug overdose deaths in BC from Jan. 1 to Dec. 31, 2016. This compares to 518 in 2015, an increase of 79.2\%. \cite{bccdc_opioid}  The goal of this project is to apply Bayesian evidence synthesis to better understand the opioid crisis in British Columbia, Canada.  \\ 
 
@@ -124,7 +120,7 @@ x_{A,t} \sim Bin(n_{A,t},p_{A,t})\end{aligned}\right.
 \text{(ambulance call-outs model).}
 \end{equation}
 
-Now the estimated $p_{A,t}$ can help to infer $O_t$ if there is a data regarding the number of  ambulance-attended overdoses. Let \(U_t\) be the number of ambulance-attended overdoses at a time point $t$. In general, the data of ambulance-attended overdoses \(U_t\) can be obtained. It is assumed that  \(U_t\) follows a Binomial distribution: 
+Now the estimated $p_{A,t}$ can help to infer $O_t$ if there is a data regarding the number of  ambulance-attended overdoses. Let \(U_t\) be at a time point $t$. In general, the data of ambulance-attended overdoses \(U_t\) can be obtained. It is assumed that  \(U_t\) follows a Binomial distribution: 
 \begin{equation}
 \label{over_amb}
 \left.
@@ -179,7 +175,7 @@ The vector of $O_t$ was generated following the overdose model (\ref{overdose}).
 
 \begin{equation}
 \label{nonin_prior_amb}
-p(p_A) \sim Beta(1,1)
+p(p_{A,t}) \sim Beta(1,1)
 \text{			noninformative prior for ambulance model}
 \end{equation} 
 
@@ -235,7 +231,7 @@ Figure \ref{pst_ot} is the boxplot of posterior samples of $O_t$. It is shown th
 	\label{pst_ot}
 \end{figure}
 
-Let $O_+$ denote the total overdose per year ($O_+ = \sum_{t=1}^{12}O_t $). Figure \ref{hst_ot} is the histogram of posterior samples of the total number of overdoses $O_+$ per year. 2000 samples were collected and shown as the histogram.  It is seen that the plot is bell-shaped and not skewed. The total number of overdoses per year is inferred to be around 10900 to 11000. [mention about credible interval] \\
+Let $O_+$ denote the total overdose per year ($O_+ = \sum_{t=1}^{12}O_t $). Figure \ref{hst_ot} is the histogram of posterior samples of the total number of overdoses $O_+$ per year. 3000 samples were collected and shown as the histogram.  It is seen that the plot is bell-shaped and not skewed. The 95\% credible interval of the total number of overdoses per year is between 10741 and 11164.\\
 
 \begin{figure}[h]
 	\centering
@@ -246,34 +242,33 @@ Let $O_+$ denote the total overdose per year ($O_+ = \sum_{t=1}^{12}O_t $). Figu
 
 \newpage
 \subsubsection{Posterior Predictive Check}
-Posterior predictive checking is a model validation technique when we simulate some replicated data under the fitted model then compare the new data to the observed data. If the model fits, then replicated data generated under the model should look similar to observed data. To put it another way, the observed data should look plausible under the posterior predictive distribution. This is really a self-consistency check: an observed discrepancy can be due to model misfit or chance. \cite{bda_galman}
-[attempted: brief explannation of what is PPC]\\
+Posterior predictive checking is a model validation technique when we simulate some replicated data under the fitted model then compare the new data to the observed data. If the model fits, then replicated data generated under the model should look similar to observed data. To put it another way, the observed data should look plausible under the posterior predictive distribution. This is really a self-consistency check: an observed discrepancy can be due to model misfit or chance. \cite{bda_galman}\\
 
 Figure \ref{ppc_ut} is the boxplot of posterior predictive samples of $U_t$. It is shown that the posterior predictive estimates of $U_t$ are failry accurate, for the same two reasons regarding the accuracy of the posterior distribution of $O_t$. It is more obvious here that the range of the boxplots from higher $O_t$ values (t=1, 7, 11) is wider than the other ranges of the boxplots from smaller estimates of $O_t$ (all t values but 1,7, 11). Notice that the relative ranges of figure \ref{ppc_ut} follow the ones of figure \ref{pst_ot}; for months where $U_t$ values are higher, the values of $O_t$ are also higher than the average (t=1, 7, 11).\\
 
 \begin{figure}[htb]
 	\centering
 	\subfloat[ppc of $U_t$]{\includegraphics[width=.50\columnwidth]{Figures/early_r_ppc1_ut.png}\label{ppc_ut}}
-	\subfloat[ppc of $p_A$]{\includegraphics[width=.50\columnwidth]{early_r_ppc1_xt}\label{ppc_xt}}
-	\caption[Initial result: box plots of predictive posterior samples of $U_t$ and $x_A$]{Boxplots of posterior predictive samples of $U_t$ and $x_A$ (1000 samples) with the actual data point of simulated $U_t$,$x_A$ value. The simulated values are shown as a red dots.}
+	\subfloat[ppc of $x_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_r_ppc1_xt}\label{ppc_xt}}
+	\caption[Initial result: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$]{Boxplots of posterior predictive samples of $U_t$ and $x_{A,t}$ (1000 samples) with the actual data point of simulated $U_t$,$x_{A,t}$ value. The simulated values are shown as a red dots.}
 	
 \end{figure}
 
-Figure \ref{ppc_xt} is the boxplots of posterior predictive samples of $x_A$. It is shown that the posterior predictive estimates of $x_A$ are tolerably accurate since (1), the boxplots contain actual values of $O_t$ within their lines connecting the maximum and the minimum, and (2), the ranges of IQR seem narrow. \\
+Figure \ref{ppc_xt} is the boxplots of posterior predictive samples of $x_{A,t}$. It is shown that the posterior predictive estimates of $x_{A,t}$ are tolerably accurate since (1), the boxplots contain actual values of $O_t$ within their lines connecting the maximum and the minimum, and (2), the ranges of IQR seem narrow. \\
 
 
 
-\subsection{Result: Contamination of $p_A$ } 
-One focus of this research project is to investigate how robust the model is to contaminations of the data sets. The first inspection is to check an impact of a contamination of $p_A$; what would happen if the estimation of $p_A$ is biased? It is assumed that the survey data gives us a wrong estimate of $p_A$ such that it would be underestimated or overestimated. We then want to see how the biased estimation of $p_A$ affects the estimate of $O_t$, the total number of overdoses.\\
+\subsection{Result: Contamination of $p_{A,t}$ } 
+One focus of this research project is to investigate how robust the model is to contaminations of the data sets. The first inspection is to check an impact of a contamination of $p_{A,t}$; what would happen if the estimation of $p_{A,t}$ is biased? It is assumed that the survey data gives us a wrong estimate of $p_{A,t}$ such that it would be underestimated or overestimated. We then want to see how the biased estimation of $p_{A,t}$ affects the estimate of $O_t$, the total number of overdoses.\\
 
-Both underestimation and overestimation were considered for the analysis. In terms of underestimation, the simulated survey data ($n_A, x_A$) was generated with $p_A=0.6$ while the true value of $p_A$ is 0.8, and all the other assumptions hold as before. That is, $x_A$ is generated from $x_A \sim Bin(n_A, 0.6)$, while $U_t$ is generated from $U_t \sim Bin(O_t, 0.8)$ for every $t$. For overestimation, the simulated survey data was generated with $p_A=0.9$ while the true value of $p_A$ is 0.8, and all the other assumptions hold the same.  \\
+Both underestimation and overestimation were considered for the analysis. In terms of underestimation, the simulated survey data ($n_{A,t}, x_{A,t}$) was generated with $p_{A,t}=0.6$ while the true value of $p_{A,t}$ is 0.8 for all $t$ ($t=1,2,3, ..., 12$), and all the other assumptions hold as before. That is, $x_{A,t}$ is generated from $x_{A,t} \sim Bin(n_{A,t}, 0.6)$, while $U_t$ is generated from $U_t \sim Bin(O_t, 0.8)$ for every $t$. For overestimation, the simulated survey data was generated with $p_{A,t}=0.9$ while the true value of $p_{A,t}$ is 0.8, and all the other assumptions hold the same.  \\
 
 \subsubsection{Posterior Distribution}
 
 \begin{figure}[htb]
 	\centering
-	\subfloat[ppc of $O_t$: underestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-o_t.png}\label{under_ot}}
-	\subfloat[ppc of $O_t$: overestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-o_t}\label{over_ot}}
+	\subfloat[ppc of $O_t$: underestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-o_t.png}\label{under_ot}}
+	\subfloat[ppc of $O_t$: overestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-o_t}\label{over_ot}}
 	\caption[Initial result: box plot of posterior samples of $O_t$ ]{Boxplot of posterior samples of $O_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $O_t$ values are shown as red dots.}
 	\label{contam_ot}
 \end{figure}
@@ -290,32 +285,92 @@ Figure \ref{over_ot} shows the opposite case. Overestimation of $p_A$ leads unde
 
 \subsubsection{Posterior Predictive Check}
 
-Figure \ref{contam_ut} gives the boxplots of posterior predictive samples where $p_A$ is underestimated and overestimated respectively from the survey data. It is seen that none of the contaminations of $p_A$ lead to an contamination effect on $U_t$ but only affect the $O_t$ estimation.\\
+Figure \ref{contam_ut} gives the boxplots of posterior predictive samples where $p_{A,t}$ is underestimated and overestimated respectively from the survey data. It is seen that none of the contaminations of $p_{A,t}$ lead to an contamination effect on $U_t$ but only affect the $O_t$ estimation.\\
 
-The possible explanation is that the contaminations of  $p_A$ and $O_t$ (from $p_A$) cancel out the bias component as combined so that $U_t$ has no bias. Notice that $U_t$ is a likelihood (data set) of $O_t$ estimation. Hence it plays the role of $y$ in Bayes theorem (\ref{bayes_thm}) and the likelihood, $U_t$, is used to obtain the biased posterior samples of $O_t$ with the contaminated estimates of $p_A$. Here the pair of $(O_t, P_A)$ are both biased and the pair is fitted by the likelihood, $U_t$. To obtain the posterior predictive samples, MCMC algorithm help obtain posterior samples of biased $O_t$ and then the samples will be combined with biased $p_A$ such that the new samples of $\tilde{U_t}$ from $p(\tilde{U_t}|{U_t})$ is obtained.  The result also matches with our intution. Posterior predictive checks use the existing data points twice; firstly it uses the data to obtain the posterior samples of parameters, and secondly the samples are used to produce posterior predictive samples. Given the fact that there could be an overfitting issue due to using the data twice, the result shown here seems reasonable. 
+The possible explanation is that the contaminations of  $p_{A,t}$ and $O_t$ (from $p_{A,t}$) cancel out the bias component as combined so that $U_t$ has no bias. Notice that $U_t$ is a likelihood (data set) of $O_t$ estimation. Hence it plays the role of $Y$ in Bayes theorem (\ref{generic_bayes_thm}) and the likelihood, $U_t$, is used to obtain the biased posterior samples of $O_t$ with the contaminated estimates of $p_A$. Here the pair of $(O_t, P_{A,t})$ are both biased and the pair is fitted by the likelihood, $U_t$. To obtain the posterior predictive samples, MCMC algorithm help obtain posterior samples of biased $O_t$ and then the samples will be combined with biased $p_A$ such that the new samples of $\tilde{U_t}$ from $p(\tilde{U_t}|{U_t})$ is obtained.  The result also matches with our intution. Posterior predictive checks use the existing data points twice; firstly it uses the data to obtain the posterior samples of parameters, and secondly the samples are used to produce posterior predictive samples. Given the fact that there could be an overfitting issue due to using the data twice, the result shown here seems reasonable. 
 \\
 
 \begin{figure}[htb]
 	\centering
-	\subfloat[ppc of $U_t$: underestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-u_t.png}\label{under_ut}}
-	\subfloat[ppc of $U_t$: overestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-u_t}\label{over_ut}}
+	\subfloat[ppc of $U_t$: underestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-u_t.png}\label{under_ut}}
+	\subfloat[ppc of $U_t$: overestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-u_t}\label{over_ut}}
 	\caption[Initial result: boxplot of posterior samples of $U_t$]{Box plot of posterior samples of $U_t$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $U_t$ values are shown as red dots.}
 	\label{contam_ut}
 \end{figure}
 
-Figure \ref{contam_xt}  gives the boxplots of posterior predictive samples of $x_A$ where $p_A$ is underestimated and overestimated respectively from the survey data. It is seen that none of the contaminations of $p_A$ leads an effect of contamination on $x_A$; the actual simulated points (red dots) are close to the medians from the two boxplots. However, notice that the range of the estimated values are different between the two boxplots; the median from Figure \ref{under_xa} is around 600 whereas the median from Figure \ref{over_xa} is around 900. [???? I think this should go to the previous of the previous paragraph] This is because overdose model (\ref{overdose}) does not affect the result from the ambulance model (\ref{ambulance}); only the ambulance model has an effect on the overdose model.
+Figure \ref{contam_xt}  gives the boxplots of posterior predictive samples of $x_{A,t}$ where $p_{A,t}$ is underestimated and overestimated respectively from the survey data. It is seen that none of the contaminations of $p_{A,t}$ leads an effect of contamination on $x_{A,t}$; the actual simulated points (red dots) are close to the medians from the two boxplots. However, notice that the range of the estimated values are different between the two boxplots; the median from Figure \ref{under_xa} is around 600 whereas the median from Figure \ref{over_xa} is around 900. This implies that the posterior predictive samples match the biased given data sets (with $p_{A,t}=0.6$ and $p_{A,t}=0.9$ respectively) but the samples cannot estimate the unbiased true value of $p_{A,t}$, which is 0.8. This is because overdose model (\ref{overdose}) does not affect the result from the ambulance model (\ref{ambulance}); only the ambulance model has an effect on the overdose model as it is seen from figure \ref{simple_draw}.
 
 \begin{figure}[h]
 	\centering
-	\subfloat[ppc of $x_A$: underestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-x_a.png}\label{under_xa}}
-	\subfloat[ppc of $x_A$: overestimated $p_A$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-x_a.png}\label{over_xa}}
-	\caption[Initial result: b	oxplot of posterior samples of $x_A$]{Boxplot of posterior samples of $x_A$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $x_A$ values are shown as red dots.}
+	\subfloat[ppc of $x_{A,t}$: underestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_underestimated-x_a.png}\label{under_xa}}
+	\subfloat[ppc of $x_{A,t}$: overestimated $p_{A,t}$]{\includegraphics[width=.50\columnwidth]{early_contamination_overestimated-x_a.png}\label{over_xa}}
+	\caption[Initial result: b	oxplot of posterior samples of $x_{A,t}$]{Boxplot of posterior samples of $x_{A,t}$ (1000 samples) where survey data is contaminated.  The actual data point of simulated $x_{A,t}$ values are shown as red dots.}
 	\label{contam_xt}
 \end{figure}
 
-\subsection{Variying the Assumptions}
-The assumptions will change later to see the impact of the likelihood over the posterior distributions of variables of interest; the total population size for a region, N, could vary over time or it can be staritified for a better realization of the reality. The survey size could also vary such as $n_{A}=100$ or $n_{A}=10000$ in later examples. 
+\subsection{Result: Unobservable $N$}
+In practice, it is reasonable to assume that investigators only have a general idea about the total population size of the reigion rather that they know the exact value of the total population size. The assumption of the known value of the total population size for a region, $N$, from the previous section changes to be unknown in this section to see the impact of the likelihood over the posterior distributions of variables of interest. The generative model at a month $t$ can be written as follows given some a priori assumptions:
+
+\begin{equation}
+\label{gen_model_unk_N}
+\left.\begin{aligned}
+p(\theta, Y) & =p(\mu,\sigma^2,\lambda_t, N, O_t, p_{(A,t)}, n_{(A,t)}, x_{(A,t)}, U_t) \\
+& = p(\mu)p(\sigma^2|\mu)p(\lambda_t|\mu, \sigma^2)p(N)p(O_t|\lambda_t, N)p(p_{(A,t)})p(n_{(A,t)})p(x_{(A,t)}|p_{(A,t)},n_{(A,t)})p(U_t|O_t, p_{(A,t)}) \\
+& \propto p(\mu)p(\sigma^2)p(\lambda_t|\mu, \sigma^2)p(N)p(O_t|\lambda_t, N)p(p_{(A,t)})p(x_{(A,t)}|p_{(A,t)},n_{(A,t)})p(U_t|O_t, p_{(A,t)}),
+\end{aligned}\right.
+\end{equation}
+
+where $\theta = (\mu, ,\sigma^2,\lambda_t, O_t, p_{(A,t)}, N)$ and $ Y = (n_{(A,t)}, x_{(A,t)}, U_t)$. Notice that $N$ is an element of $\theta$ instead of an element of $Y$ and the model contains a prior distribution of $N$. The chain rule for random variables \cite{chain_rule} is used to the joint distribution of all variables at the first line of equation \ref{gen_model_unk_N} such that the second line of the equation is derived.
+A priori independence assumptions and conditional independence assumptions were presumed so that the second line of the equation is simplified. The model is shown graphically in figure \ref{draw_N} where $N$ is a latent variable with a prior distribution needed.\\
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=100mm,scale=0.3]{Figures/draw_N}
+	\caption{Generative model with unoberservable $N$}
+	\label{draw_N}
+\end{figure}
+
+Suppose we have some information about the population size such that we transform it into a prior distribution; the prior distribution of $N$ should reflect our prior knowledge about $N$ which we have even before we encounter the data set. As a start,  $N$ is assumed to follow symmetric prior distribution: 
+
+\begin{equation}
+\label{in_prior_N}
+N \sim Normal(10000,1000)
+\text{ (informative prior for the total population size),}
+\end{equation} 
+
+where the prior information suggests that $N$ is most likely around 10000 and $\pm 20\%$ of the point estimation covers  95\% of the symmetric support of $N$.
+\subsubsection{Posterior Distribution}
+Both MCMC algorithms from pyMC3 and JAGS suffered from relatievely long running time of the algorithms and the convergence issue of the trace of $N$. From the trace plot of $N$, two chains of the variable covered a common distribution but neither sequence appeared stationary after 10000000 iterations and the effective sample size for N was 56271. Figure \ref{trace_N} shows the trace plot and the posterior density plot of N. It is shown that the two chains cross over each other multiple times but they do not seem stationary even with 10000000 iterations. The posterior distribution seems to be roughly symmetric at the center 10000. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/not_mixed_N.png}
+	\caption{Trace plot of $N$}
+	\label{trace_N}
+\end{figure}
+
+The reason of having a mixing issue is because too much inference has been asked to the data set. ~
+
+
+
+Posterior samples of $O_t$ was accurate as before.
+
+\subsubsection{Posterior Predictive Check}
+\iffalse
+could vary over time or it can be staritified for a better realization of the reality. The survey size could also vary such as $n_{A}=100$ or $n_{A}=10000$ in later examples. 
+\fi
+
+
+\section{Conclusion}
  
+Bayesian statistics and generative model is an outstanding approach for statistical inference which incorporate available data sets and our  prior knowlede and information. Bayesian model can cope with prior research outcomes as our prior information whereas frequentist approach cannot absorb the knowledge in their models. Furthermore, Bayesian modeling is intuitive to us since Bayesian viewpoint to probability corresponds to our conceptual perspective about probability. \\ 
+
+However, Bayesian models have their own weaknesses. In cases where the problems are immensely complicated, the models suffer much more than the Frequentist models from long computational time of MCMC algorithms. This issue has been being relived as the general computing power of machines has been improved and decent MCMC algorithms have been developed to reduce waiting time although patient waiting is still a virtue to Bayesian statisticians.\\
+ 
+Note that the robustness of models shoud be confirmed. If there exist some contaminations of data sets, the result of posterior estimations may not be trustworthy and therefore it is needed to confirm how robust the result of models is from the contaimiations. Likewise, it is generally recommended to apply more than one MCMC algorithms to the generative model to confirm that Monte Carlo realizations of  samples are robust to different types of the algorithms.\\
+ 
+Lastly, notice that it is not reasonable to provide few data sets and ask Bayesian generative models to yield decent results; the models are not a god-like solver for every qnatitative problems. It is shown from the previous section that asking about the total population size $N$ is too much to ask for the model while the survey data $(n_{A,1:T}, x_{A,1:T})$ and the data of the number of ambulance-attended overdoses $(U_{1:T})$ are only provided.	\\
+ 
+ nevertheless, the bayesian generative model is 
 \bibliographystyle{alpha}
 \bibliography{sample.bib}
 \end{document}

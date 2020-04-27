@@ -26,13 +26,13 @@
 \newlabel{overdose}{{2}{4}{Methods}{equation.2.2}{}}
 \newlabel{ambulance}{{3}{4}{Methods}{equation.2.3}{}}
 \citation{paul}
-\citation{chain_rule}
 \newlabel{over_amb}{{4}{5}{Methods}{equation.2.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Generative Models}{5}{subsection.2.1}\protected@file@percent }
-\newlabel{gen_model}{{5}{5}{Generative Models}{equation.2.5}{}}
+\citation{chain_rule}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Example of estimating the total number of overdoses indirectly given two data sets: ambulance attended overdoses and survey data.\relax }}{6}{figure.caption.4}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{simple_draw}{{1}{6}{Example of estimating the total number of overdoses indirectly given two data sets: ambulance attended overdoses and survey data.\relax }{figure.caption.4}{}}
+\newlabel{gen_model}{{5}{6}{Generative Models}{equation.2.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Simulation}{7}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Likelihood}{7}{subsubsection.2.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Prior Distributions}{8}{subsubsection.2.2.2}\protected@file@percent }
@@ -61,10 +61,10 @@
 \newlabel{sub@ppc_ut}{{(a)}{a}{Subfigure 4a\relax }{subfigure.4.1}{}}
 \newlabel{ppc_xt}{{4b}{14}{Subfigure 4b}{subfigure.4.2}{}}
 \newlabel{sub@ppc_xt}{{(b)}{b}{Subfigure 4b\relax }{subfigure.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Initial result: box plots of predictive posterior samples of $U_t$ and $x_A$}}{14}{figure.caption.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Initial result: box plots of predictive posterior samples of $U_t$ and $x_{A,t}$}}{14}{figure.caption.7}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ppc of $U_t$}}}{14}{subfigure.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ppc of $p_A$}}}{14}{subfigure.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Result: Contamination of $p_A$ }{14}{subsection.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ppc of $x_{A,t}$}}}{14}{subfigure.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Result: Contamination of $p_{A,t}$ }{14}{subsection.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Posterior Distribution}{15}{subsubsection.2.4.1}\protected@file@percent }
 \newlabel{under_ot}{{5a}{15}{Subfigure 5a}{subfigure.5.1}{}}
 \newlabel{sub@under_ot}{{(a)}{a}{Subfigure 5a\relax }{subfigure.5.1}{}}
@@ -72,8 +72,8 @@
 \newlabel{sub@over_ot}{{(b)}{b}{Subfigure 5b\relax }{subfigure.5.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Initial result: box plot of posterior samples of $O_t$ }}{15}{figure.caption.8}\protected@file@percent }
 \newlabel{contam_ot}{{5}{15}{Initial result: box plot of posterior samples of $O_t$}{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ppc of $O_t$: underestimated $p_A$}}}{15}{subfigure.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ppc of $O_t$: overestimated $p_A$}}}{15}{subfigure.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ppc of $O_t$: underestimated $p_{A,t}$}}}{15}{subfigure.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ppc of $O_t$: overestimated $p_{A,t}$}}}{15}{subfigure.5.2}\protected@file@percent }
 \newlabel{ot.how.made}{{8}{16}{Posterior Distribution}{equation.2.8}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Posterior Predictive Check}{16}{subsubsection.2.4.2}\protected@file@percent }
 \newlabel{under_ut}{{6a}{17}{Subfigure 6a}{subfigure.6.1}{}}
@@ -82,23 +82,33 @@
 \newlabel{sub@over_ut}{{(b)}{b}{Subfigure 6b\relax }{subfigure.6.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Initial result: boxplot of posterior samples of $U_t$}}{17}{figure.caption.9}\protected@file@percent }
 \newlabel{contam_ut}{{6}{17}{Initial result: boxplot of posterior samples of $U_t$}{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ppc of $U_t$: underestimated $p_A$}}}{17}{subfigure.6.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ppc of $U_t$: overestimated $p_A$}}}{17}{subfigure.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ppc of $U_t$: underestimated $p_{A,t}$}}}{17}{subfigure.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ppc of $U_t$: overestimated $p_{A,t}$}}}{17}{subfigure.6.2}\protected@file@percent }
+\citation{chain_rule}
+\newlabel{under_xa}{{7a}{18}{Subfigure 7a}{subfigure.7.1}{}}
+\newlabel{sub@under_xa}{{(a)}{a}{Subfigure 7a\relax }{subfigure.7.1}{}}
+\newlabel{over_xa}{{7b}{18}{Subfigure 7b}{subfigure.7.2}{}}
+\newlabel{sub@over_xa}{{(b)}{b}{Subfigure 7b\relax }{subfigure.7.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Initial result: b oxplot of posterior samples of $x_{A,t}$}}{18}{figure.caption.10}\protected@file@percent }
+\newlabel{contam_xt}{{7}{18}{Initial result: b oxplot of posterior samples of $x_{A,t}$}{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ppc of $x_{A,t}$: underestimated $p_{A,t}$}}}{18}{subfigure.7.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ppc of $x_{A,t}$: overestimated $p_{A,t}$}}}{18}{subfigure.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Result: Unobservable $N$}{18}{subsection.2.5}\protected@file@percent }
+\newlabel{gen_model_unk_N}{{9}{18}{Result: Unobservable $N$}{equation.2.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Generative model with unoberservable $N$\relax }}{19}{figure.caption.11}\protected@file@percent }
+\newlabel{draw_N}{{8}{19}{Generative model with unoberservable $N$\relax }{figure.caption.11}{}}
+\newlabel{in_prior_N}{{10}{20}{Result: Unobservable $N$}{equation.2.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}Posterior Distribution}{20}{subsubsection.2.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Trace plot of $N$\relax }}{20}{figure.caption.12}\protected@file@percent }
+\newlabel{trace_N}{{9}{20}{Trace plot of $N$\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}Posterior Predictive Check}{21}{subsubsection.2.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Conclusion}{21}{section.3}\protected@file@percent }
 \bibstyle{alpha}
 \bibdata{sample.bib}
 \bibcite{chain_rule}{{Cha}20}
 \bibcite{jags}{Den16}
 \bibcite{bccdc_opioid}{fDC19}
 \bibcite{bda_galman}{GCS{$^{+}$}14}
-\newlabel{under_xa}{{7a}{18}{Subfigure 7a}{subfigure.7.1}{}}
-\newlabel{sub@under_xa}{{(a)}{a}{Subfigure 7a\relax }{subfigure.7.1}{}}
-\newlabel{over_xa}{{7b}{18}{Subfigure 7b}{subfigure.7.2}{}}
-\newlabel{sub@over_xa}{{(b)}{b}{Subfigure 7b\relax }{subfigure.7.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Initial result: b oxplot of posterior samples of $x_A$}}{18}{figure.caption.10}\protected@file@percent }
-\newlabel{contam_xt}{{7}{18}{Initial result: b oxplot of posterior samples of $x_A$}{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {ppc of $x_A$: underestimated $p_A$}}}{18}{subfigure.7.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ppc of $x_A$: overestimated $p_A$}}}{18}{subfigure.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Variying the Assumptions}{18}{subsection.2.5}\protected@file@percent }
 \bibcite{paul}{Gus20}
 \bibcite{hoffman2011nouturn}{HG11}
 \bibcite{Irvine:modelling}{IM19}

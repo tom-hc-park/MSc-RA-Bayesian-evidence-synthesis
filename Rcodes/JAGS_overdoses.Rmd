@@ -39,12 +39,12 @@ if (!require(rjags)) install.packages("rjags", dependencies = TRUE)
 if (!require(coda)) install.packages("coda", dependencies = TRUE)
 if (!require(tidyverse)) install.packages("tidyverse", dependencies = TRUE)
 if (!require(tinytex)) install.packages("tinytex", dependencies = TRUE)
-
+if (!require(MCMCvis)) install.packages("MCMCvis", dependencies = TRUE)
 library('rjags')
 library('coda')
 library('tidyverse')
 library('tinytex')
-
+library('MCMCvis')
 ```
 The data is the same data from pymc3 with Python.  
 Todo: build a pipeline to connect the python (pymc3) and R (JAGS)
@@ -140,6 +140,10 @@ samples <- coda.samples(simple.model, params, n.iter = 1000)
 # guess it's getting posterior samples ?
 ```
 
+```{r}
+MCMCsummary(samples)
+# MCMCtrace(samples)
+```
 
 
 ```{r }
@@ -456,7 +460,7 @@ Pre-set variables.
 ```{r Defining Values}
 n_T <- length(df$o_t)
 n_a <- 1000
-# N <- 10000
+# N <- 10000 it is to be deleted
 u_t <- df$u_t
 x_a <- df$x_a
 ```
@@ -496,12 +500,21 @@ simple.N.model
 ```
 
 ```{r}
-test <- coda.samples(model = simple.N.model,variable.names = c('o_t','p_a','N'), n.iter = 10000)
-interations = 10000
-burnin= floor(interations/2)
-summary(window(test), start=burnin)
+test <- coda.samples(model = simple.N.model,variable.names = c('o_t','p_a','N'), n.iter = 10000000)
+MCMCsummary(test)
+# interations = 1000000
+# burnin= floor(interations/2)
+# summary(window(test), start=burnin)
 # head(test)
 ```
+
+
+
+```{r}
+MCMCtrace(test)
+```
+
+
 ```{r}
 plot(test)
 ```
@@ -513,9 +526,6 @@ N <- pst_mtx.N[,1]
 length(N)
 ```
 
-```{r}
-plot(N )
-```
 
 
 ```{r}
