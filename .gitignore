@@ -2,3 +2,4 @@ Envmike/
 garage/
 *.db
 pdf/3rd_comments.pdf
+pdf/*.pdf
